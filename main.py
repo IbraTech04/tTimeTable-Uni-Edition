@@ -2,9 +2,7 @@ import datetime
 from time import time
 from click import pass_context
 import discord
-from discord import message
 from discord.ext import commands
-from collections import defaultdict
 from pymongo import MongoClient
 
 client = commands.Bot(command_prefix='tmt',activity = discord.Game("hide and seek with guidance counselors")) #initializing the bot
@@ -13,7 +11,6 @@ mongo = MongoClient("mongodb+srv://IbraTech:ibratech@cluster0.mj3ax.mongodb.net/
 
 db = client.testdb = mongo["myFirstDatabase"] #selecting the database
 
-timetables = defaultdict(dict)
 @client.command(pass_context=True)
 async def setup(ctx):
     #if the author is in the db database
