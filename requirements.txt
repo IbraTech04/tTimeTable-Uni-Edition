@@ -1,1 +1,1 @@
-pymongo[svr]
+pymongo[srv]
