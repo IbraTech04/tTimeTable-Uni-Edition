@@ -93,7 +93,7 @@ async def viewTimeTable(ctx, person: discord.Member = None):
                 await ctx.send(embed=embed)
         else:
             #ping user that they don't have a timetable setup
-            embed = discord.Embed(title="❌ TMtimeTable Error", description="{person.mention} doesn't have a timetable setup yet. Tell them to use tmtsetup to setup a timetable!", color=0x1F99CD)
+            embed = discord.Embed(title="❌ TMtimeTable Error", description=person.mention + " doesn't have a timetable setup yet. Tell them to use tmtsetup to setup a timetable!", color=0x1F99CD)
             await ctx.send(embed=embed)
 
 @client.command(pass_context=True)
