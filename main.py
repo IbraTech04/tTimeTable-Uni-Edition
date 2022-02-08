@@ -41,7 +41,7 @@ async def setup(ctx):
         await ctx.send(embed=embed)
         db.users.insert_one(dict)
         
-@client.command(pass_context=True)
+@client.command(pass_context=True, aliases=["view", "show", "school", "timetable"])
 async def viewTimeTable(ctx, person: discord.Member = None):
     #check if the author is in the timetables dictonary
     if (person == None):
@@ -113,4 +113,41 @@ async def reset(ctx):
 async def on_ready():
     print("The bot is ready!")
 
+#method which edits a users timetable entry
+@client.command(pass_context=True)
+async def edit (ctx, period = None, *, new_entry = None):
+    #check if user is in databse
+    if (not db.users.find_one({"_id": ctx.message.author.id})):
+        embed = discord.Embed(title="❌ TMtimeTable Error", description="You don't have a timetable setup yet. Use tmtsetup to setup a timetable!", color=0x1F99CD)
+        await ctx.send(embed=embed)
+    else:
+        #check if period and newentry are none
+        if (period == None or new_entry == None):
+            embed = discord.Embed(title="❌ TMtimeTable Error", description="You need to specify a period and a new entry!", color=0x1F99CD)
+            await ctx.send(embed=embed)
+        else:
+            #check if period is valid
+            
+            #check if period is a number
+            if (period.isdigit() and int(period) >= 1 and int(period) <= 4):
+                period = "p" + str(period)    
+            if (period == "p1" or period == "p2" or period == "p3" or period == "p4"):
+                #backup current timetable
+                backup = db.users.find_one({"_id": ctx.message.author.id})["timetable"]
+                
+                #change the timetable entry
+                backup[period] = new_entry
+                
+                #reset the users timetable
+                db.users.delete_one({"_id": ctx.message.author.id})
+
+                #append new timetable
+                
+                db.users.insert_one({"_id": ctx.message.author.id, "timetable": backup})
+                embed = discord.Embed(title="🔔 TMtimeTable Notification", description="Your timetable has been updated!", color=0x1F99CD)
+                await ctx.send(embed=embed)
+            else:
+                embed = discord.Embed(title="❌ TMtimeTable Error", description="You need to specify a valid period!", color=0x1F99CD)
+                await ctx.send(embed=embed)
+                
 client.run("OTQwMDM0NDQ0OTgxNTkyMDk2.YgBhTA.0deI66Jn4Fp4M3S1WLxdA0wlSNo") #token
