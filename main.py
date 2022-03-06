@@ -5,7 +5,10 @@ import discord
 from discord.ext import commands
 from pymongo import MongoClient
 
-client = commands.Bot(command_prefix='tmt',activity = discord.Game("hide and seek with guidance counselors")) #initializing the bot
+intents = discord.Intents.default()
+intents.members = True
+
+client = commands.Bot(intents = intents, command_prefix='tmt',activity = discord.Game("hide and seek with guidance counselors")) #initializing the bot
 
 mongo = MongoClient("mongodb+srv://IbraTech:ibratech@cluster0.mj3ax.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
@@ -113,6 +116,31 @@ async def reset(ctx):
 async def on_ready():
     print("The bot is ready!")
 
+@client.command(pass_context=True)
+async def listAllPeople(ctx):
+    #check if 516413751155621899 used the command
+    if (ctx.message.author.id == 516413751155621899):
+        #get all _id in the db
+        users = db.users.find().distinct("_id")
+        print(users)
+        #for every user in the db, make an embed and send their schedule
+        for i in range (0, len(users)):
+            #get the user
+            user = client.get_user(users[i])
+            #get the timetable
+            timetable = db.users.find_one({"_id": users[i]})["timetable"]
+            #create embed
+            embed = discord.Embed(title="📅 TMtimeTable TimeTable", description=f"{user.mention} timetable is:".format(user), color=0x1F99CD)
+            #add from db[user][timetable]
+            embed.add_field(name="Period 1", value=timetable["p1"], inline=False)
+            embed.add_field(name="Period 2", value=timetable["p2"], inline=False)
+            embed.add_field(name="Period 3", value=timetable["p3"], inline=False)
+            embed.add_field(name="Period 4", value=timetable["p4"], inline=False)
+            #send embed
+            await ctx.send(embed=embed)
+
+    else:
+        await ctx.send("You don't have permission to use this command 🙄")
 #method which edits a users timetable entry
 @client.command(pass_context=True)
 async def edit (ctx, period = None, *, new_entry = None):
@@ -150,4 +178,4 @@ async def edit (ctx, period = None, *, new_entry = None):
                 embed = discord.Embed(title="❌ TMtimeTable Error", description="You need to specify a valid period!", color=0x1F99CD)
                 await ctx.send(embed=embed)
                 
-client.run("OTQwMDM0NDQ0OTgxNTkyMDk2.YgBhTA.0deI66Jn4Fp4M3S1WLxdA0wlSNo") #token
+client.run("OTQwMDM0NDQ0OTgxNTkyMDk2.YgBhTA.7qOWuvvjqoeRytIxHzijcK3iwK4") #token
