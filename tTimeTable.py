@@ -6,8 +6,8 @@ import json
 from pymongo import MongoClient
 import os
 from nextcord import Interaction, SlashOption, ChannelType
-from nextcord.abc import GuildChannel
-from nextcord import Attachment
+from nextcord.abc import GuildChannel #Tentative import - gonna be used later
+from nextcord import Attachment #Tentative import - gonna be used later (ACORN HTML parsing)
 from dotenv import load_dotenv
 
 load_dotenv(dotenv_path="tTimeTableTokens.env")
@@ -19,8 +19,17 @@ tTimeTable = commands.Bot(intents = intents, command_prefix='tmt',activity = nex
 
 UTMCourses = json.load(open("UTMCourses.json"))
 
+
+
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
-async def addlecture(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S"}), tutorialsection: Optional[str] = SlashOption(required=True)):
+async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
+    """
+    Command which adds a lecture to a user's profile, and creates a user profile if one does not exist
+    :param interaction: Interaction object
+    :param coursecode: Course code of the course to be added
+    :param semester: Semester of the course to be added
+    :param tutorialsection: Tutorial section of the course to be added
+    """
     db = mongo.tTimeTableUniEdition
     #These are checks to make sure the inputted info is valid
     #Step One: Check if the course code is valid - check if it is in the json file
@@ -33,7 +42,7 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         courseCode = courseCode + "H5"
         if (not courseCode in UTMCourses):
             courseCode = courseCode[:-2] + "Y5"
-    #check if course needs tutorial in teh first place
+    #check if course needs tutorial in the first place
     if (not UTMCourses[courseCode]["tutorial"]):
         await interaction.response.send_message("This course does not have a tutorial", ephemeral=True)
         return
@@ -46,11 +55,11 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
     #If we're here, we know the course code is guaranteed to be valid. Now we need to check if the lecture section is valid
     #The Lecture section should either be in the format of LECXXXX, or just XXXX. 
     tutorialsection = tutorialsection.upper()
-    if (len(tutorialsection) < 4):
+    if (len(tutorialsection) < 4 or (tutorialsection.isdigit() and len(tutorialsection) > 4)):
         await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
         return
-    if (not tutorialsection[:3] == "LEC"):
-        tutorialsection = "LEC" + tutorialsection
+    if (not tutorialsection[:3] == "TUT"):
+        tutorialsection = "TUT" + tutorialsection
     if (not tutorialsection[4:].isdigit()):
         await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
         return
@@ -73,22 +82,96 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
     
     if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{courseCode:{}}}})
-    if (not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{courseCode:{}}}})
-        await interaction.response.send_message(f"{coursecode} Added!")
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"tutorialSection":tutorialsection}})
+    if (not "tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"tutorialSection":tutorialsection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+tutorialsection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
         return
     await interaction.response.send_message("You already have this course in your timetable. Use /remove to remove this course from your timetable", ephemeral=True)
 
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addpractical", description = "Add a practical to your timetable")
+async def addpractical(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), practicalsection: Optional[str] = SlashOption(required=True)):
+    """
+    Command which adds a lecture to a user's profile, and creates a user profile if one does not exist
+    :param interaction: Interaction object
+    :param coursecode: Course code of the course to be added
+    :param semester: Semester of the course to be added
+    :param practicalsection: Practical section of the course to be added
+    """
+    db = mongo.tTimeTableUniEdition
+    #These are checks to make sure the inputted info is valid
+    #Step One: Check if the course code is valid - check if it is in the json file
+    courseCode = coursecode.upper()
+    if (not coursecode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+        await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
+        return
+    #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
+    if (not courseCode[-2:] == "H5" and not courseCode[-2:] == "Y5"):
+        courseCode = courseCode + "H5"
+        if (not courseCode in UTMCourses):
+            courseCode = courseCode[:-2] + "Y5"
+    #check if course needs tutorial in the first place
+    if (not UTMCourses[courseCode]["practical"]):
+        await interaction.response.send_message("This course does not have a tutorial", ephemeral=True)
+        return
+    if (db.courses.find_one({"_id": courseCode}) == None):
+        #add courseCode to database
+        db.courses.insert_one({"_id": courseCode})
+    if (not semester in db.courses.find_one({"_id":courseCode})):
+        #create the semester object
+        db.courses.update_one({"_id":courseCode},{"$set":{semester:{}}})
+    #If we're here, we know the course code is guaranteed to be valid. Now we need to check if the lecture section is valid
+    #The Lecture section should either be in the format of LECXXXX, or just XXXX. 
+    practicalSection = practicalsection.upper()
+    if (len(practicalSection) < 4 or (practicalSection.isdigit() and len(practicalSection) > 4)):
+        await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
+        return
+    if (not practicalSection[:3] == "PRA"):
+        practicalSection = "PRA" + practicalSection
+    if (not practicalSection[4:].isdigit()):
+        await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
+        return
 
+    #If we're here, we know the tutorial section is valid. 
+    #The Semester is apart of a picker - it's guaranteed to be valid
+    
+    if (not practicalSection in db.courses.find_one({"_id":courseCode})[semester]):
+        #append the lecturesection array to the semester object
+        db.courses.update_one({"_id":courseCode},{"$set":{semester+"."+practicalsection:[]}})
+    
+    #Now we can interact with our database
+    #Step one: Check if the user has a profile
+    if (not db.users.find_one({"_id":interaction.user.id})): # Add course to database
+        db.users.insert_one({"_id":interaction.user.id}) #If they don't have a profile, we create one for them
+    #Check if they have the semester in their profile
+    if (semester not in db.users.find_one({"_id":interaction.user.id})):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{}}})       
+    if (semester not in db.courses.find_one({"_id": courseCode})): #Add semester to database
+        db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
+    
+    if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
+    if (not "practicalSession" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"practicalSession":practicalSection}}, upsert=True)
+        db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+practicalSection:interaction.user.id}})
+        await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
+        return
+    await interaction.response.send_message("You already have this course in your timetable. Use /remove to remove this course from your timetable", ephemeral=True)
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addlecture", description = "Add a lecture to your timetable")
-async def addlecture(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S"}), lecturesection: Optional[str] = SlashOption(required=True)):
+async def addlecture(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), lecturesection: Optional[str] = SlashOption(required=True)):
+    """
+    Command which adds a lecture to the user's timetable
+    :param interaction: Interaction object
+    :param coursecode: Course code of the course to be added
+    :param semester: Semester of the course to be added
+    :param lecturesection: Lecture section of the course to be added
+    """
     db = mongo.tTimeTableUniEdition
     #These are checks to make sure the inputted info is valid
     #Step One: Check if the course code is valid - check if it is in the json file
@@ -110,7 +193,7 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
     #If we're here, we know the course code is guaranteed to be valid. Now we need to check if the lecture section is valid
     #The Lecture section should either be in the format of LECXXXX, or just XXXX. 
     lectureSection = lecturesection.upper()
-    if (len(lectureSection) < 4):
+    if (len(lectureSection) < 4 or (lectureSection.isdigit() and len(lectureSection) > 4)):
         await interaction.response.send_message("Invalid lecture section, check your spelling and try again", ephemeral=True)
         return
     if (not lectureSection[:3] == "LEC"):
@@ -137,19 +220,21 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
     
     if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{courseCode:{}}}})
-    if (not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{courseCode:{}}}})
-        await interaction.response.send_message(f"{coursecode} Added!")
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"lectureSection":lectureSection}})
+    if (not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"lectureSection":lectureSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+lectureSection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
         return
     await interaction.response.send_message("You already have this course in your timetable. Use /remove to remove this course from your timetable", ephemeral=True)
 
-
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name = "viewclassmates", description = "See who else is in your class!")
+async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=False, description="The course you'd like to view classmates in. Optional: Leave blank to search all courses", name="coursecode"), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}, description="The semester you'd like to view classmates in. Optional: Leave blank to search all semesters", required=False)):
+    #TODO Implement this command
+    await interaction.response.send_message("This command is not yet implemented", ephemeral=True)
+    
 @tTimeTable.command(pass_context=True)
 async def addCourse(ctx):
     semester = None
