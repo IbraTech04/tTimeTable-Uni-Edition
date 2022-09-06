@@ -1,0 +1,2362 @@
+ANT101H5   Introduction to Biological Anthropology and Archaeology
+ANT102H5   Introduction to Sociocultural and Linguistic Anthropology
+ANT200H5   Introduction to the Practice of Archaeology
+ANT201H5   World Prehistory
+ANT202H5   Biological Anthropology: Human Variation and Adaptation
+ANT203H5   Biological Anthropology: Primatology and Palaeoanthropology
+ANT204H5   Sociocultural Anthropology
+ANT205H5   Introduction to Forensic Anthropology
+ANT206H5   Culture and Communication
+ANT207H5   Being Human: Classic Thought on Self and Society
+ANT208H5   The Culture Machine: The Anthropology of Everyday Life
+ANT209H5   War, Trade and Aid: The Anthropology of Global Intervention
+ANT210H5   Fantasies, Hoaxes and Misrepresentations of the Ancient World
+ANT211H5   Sex, Evolution and Behaviour
+ANT212H5   Who am I? Topics in Identity and Difference
+ANT214H5   Anthropology of Food and Nutrition
+ANT215H5   How Should One Live? An Introduction to the Anthropology of Ethics
+ANT216H5   Racketeers, Smugglers and Pirates: Anthropology of Illegality
+ANT217H5   Anthropology of Law
+ANT218H5   The Social Conquest of Earth
+ANT219H5   How Do We Know? The Social Anthropology of Knowledge
+ANT220H5   Introduction to the Anthropology of Health
+ANT241H5   Anthropology and the Indigenous Peoples of Turtle Island (in Canada)
+ANT299H5   Research Opportunity Program
+ANT299Y5   Research Opportunity Program
+ANT300H5   Cultural Heritage Management: The Past in the Present and for the Future
+ANT306H5   Forensic Anthropology Field School
+ANT310H5   Political Anthropology of Ancient States
+ANT312H5   Archaeological Analysis
+ANT313H5   China, Korea and Japan in Prehistory
+ANT314H5   Archaeological Theory
+ANT316H5   South Asian Archaeology
+ANT317H5   Pre-contact Indigenous History of Eastern North America
+ANT318H5   Archaeological Fieldwork
+ANT320H5   Archaeological Approaches to Technology
+ANT322H5   Anthropology of Youth
+ANT327H5   Agricultural Origins:  The Second Revolution
+ANT331H5   The Biology of Human Sexuality
+ANT332H5   Human Origins I: Early Ancestors to Homo
+ANT333H5   Human Origins II: The genus Homo
+ANT334H5   Human Osteology
+ANT335H5   Anthropology of Gender
+ANT337H5   Anthropology of Growth and Development
+ANT338H5   Laboratory Methods in Biological Anthropology
+ANT340H5   Osteological Theory and Methods
+ANT341H5   Anthropology of Infectious Disease
+ANT350H5   Globalization and the Changing World of Work
+ANT351H5   Money, Markets, Gifts: Topics in Economic Anthropology
+ANT352H5   Protest, Power and Authority: Topics in Political Anthropology
+ANT353H5   Queer Bodies: Gender, Disability, and Illness
+ANT354H5   Capitalism and its Rebels
+ANT355H5   Disabled Cyborgs and Racist Robots: Bodies, Technologies, and Social Justice
+ANT357H5   Nature, People and Power: Topics in Environmental Anthropology
+ANT358H5   Field Methods in Sociocultural Anthropology
+ANT360H5   Anthropology of Religion
+ANT361H5   Language and Culture in Southeast Asia
+ANT362H5   Language in Culture and Society
+ANT363H5   Magic and Science
+ANT364H5   Fieldwork in Language, Culture, and Society
+ANT365H5   Meaning, Self, Society
+ANT367H5   Sister Species: Lessons from the chimpanzee
+ANT368H5   World Religions and Ecology
+ANT369H5   Religious Violence and Nonviolence
+ANT370H5   Environment, Culture and Film
+ANT380H5   Special Topics in Biological Anthropology and Archaeology
+ANT381H5   Special Topics in Sociocultural and Linguistic Anthropology
+ANT397H5   Independent Study
+ANT397Y5    Independent Study
+ANT398H5   Independent Reading
+ANT398Y5   Independent Reading
+ANT399H5   Research Opportunity Program
+ANT399Y5   Research Opportunity Program
+ANT402H5   Wild Nights: Sleep, evolution, and performance in the 21st century
+ANT403H5   Social Learning and Cultural Patterns
+ANT404H5   Current Topics in Palaeoanthropology
+ANT405H5   Behind Bars: Anthropology of Institutions and Confinement
+ANT407H5   Quantitative Methods in Archaeology and Biological Anthropology
+ANT414H5   People and Plants in Prehistory
+ANT415H5   Faunal Archaeo-Osteology
+ANT416H5   Advanced Archaeological Analysis
+ANT418H5   Advanced Archaeological Fieldwork
+ANT430H5   Special Problems in Biological Anthropology and Archaeology
+ANT431H5   Special Problems in Sociocultural and Linguistic Anthropology
+ANT432H5   Advanced Seminar in Biological Anthropology and Archaeology
+ANT433H5   Advanced Seminar in Sociocultural and Linguistic Anthropology
+ANT434H5   Palaeopathology
+ANT436H5   Theory and Methods in Molecular Anthropology
+ANT437H5   Advanced Seminar in the Anthropology of Health
+ANT438H5   The Development of Thought in Biological Anthropology
+ANT439H5   Advanced Forensic Anthropology
+ANT441H5   Advanced Bioarchaeology
+ANT455H5   TOXIC! The anthropology of toxicity
+ANT460H5   Theory in Sociocultural Anthropology
+ANT462H5   Living and Dying: Topics in Medical Anthropology and Global Health
+ANT463H5   Anthropologies of Water: On Meaning, Value, and Futures
+ANT464H5   The End of Coal: An Ethnographic Approach
+ANT465H5   The Anthropology of Islam
+ANT466H5   Language in Anthropological Thought
+ANT467H5   Are Media Turning Humans into Cyborgs?
+ANT497H5   Advanced Independent Study
+ANT497Y5   Advanced Independent Study
+ANT498H5   Advanced Independent Reading
+ANT498Y5   Advanced Independent Reading
+ANT499H5   Research Opportunity Program
+ANT499Y5   Research Opportunity Program
+ARA210H5   Arab Culture I
+ARA212Y5   Introductory Arabic
+ARA300Y5   Intermediate Arabic for Heritage Learners
+ARA305Y5   Introductory Egyptian Colloquial Arabic
+ARA312Y5   Intermediate Arabic
+ARA400Y5   Advanced Arabic for Heritage Learners
+ARA408H5   Arabs in Western Literature and Arts: Reception and Interpretation
+ARA410H5   Advanced Arabic Reading I: Reading the Sacred and the Legendary
+ARA411H5   Advanced Arabic Reading II: Literary Journeys into the Past
+ARA412Y5   Advanced Arabic
+AST101H5   Exploring the Solar System
+AST110H5   Introduction to Astronomical Observations
+AST115H5   Cultural Astronomy
+AST201H5   Exploring the Universe
+AST221H5   Astrophysics I – Planets, Sun and Stars
+AST222H5   Astrophysics II – Stellar Systems, Galaxies and the Universe
+AST252H5   Life in the Universe
+AST299Y5   Research Opportunity Program
+AST320H5   Astrophysics III – Unsolved Problems in Astrophysics
+AST399Y5   Research Opportunity Program
+BIO152H5   Introduction to Evolution and Evolutionary Genetics
+BIO153H5   Diversity of Organisms
+BIO200H5   Introduction to Pharmacology:  Pharmacokinetic Principles
+BIO201H5   The Biology Behind the News
+BIO202H5   Introductory Animal Physiology
+BIO203H5   Introductory Plant Morphology and Physiology
+BIO205H5   Ecology
+BIO206H5   Introductory Cell and Molecular Biology
+BIO207H5   Introductory Genetics
+BIO208H5   Fundamentals of Human Anatomy and Physiology I
+BIO209H5   Fundamentals of Human Anatomy and Physiology II
+BIO211H5   The History of Our Living Planet
+BIO259H5   Introduction to Biological Data
+BIO299Y5   Research Opportunity Program
+BIO304H5   Physiology of Neurons and Muscle
+BIO310H5   Physiology of Regulatory Systems
+BIO311H5   Landscape Ecology
+BIO312H5   Plant Physiology
+BIO313H5   Field Methods and Experimental Design in Ecology
+BIO314H5   Laboratory in Cell and Molecular Biology
+BIO315H5   Human Cell Biology
+BIO318Y5   Animal Behaviour
+BIO320H5   Sensory and Cognitive Ecology
+BIO324H5   Plant Biochemistry
+BIO325H5   Biomechanics
+BIO326H5   Ornithology
+BIO328H5   Lectures in Animal Behaviour
+BIO330H5   Plant Ecology
+BIO331H5   Ecology of Communities
+BIO332H5   Biology Field Research
+BIO333H5   Freshwater Ecology
+BIO335H5   Mycology
+BIO339H5   Plant Identification and Systematics
+BIO341H5   Advanced Genetics
+BIO342H5   Evolutionary Biology
+BIO347H5   Epigenetics
+BIO353H5   Plant Development
+BIO354H5   Vertebrate Form and Function
+BIO356H5   Major Features of Vertebrate Evolution
+BIO360H5   Biometrics I
+BIO361H5   Biometrics II
+BIO362H5   Bioinformatics
+BIO368H5   Medicinal Plants and Human Health
+BIO370Y5   Microbiology
+BIO371H5   Microbiology Lectures
+BIO372H5   Molecular Biology
+BIO373H5   Environmental Microbiology
+BIO374H5   Modern Biotechnology
+BIO375H5   Introductory Medical Biotechnology
+BIO376H5   Marine Ecology
+BIO378H5   The Biology of Marine Mammals: evolution, physiology, ecology and conservation
+BIO380H5   Human Development
+BIO399Y5   Research Opportunity Program
+BIO400Y5   Biology Internship
+BIO403H5   Developmental Neurobiology
+BIO404H5   Invertebrate Neurobiology
+BIO405H5   Evolutionary Perspectives on Behaviour
+BIO406H5   Current Topics in Ecology and Evolution
+BIO407H5   Behaviour Genetics
+BIO408H5   Neural Circuit Structure and Function
+BIO409H5   Laboratory in Animal Physiology
+BIO410H5   Insect Physiology
+BIO411H5   Topics in Molecular and Cellular Physiology
+BIO412H5   Climate Change Biology
+BIO414H5   Advanced Integrative Physiology
+BIO416H5   Field Course in Ecology
+BIO417H5   Molecular and Structural Genomics
+BIO419H5   Molecular Aspects of Gene Regulation
+BIO422H5   Environmental Epigenetics
+BIO427H5   Data Science in Biology
+BIO429H5   Data analysis in Neurobiology
+BIO434H5   Social and Developmental Determinants of Human Health
+BIO443H5   Phylogenetic Principles
+BIO445H5   Evolutionary Ecology
+BIO458H5   Genomics
+BIO464H5   Conservation and Biodiversity
+BIO475H5   Virology
+BIO476H5   Molecular Basis of Disease
+BIO477H5   The Human Genome and Cancer Biology
+BIO481Y5   Biology Research Project
+BIO483H5   Selected Topics in Biology I
+BIO484H5   Selected Topics in Biology II
+CBJ481Y5   Independent Project in Bioinformatics
+CCT109H5   Contemporary Communication Technologies
+CCT110H5   Rhetoric and Media
+CCT111H5   Critical Coding
+CCT112H5   Introduction to Management in the Networked Information Economy
+CCT200H5   Race, Media and Culture
+CCT202H5   Human-Machine Communication
+CCT203H5   Business Research Methods
+CCT204H5   Design Thinking I
+CCT205H5   Digital Innovation and Cultural Transformation
+CCT206H5   Law, Technology and Culture
+CCT208H5   Communications Research Methods
+CCT210H5   Signs, Referents, and Meaning 
+CCT211H5   Fundamentals of User Interface Programming
+CCT212H5   Hacker Culture
+CCT218H5   Foundations of Media and Technology Studies
+CCT219H5   Media Economics I
+CCT221H5   Digital Marketing I (DEM)
+CCT222H5   Political Economy of Communication, Culture, and Technology
+CCT224H5   Organizational Studies I
+CCT225H5   Information Systems
+CCT226H5   Data Analysis I
+CCT250H5   Technology and Creative Expression
+CCT260H5   Web Culture and Design
+CCT261H5   Speculative Design I
+CCT270H5   Principles in Game Design
+CCT273H5   Professional Practice and Communication
+CCT285H5   Immersive Environment Design
+CCT286H5   Interactive Media Design
+CCT295H5   Topics in Communication, Culture, Information and Technology
+CCT300H5   Critical Analysis of Media
+CCT301H5   Design for Online Cultures
+CCT302H5   Developing and Managing Communication Campaigns and Projects
+CCT303H5   Communicating In and Between Organizations
+CCT304H5   Visual Communication and Digital Environments
+CCT305H5   Design and Implementation of Multimedia Documents
+CCT307H5   Critical Infrastructure Studies
+CCT308H5   Advanced Research Methodologies
+CCT310H5   Popular Culture and Society
+CCT311H5   Game Design and Theory
+CCT312H5   Interactive Story Telling for Game Development
+CCT314H5   Mind, Media and Representation
+CCT315H5   Theory of Linguistic Communication
+CCT316H5   Communication and Advertising
+CCT317H5   Creative and Experimental Coding
+CCT320H5   Communication, Technology, and Social Change
+CCT321H5   Introduction to Finance
+CCT324H5   Organizational Studies II
+CCT325H5   Media Economics II
+CCT326H5   Communication across the Lifespan
+CCT331H5   Social Media and Society
+CCT332H5   Canadian Communication Policy
+CCT333H5   Social Innovation
+CCT334H5   History and Theory of Game Production
+CCT335H5   Technology and the City
+CCT336H5   Comics and Digital Culture
+CCT340H5   Gender, Media and Technology
+CCT341H5   Introduction to IT Consulting
+CCT351H5   Theory and Practice of Animation
+CCT352H5   History and Practice of Design
+CCT353H5   Digital Media: Video
+CCT354H5   Digital Marketing II
+CCT355H5   Critical Approaches to Innovation
+CCT356H5   Online Advertising and Marketing
+CCT357H5   Digital Media: Photography
+CCT360H5   Intermediate Web Design 
+CCT361H5   Speculative Design II
+CCT365H5   Surveillance
+CCT371H5   Sound as Media
+CCT373H5   Career Planning and Development
+CCT374H5   Critical Histories of Information Technologies
+CCT376H5   Introduction to Modelling Information
+CCT380H5   Human-Computer Interaction and Communication
+CCT381H5   Media Audiences
+CCT382H5   Prototyping Digital Games
+CCT383H5   The Interactive Society
+CCT384H5   Inclusive Design and Social Responsibility
+CCT385H5   Conceptualizing Media Environments
+CCT386H5   Information Practice in Virtual Worlds: Exploration of Information Environments
+CCT390H5   Digital Media and Communications Abroad
+CCT391H5   Topics in Communication, Culture, Information and Technology
+CCT395H5   Topics in Communication, Culture, Information & Technology
+CCT399Y5   Research Opportunity Program (ROP)
+CCT400H5   Advanced Project
+CCT401H5   Advanced Thesis Course
+CCT402H5   Creating, Protecting and Managing Digital Artifacts
+CCT403H5   Finance, Innovation and the Digital Firm
+CCT404H5   Remote Work, Technology and Collaboration
+CCT405H5   Individual Project
+CCT406H5   Capstone Design Project
+CCT407Y5   Advanced Field Experiences in CCIT
+CCT409H5   Special Topics in Work-Based Learning
+CCT410H5   CCIT Internship I
+CCT411H5   CCIT Internship II
+CCT412H5   Self-Directed Research Project: Advanced Studio Practices
+CCT414H5   Special Topics in Knowledge, Media and Design
+CCT416H5   Social Data Analytics
+CCT417H5   Alternative Media
+CCT418H5   Work, Media and Technology
+CCT419H5   User Experience Design - UXD and Board Games
+CCT420H5   Information Technology and Globalization
+CCT423H5   Game Development Project
+CCT424H5   Organizational Studies III
+CCT430H5   Networked Life
+CCT431H5   Drones, Robots, Artificial Intelligence
+CCT432H5   Ethics and Code
+CCT433H5   Sustainable Design
+CCT434H5   Design Thinking II 
+CCT435H5   Media and Outer Space
+CCT440H5   Power, Privilege and Technology
+CCT441H5   Online Collaborative Project Management
+CCT448H5   Game Design as Problem Solving
+CCT449H5   Immersive VR Journalism
+CCT450H5   Designing Interactive Books
+CCT451H5   Digital Media: Advanced Audio Production
+CCT452H5   Graphic Design and Popular Culture
+CCT453H5   Digital Media:  Advanced Video Production
+CCT454H5   Documentary Practices
+CCT456H5   Analysis and Visualization of Open Data
+CCT457H5   Digital Media:  Advanced Photography Production
+CCT460H5   Advanced Web Design
+CCT461H5   Speculative Design III
+CCT470H5   Information Visualization
+CCT472H5   Media Archaeology
+CCT473H5   Career Strategies
+CCT475H5   Integrated Learning in Digital Media, Communication, and Technology
+CCT476H5   Foundations of Operations Management
+CCT477H5   UX Design - Understanding Users
+CCT478H5   UX Design - Prototyping and Evaluation
+CCT481H5   Augmented Places and Social Media Spaces
+CCT482H5   Interactive Electronic Design
+CCT483H5   Play, Performance and Community in Digital Games
+CCT486H5   Digital Platforms: A Global Perspective 
+CCT487H5   Advanced Communication Policy in a Global Context 
+CCT490H5   Topics in Communication, Culture, Information and Technology
+CCT491H5   Topics in Communication, Culture, Information and Technology
+CCT495H5   Topics in Communication, Culture, Information & Technology
+CCT499Y5   Research Opportunity
+CHI101H5   Introductory Chinese  for Students with Prior Background
+CHI103H5   Introductory Chinese I
+CHI104H5   Introductory Chinese II
+CHI203H5   Intermediate Low Chinese I
+CHI204H5   Intermediate Low Chinese II
+CHI211H5   Chinese for Academic Purposes I
+CHI212H5   Chinese for Academic Purposes II
+CHI303H5   Intermediate High Chinese I
+CHI304H5   Intermediate High Chinese II 
+CHI308H5   Introduction to Chinese Culture
+CHI310H5   Business Chinese
+CHI311H5   Classical Chinese Literature
+CHI312H5   Chinese Diaspora Literature and Culture
+CHI313H5   The Wisdom of Life in Traditional Chinese Culture
+CHI314H5   Chinese Culture through Media 
+CHI403H5   Advanced Chinese I 
+CHI404H5   Advanced Chinese II
+CHI408H5   Reading Confucianism  in Modern Chinese
+CHI409H5   Influence of Confucianism on Chinese Culture
+CHI410H5   Modern Chinese Literature Studies
+CHI411H5   Theory and Practice in English/Chinese Translation
+CHM101H5   The Science of Human Health
+CHM110H5   Chemical Principles 1
+CHM120H5   Chemical Principles 2
+CHM211H5   Fundamentals of Analytical Chemistry
+CHM231H5   Inorganic Chemistry I
+CHM242H5   Introductory Organic Chemistry I
+CHM243H5   Introductory Organic Chemistry II
+CHM299Y5   Research Opportunity Program
+CHM311H5   Instrumental Analytical Chemistry
+CHM331H5   Inorganic Chemistry II:  Advanced Inorganic Chemistry
+CHM333H5   Bioinorganic Chemistry
+CHM341H5   Organic Chemistry:  Mechanism and Structure
+CHM345H5   Organic Synthesis
+CHM347H5   Organic Chemistry of Biological Compounds
+CHM361H5   Structural Biochemistry
+CHM362H5   Metabolism and Bioenergetics
+CHM372H5   Techniques in Biological Chemistry I
+CHM373H5   Techniques in Biological Chemistry II
+CHM394H5   Chemical Synthesis Laboratory I
+CHM395H5   Chemical Synthesis Laboratory II
+CHM396H5   Analytical and Physical Chemistry Instrumentation Laboratory I
+CHM397H5   Analytical and Physical Chemistry Instrumentation Laboratory II
+CHM399Y5   Research Opportunity Program
+CHM412H5   Analytical Methods of Biomolecule Analysis
+CHM414H5   Advanced Topics in Analytical Chemistry
+CHM416H5   Separations, Chromatography and Microfluidics
+CHM436H5   Metal-based Chemistry for Synthesis of Small Molecules and Functional Materials
+CHM442H5   Developments in Organic Chemistry
+CHM444H5   An Introduction to Medicinal Chemistry and Molecular Recognition
+CHM462H5   Advances in Chemical Biology
+CHM485H5   Dissertation Based on Literature Research
+CHM489Y5   Introduction to Research in Chemistry
+CIN101H5   An Introduction to Cinema Studies
+CIN102H5   Modernity and the Moving Image
+CIN203H5   The Films of Alfred Hitchcock
+CIN204H5   The Films of Martin Scorsese
+CIN205H5   Canadian Auteurs
+CIN206H5   Auteurs
+CIN207H5   East Asian Cinema
+CIN208H5   The Films of Abbas Kiarostami: Being and Movement
+CIN215H5   Bollywood in Context
+CIN250H5   Introduction to the Fundamentals of Cinematic Language
+CIN290H5   Topics in Cinema Studies
+CIN301H5   Topics in Cinema Studies
+CIN302H5   Topics in Cinema Studies
+CIN303H5   Global Auteurs
+CIN304H5   The Violent Image
+CIN305H5   Taiwan New Wave in Our Time
+CIN306H5   The Comedic Image
+CIN307H5   Movement
+CIN308H5   East and Southeast Asian Cinemas of Migration
+CIN309H5   Colour and the Moving image
+CIN310H5   Melodrama
+CIN315H5   From Script to Screen
+CIN317H5   Production: Independent Cinema
+CIN399Y5   Research Opportunity Program
+CIN400H5   Topics in Cinema Studies
+CIN401H5   Topics in Cinema Studies
+CIN402H5   Avant-Garde Film and Video
+CIN403H5   Queerscapes, Screenscapes, Escapes: Gender and Sexuality Across East and Southeast Asian Cinemas
+CIN404H5   Film Noir and the Problem of Style
+CIN405H5   Cinema and Emotion
+CIN410H5   Creating Mobile Cinemas
+CIN430H5   Making a Short Film
+CLA101H5   Introduction to Classical Civilization
+CLA201H5   Latin and Greek in Scientific Terminology
+CLA204H5   Introduction to Classical Mythology
+CLA207H5   Introduction to Greek and Roman Literature
+CLA220H5   Introduction to Greek and Roman Archaeology
+CLA230H5   Introduction to Greek History
+CLA231H5   Introduction to Roman History
+CLA232H5   Ancient Astronomy and Astrology
+CLA233H5   Introduction to Roman Culture & Society
+CLA234H5   Ancient Science and Technology
+CLA237H5   Introduction to Greek Culture & Society
+CLA299Y5   Research Opportunity Program
+CLA300H5   Greek Tragedy and Comedy
+CLA301H5   Greek Epic
+CLA302H5   Roman Epic
+CLA303H5   The Ancient Novel
+CLA307H5   Greek and Roman Lyric Poetry
+CLA308H5   Religion in the Ancient Greek World
+CLA310H5   Religion in the Roman Empire
+CLA319H5   Women and Gender in Antiquity
+CLA337H5   Pompeii and Herculaneum: Everyday Life and Death in Roman Cities 
+CLA359H5   The Persian Empire: 559-331 BCE
+CLA360H5   Early Greece
+CLA361H5   Classical Greece
+CLA362H5   Alexander the Great and the Hellenistic World
+CLA365H5   Trade in the Ancient Mediterranean
+CLA367H5   The Roman Republic
+CLA368H5   Augustus and the Julio-Claudians
+CLA369H5   The High Roman Empire, 68-305 CE
+CLA370H5   Late Antiquity
+CLA390H5   Topics in Greek History & Culture
+CLA391H5   Topics in Roman History & Culture
+CLA395H5   Topics in Classics
+CLA399Y5   Research Opportunity Program
+CLA404H5   Advanced Topics in Classics
+CLA405H5   Theories of Myth
+CLA497Y5   Independent Reading
+CLA499H5   Independent Reading
+CLA499Y5   Research Opportunity Program
+CPS398H5   Teaching Opportunity Program in Sciences
+CPS400Y5   Chemical and Physical Sciences Internship
+CPS401Y5   Research and Development in Science Education
+CPS489Y5   Introduction to Research in the Chemical and Physical Sciences
+CSC104H5   The Why and How of Computing
+CSC108H5   Introduction to Computer Programming
+CSC148H5   Introduction to Computer Science
+CSC199H5   Computer Science Seminar
+CSC207H5   Software Design
+CSC209H5   Software Tools and Systems Programming
+CSC236H5   Introduction to the Theory of Computation
+CSC258H5   Computer Organization
+CSC263H5   Data Structures and Analysis
+CSC290H5   Communication Skills for Computer Scientists
+CSC299Y5   Research Opportunity Program
+CSC300H5   Computers and Society
+CSC301H5   Introduction to Software Engineering
+CSC309H5   Programming on the Web
+CSC310H5   Information Theory
+CSC311H5   Introduction to Machine Learning
+CSC318H5   The Design of Interactive Computational Media
+CSC322H5   Introduction to Algebraic Cryptography
+CSC324H5   Principles of Programming Languages
+CSC333H5   Forensic Computing
+CSC338H5   Numerical Methods
+CSC343H5   Introduction to Databases
+CSC347H5   Introduction to Information Security
+CSC358H5   Principles of Computer Networks
+CSC363H5   Computational Complexity and Computability
+CSC367H5   Parallel Programming
+CSC369H5   Operating Systems
+CSC373H5   Algorithm Design and Analysis
+CSC375H5   Algorithmic Intelligence in Robotics
+CSC376H5   Fundamentals of Robotics
+CSC384H5   Introduction to Artificial Intelligence
+CSC392H5   Computer Science Implementation Project
+CSC393H5   Computer Science Expository Work
+CSC398H5   Topics in Computer Science
+CSC399Y5   Research Opportunity Program
+CSC404H5   Video Game Design
+CSC409H5   Scalable Computing
+CSC413H5   Neural Networks and Deep Learning
+CSC415H5   Introduction to Reinforcement Learning 
+CSC420H5   Introduction to Image Understanding
+CSC422H5   Cryptography and Computational Complexity
+CSC423H5   Computer Forensics
+CSC427H5   Computer Security
+CSC428H5   Human-Computer Interaction
+CSC458H5   Computer Networks
+CSC469H5   Operating Systems Design and Implementation
+CSC475H5   Introduction to Reinforcement Learning
+CSC476H5   Introduction to Continuum Robotics
+CSC477H5   Introduction to Mobile Robotics
+CSC478H5   Robotic Perception
+CSC488H5   Compilers and Interpreters
+CSC490H5   Capstone Design Course
+CSC492H5   Computer Science Implementation Project
+CSC493H5   Computer Science Expository Work
+CSC497H5   Topics in Computer Science
+CSC498H5   Topics in Computer Science
+CSC499Y5   Research Opportunity Program
+DRE121H5   Traditions of Theatre and Drama
+DRE122H5   Modern and Contemporary Theatre and Drama
+DRE200H5   Canadian Theatre History
+DRE201H5   Acting
+DRE221Y5   Shakespeare
+DRE222H5   The Performance Text
+DRE224H5   Introduction to Shakespeare
+DRE226H5   Shakespeare in the Theatre
+DRE299Y5   Research Opportunity Program
+DRE305H5   Studies in Indigenous Performance
+DRE342H5   Studies in Twentieth Century Performance Styles
+DRE344H5   Studies in Theatre and Drama 1
+DRE346H5   Studies in Theatre and Drama 2
+DRE347H5   Studies in Theatre and Drama 3
+DRE348H5   Production Dramaturgy
+DRE350H5   Film Genres in Performance
+DRE352H5   Stage to Screen
+DRE356H5   Theory of Drama
+DRE358H5   The Audience and the Theatre
+DRE360H5   Developmental Dramaturgy
+DRE362H5   Playwriting
+DRE363H5   Workshop in Playwriting
+DRE366H5   Women in Theatre
+DRE370H5   Exploring Shakespeare in Performance
+DRE380H5   Repertory Theatre in Practice: The Shaw Festival
+DRE392H5   Independent Study 1
+DRE394H5   Independent Study 2
+DRE399Y5   Research Opportunity Program
+DRE405H5   Topics in Indigenous Performance
+DRE420H5   Senior Seminar 1
+DRE422H5   Senior Seminar II
+DRE463H5   Senior Seminar III
+DRS121H5   Acting 1
+DRS122H5   Acting 2
+DRS221H5   Acting 3
+DRS222H5   Acting 4
+DRS321H5   Acting 5
+DRS322H5   Acting 6
+DRS325H5   Production 1
+DRS326H5   Production 2
+DRS421H5   Acting 7
+DRS422H5   Acting 8
+DRS425H5   Production 3
+DRS426H5   Production 4
+DTS201H5   Introduction to Diaspora and Transnational Studies I
+DTS202H5   Introduction to Diaspora and Transnational Studies II
+DTS301H5   Topics in Diaspora and Transnational Studies
+DTS401H5   Advanced Topics in Diaspora and Transnational Studies
+ECO101H5   Principles of Microeconomics
+ECO102H5   Principles of Macroeconomics
+ECO200Y5   Microeconomic Theory
+ECO202Y5   Macroeconomic Theory and Policy
+ECO204Y5   Microeconomic Theory and Applications (for Commerce)
+ECO205Y5   Microeconomic Theory and Applications (for Management)
+ECO206Y5   Microeconomic Theory
+ECO208Y5   Macroeconomic Theory
+ECO209Y5   Macroeconomic Theory and Policy (for Commerce)
+ECO220Y5   Introduction to Data Analysis and Applied Econometrics
+ECO227Y5   Foundations of Econometrics
+ECO302H5   World Economic History Prior to 1870
+ECO303H5   World Economic History After 1870
+ECO311H5   Pricing Strategies
+ECO312H5   Firms and Markets
+ECO313H5   Environmental Economics 
+ECO315H5   Economics of Poverty
+ECO320H5   Economic Analysis of Law: Part 1
+ECO321H5   Economic Analysis of Law: Part 2
+ECO322Y5   History of Economic Thought
+ECO324H5   Economic Development
+ECO325H5   Advanced Economic Theory - Macro
+ECO326H5   Advanced Economic Theory - Micro
+ECO333H5   Urban Economics
+ECO335H5   Public Economics I: Global Warming, Biodiversity Loss and Inequality
+ECO336H5   Public Economics II: Advanced Policy Analysis
+ECO343H5   Labour Economics and Public Policy
+ECO344H5   Labour Economics and Market Frictions
+ECO345H5   Macroeconomics and the Labour Market
+ECO348H5   Foundations of Money and Banking
+ECO349H5   Money, Banking & Financial Markets
+ECO350Y5   Special Topics in Economics
+ECO351H5   Special Topics in Economics
+ECO352H5   Special Topics in Economics
+ECO353H5   Special Topics in Economics
+ECO358H5   Financial Economics I
+ECO359H5   Financial Economics II
+ECO362H5   Economic Growth: Theory and Evidence
+ECO364H5   International Trade Theory
+ECO365H5   International Monetary Economics
+ECO370Y5   The Economics of Organizations
+ECO373Y5   The Environment:  Perspectives from Economics and Ecology
+ECO375H5   Applied Econometrics I
+ECO380H5   Managerial Economics: Competitive Strategy
+ECO381H5   Managerial Economics: Personnel Economics
+ECO383H5   Introduction to Empirical Methods of Microeconomics
+ECO385H5   Economics of Information
+ECO399H5   Research Opportunity Program
+ECO399Y5   Research Opportunity Program
+ECO400Y5   Economics Internship
+ECO401Y5   Special Topics in Economics
+ECO402H5   Special Topics in Economics
+ECO406H5   Advanced Public Economics
+ECO411H5   Human Capital and Education in the Economy
+ECO420Y5   Reading Course, Seminar or Workshop
+ECO421H5   Reading Course, Seminar or Workshop
+ECO422H5   Reading Course, Seminar or Workshop
+ECO433H5   Gender and Family Economics
+ECO435H5   Growth and Development of the Chinese Economy
+ECO436H5   Measuring Well Being
+ECO440H5   Advanced Topics in Financial Economics
+ECO456H5   Public Policy Analysis
+ECO460H5   Introduction to Financial Risk Management
+ECO461H5   The Economics of Financial Risk Management
+ECO466H5   Empirical Macroeconomics and Policy
+ECO475H5   Applied Econometrics II
+EDS100H5   Introduction to Education Studies
+EDS101H5   Health and Education
+EDS200H5   Learning Through the Lifespan
+EDS210H5   Communication and Conflict Resolution
+EDS220H5   Equity and Diversity in Education
+EDS250H5   Indigenous Education
+EDS275H5   Mass Media and Debunking the Myths of Education
+EDS285H5   The Future of Ed Tech: Active Learning Classrooms and Artificial Intelligence
+EDS291H5   Black Education 
+EDS300H5   Learning Design
+EDS310H5   Education in a Global Context
+EDS325H5   Supplemental Instruction in Higher Education: Peer-Facilitated Study Groups
+EDS345H5   Design Thinking Incubator: From Problem to Prototype
+EDS377H5   Why the First Year of University Matters:  The Impact of Peer Mentoring
+EDS388H5   Experiential Learning Opportunity within the Community
+EDS399H5   Research Opportunity Program
+ENG100H5   Effective Writing
+ENG101H5   How to Read Critically
+ENG102H5   How to Research Literature
+ENG105H5   Introduction to World Literatures
+ENG110H5   Narrative
+ENG121H5   Traditions of Theatre and Drama
+ENG122H5   Modern and Contemporary Theatre and Drama
+ENG140Y5   Contemporary World Literatures
+ENG201Y5   Reading Poetry
+ENG202H5   British Literature in the World I: Medieval to Eighteenth-Century
+ENG203H5   British Literature in the World II:  Romantic to Contemporary
+ENG204H5   How to Read Poetry
+ENG205H5   Rhetoric
+ENG206H5   Rhetorical Criticism
+ENG210Y5   The Novel
+ENG211H5   Introduction to the Novel
+ENG213H5   The Short Story
+ENG214H5   The Short Story Cycle
+ENG215H5   The Canadian Short Story
+ENG217H5   Writing about the Visual Arts
+ENG218H5   Interactive Storytelling and Worldmaking
+ENG223H5   Introduction to Shakespeare
+ENG234H5   Children's Literature
+ENG235H5   Comics and the Graphic Novel
+ENG236H5   Detective Fiction
+ENG237H5   Science Fiction
+ENG238H5   Fantasy Literature
+ENG239H5   Horror Literature
+ENG250Y5   American Literature
+ENG251H5   Introduction to American Literature
+ENG252Y5   Canadian Literature
+ENG255H5   Introduction to Canadian Literature
+ENG259H5   Literature and Environmental Criticism
+ENG261H5   Music and Literature
+ENG263H5   Play and Games
+ENG269H5   Queer Writing
+ENG271H5   Toronto's Multicultural Literatures
+ENG273H5   Literatures of Immigration and Exile
+ENG274H5   Indigenous Literature and Storytelling
+ENG275H5   Feminist Approaches to Literature
+ENG276H5   Fanfiction
+ENG277H5   Bad Romance
+ENG279H5   Video Games
+ENG280H5   Critical Approaches to Literature
+ENG289H5   Creative Writing
+ENG291H5   Reading for Creative Writing
+ENG299Y5   Research Opportunity Program
+ENG300Y5   Chaucer
+ENG301H5   Making Love in the Sixteenth Century
+ENG303H5   Milton
+ENG304H5   Seventeenth-Century Poetry
+ENG305H5   Eighteenth-Century Satire and Print Culture
+ENG306Y5   Literature of the Restoration and 18th Century
+ENG308Y5   Romantic Poetry and Prose
+ENG309H5   Anishinaabe Storytelling and Oral Tradition 
+ENG310H5   Modern South Asian Literature in English
+ENG311H5   Medieval Literature
+ENG312H5   Special Topic in Medieval Literature
+ENG313H5   Special Topic in Early Modern British Literature
+ENG314H5   Special Topic in Eighteenth-Century British Literature
+ENG315H5   Special Topic in Nineteenth-Century British Literature
+ENG316H5   Special Topic in Modern and Contemporary Literature
+ENG317H5   Drama of the Global South
+ENG318H5   Eighteenth-Century Women Writers
+ENG320H5   Transforming Literature in the Sixteenth Century
+ENG322Y5   The Rise of the Novel in the Eighteenth Century
+ENG323H5   Austen and Her Contemporaries
+ENG324Y5   Victorian Fiction
+ENG325H5   The Victorian Novel
+ENG326H5   Premodern World Literatures
+ENG327H5   Blame Chaucer
+ENG329H5   Contemporary British Fiction
+ENG330H5   Medieval Drama
+ENG331H5   Elizabethan Drama
+ENG332H5   Restoration and Early Eighteenth-Century Literature 
+ENG333H5   The Modernist Novel
+ENG334H5   Global Indigenous Literatures
+ENG335H5   Jacobean Drama
+ENG336H5   Special Topic in Shakespeare
+ENG337H5   Restoration and Eighteenth-Century Drama
+ENG338H5   Eighteenth-Century British Literature
+ENG339H5   Early Modern Women Writers
+ENG340H5   The Rise of Modern Drama
+ENG341H5   Modern Drama: Late Twentieth-Century to Present Day
+ENG342H5   Contemporary Drama
+ENG343H5   World Drama
+ENG344H5   Spy Fiction
+ENG345H5   Victorian Poetry
+ENG346H5   Indigenous First Stories Tkaronto 
+ENG347H5   The Nineteenth-Century American Novel
+ENG348H5   Special Topic in Indigenous Storywork
+ENG349H5   Contemporary Poetry
+ENG350H5   Poetry and Modernism
+ENG351H5   Toni Morrison: Texts and Contexts 
+ENG352H5   Canadian Drama
+ENG353Y5   Canadian Prose Fiction
+ENG354Y5   Canadian Poetry
+ENG355H5   Black British Literature
+ENG356H5   Caribbean Literature
+ENG357H5   New Writing in Canada
+ENG358H5   Special Topic in Canadian Literature
+ENG359H5   Land Back: Indigenous Voices and Narratives
+ENG360H5   Early American Literature
+ENG361H5   Canadian Literature, Beginnings to 1920
+ENG362H5   Canadian Literature, 1920 to the Present
+ENG363Y5   Nineteenth-Century American Literature
+ENG364Y5   Twentieth-Century American Literature
+ENG365H5   Contemporary American Fiction
+ENG366H5   Special Topic in American Literature
+ENG367H5   African American Literature
+ENG368H5   Black Feminist Poetics
+ENG369H5   Black Women’s Writing
+ENG370H5   Global Literatures in English
+ENG371H5   Special Topic in World Literatures
+ENG372H5   Special Topic in Literary Theory
+ENG373H5   Creative Writing: Poetry
+ENG374H5   Creative Writing: Prose
+ENG375H5   Editing Literary Texts
+ENG376H5   Creative Writing: Nonfiction
+ENG377H5   Special Topic in Creative Writing
+ENG378H5   Special Topic in Writing for Performance
+ENG379H5   American Literature in Global Contexts
+ENG380H5   History of Literary Theory
+ENG381H5   Digital Texts
+ENG382Y5   Contemporary Literary Theory
+ENG383H5   British Romanticism and Its Contexts
+ENG384H5   Literature and Psychoanalysis
+ENG385H5   British Romanticism, 1770-1800
+ENG386H5   British Romanticism, 1800-1830
+ENG387H5   Popular Novels in the Eighteenth Century
+ENG388H5   Spaces of Fiction
+ENG390Y5   Individual Studies
+ENG391Y5   Individual Studies (Creative)
+ENG392H5   Canadian Fiction
+ENG393H5   Canadian Poetry in Context
+ENG394H5   American Literature from the Revolution to 1900
+ENG395H5   American Literature 1900 to the Present
+ENG396H5   Literary Theory Now
+ENG397H5   Individual Studies
+ENG398H5   Research Opportunity Program
+ENG399Y5   Research Opportunity Program
+ENG400H5   Capstone Seminar: Writing a Research Project 
+ENG414H5   Seminar:  Literary Theory / Methods
+ENG415H5   Seminar: Literary Theory / Methods
+ENG416H5   Seminar:  Literary Theory / Methods
+ENG424H5   Seminar:  Canadian Literature
+ENG425H5   Seminar: Canadian Literature
+ENG426H5   Seminar: Race, Ethnicity, Diasporas, Indigeneity
+ENG434H5   Seminar: Race, Ethnicity, Diasporas, Indigeneity
+ENG435H5   Seminar:  American Literature
+ENG436H5   Seminar:  American Literature
+ENG460H5   Seminar: Literature Pre-1700
+ENG461H5   Seminar:  Literature Pre-1700
+ENG462H5   Seminar: Literature Pre-1700
+ENG463H5   Seminar: Literature 1700-1900
+ENG470H5   Seminar: Literature 1700-1900
+ENG471H5   Seminar: Literature 1700-1900
+ENG472H5   Seminar: Modern and Contemporary Literature
+ENG473H5   Seminar: Modern and Contemporary Literature
+ENG489Y5   Creative Writing Workshop
+ENV100Y5   The Environment
+ENV201H5   Environmental Management
+ENV299Y5   Research Opportunity Program
+ENV305H5   Sustainable Tourism
+ENV310H5   Sustainability
+ENV311H5   Environmental Issues in the Developing World
+ENV320H5   Managing Our Waste
+ENV330H5   Experimental Design in Environmental Science
+ENV332H5   Practicum in Environmental Project Management
+ENV393H5   Environmental Assessment
+ENV399Y5   Research Opportunity Program
+ENV425H5   Managing Urban Ecosystems
+ENV430H5   Environmental Law and Policy
+ENV490H5   Special Topics in Environmental Studies
+ENV491H5   Special Topics in Environmental Studies
+ENV495H5   Restoration Ecology I
+ENV496H5   Restoration Ecology II
+ENV497H5   Environmental Research Project
+ERS101H5   Planet Earth
+ERS111H5   Earth, Climate & Life
+ERS201H5   Earth Materials
+ERS202H5   Dynamic Earth
+ERS203H5   Magmatic Systems and Igneous Petrology
+ERS211H5   Sedimentology and Stratigraphy
+ERS225H5   Field Methods
+ERS299Y5   Research Opportunity Program
+ERS301H5   Geochemistry
+ERS302H5   Tectonics
+ERS303H5   Geophysics
+ERS304H5   Geological Remote Sensing
+ERS311H5   Sedimentology and Basin Analysis
+ERS312H5   Oceanography
+ERS315H5   Environmental Geology
+ERS325H5   Field Camp I
+ERS381H5   Special Topics in Earth Sciences
+ERS399Y5   Research Opportunity Program
+ERS401H5   Earth Resources
+ERS402H5   Advanced Structural Geology
+ERS403H5   Earthquake Seismology
+ERS404H5   Volcanology and Geothermal Systems
+ERS411H5   Paleobiology
+ERS412H5   Climate Through Time
+ERS425H5   Geology of North America
+ERS471H5   Research Project
+ERS472H5   Research Project
+ERS499Y5   Research Opportunity Program
+FAH101H5   Introduction to Art History
+FAH205H5   Art in Antiquity
+FAH215H5   Early Medieval Art and Architecture
+FAH216H5   Later Medieval Art and Architecture
+FAH274H5   Renaissance Art and Architecture
+FAH275H5   Introduction to Indigenous Art in Canada
+FAH279H5   Baroque Art and Architecture
+FAH281H5   An Introduction to Islamic Art and Architecture
+FAH282H5   Gardens, Homes, and Palaces in the Muslim World
+FAH285H5   Art and Religion
+FAH287H5   European Art of the Nineteenth Century
+FAH288H5   European and North American Art of the Earlier Twentieth Century
+FAH289H5   Art Since 1945
+FAH290H5   Topics in Modern Art and Architecture
+FAH291H5   History of Photography
+FAH292H5   Canadian Art
+FAH295H5   Topics in Art History
+FAH299Y5   Research Opportunity Program
+FAH301H5   History and Practices of Visual Resource Collecting
+FAH310H5   Curating Matters: Contexts and Issues in Contemporary Curatorial Practice
+FAH315H5   Photomontage: History, Theory, and Practice
+FAH317H5   Spirit Photography
+FAH329H5   Early Christian Art and Architecture
+FAH332H5   Studies in Baroque Painting
+FAH337H5   Court Art and Patronage in the Middle Ages
+FAH338H5   Multicultural Middle Ages
+FAH343H5   Pilgrimage
+FAH351H5   Gothic Architecture
+FAH353H5   The sculptor-architect GianLorenzo Bernini
+FAH356H5   Colonial Latin American Art and Architecture
+FAH360H5   Art and Visual Culture of the Eighteenth Century
+FAH375H5   All Our Relations: Indigenous Land Stewardship and Art
+FAH380H5   New Genres in Contemporary Art
+FAH382H5   Artists and Craftsmen from the Muslim World
+FAH383H5   Cities in the Early modern Muslim World: Istanbul, Isfahan, and Delhi
+FAH385H5   Modern and Contemporary Art of India
+FAH388H5   Theory in Art History
+FAH390H5   Topics in Modern Art and Architecture
+FAH392H5   Topics in Modern Art/Architecture
+FAH393H5   Topics in Ancient Greco-Roman Art
+FAH394H5   Topics in Early Modern Art and Architecture
+FAH395H5   Topics in Islamic Art and Architecture
+FAH396H5   Topics in Medieval Art and Architecture
+FAH399Y5   Research Opportunity Program (ROP)
+FAH415H5   Theory and Criticism of Photography
+FAH423H5   Topics in the Art of the Medieval Mediterranean
+FAH424H5   Medieval Collecting and Display
+FAH434H5   Art and Architecture of Medieval Rome
+FAH435H5   Women and Art in the Middle Ages
+FAH451H5   Curating Now: Turning Concepts into Curatorial Projects
+FAH453H5   The Archive and the Formless
+FAH454H5   Contemporary Jewish Art
+FAH455H5   Photography and Humour
+FAH457H5   Exile and Modern Art
+FAH460H5   Art and Animation
+FAH465H5   Icon, Artwork, Fetish
+FAH470H5   The History of Art History
+FAH472H5   Early Modern Mobile Objects
+FAH473H5   The Nature of Landscape
+FAH475H5   Topics in Contemporary Indigenous Art
+FAH479H5   Studies in Curatorial Practice
+FAH480H5   Studies in Ancient Art
+FAH481H5   Studies in Ancient Art
+FAH482H5   Studies in Medieval Art
+FAH483H5   Studies in Medieval Art
+FAH484H5   Studies in Renaissance Art
+FAH485H5   Studies in Renaissance Art
+FAH486H5   Studies in Baroque Art
+FAH487H5   Studies in Baroque Art
+FAH488H5   Studies in Modern Art
+FAH489H5   Studies in Modern Art
+FAH490H5   Topics in Ancient Art and Architecture
+FAH491H5   Topics in Medieval Art and Architecture
+FAH492H5   Topics in Modern Art and Architecture
+FAH493H5   Topics in Early Modern Art and Architecture
+FAH494H5   Topics in Contemporary Art and Theory
+FAH495H5   Topics in Islamic Art and Architecture
+FAH496H5   Topics in Modern Art and Architecture
+FAH498H5   Topics in Curatorial Studies
+FAS143H5   Drawing I
+FAS145H5   Painting I
+FAS147H5   Photography I
+FAS232H5   Print Media I
+FAS234H5   Print Media II
+FAS236H5   Design I
+FAS243H5   Drawing II
+FAS245H5   Painting II
+FAS246H5   Design II
+FAS247H5   Photography II
+FAS248H5   Sculpture I
+FAS258H5   Sculpture II
+FAS330Y5   Experimentation in Past and Present Techniques
+FAS334Y5   Print Media III
+FAS343Y5   Drawing III
+FAS345Y5   Painting III
+FAS346Y5   Design III
+FAS347Y5   Photography III
+FAS348Y5   Sculpture III
+FAS349Y5   Video, Sound and Performance
+FAS359Y5   Video and Sound
+FAS369Y5   Performance-Based Art
+FAS434Y5   Individual Investigations in Print Media
+FAS443Y5   Individual Investigations in Drawing
+FAS445Y5   Individual Investigations in Painting
+FAS446Y5   Individual Investigations in Design
+FAS447Y5   Individual Investigations in Photography
+FAS448Y5   Individual Investigations in Sculpture
+FAS450Y5   Advanced Project
+FAS451H5   Advanced Project
+FAS452H5   Advanced Project
+FAS453H5   Art Education Practice
+FAS454H5   Professional Practice
+FAS455H5   Teaching Art in the School and Community
+FRE180H5   French Language Skills and Learning Strategies for University Study
+FRE181H5   Introduction to French Studies
+FRE227H5   Teaching and Learning a Second/Foreign Language
+FRE240H5   Interpreting French Narratives
+FRE272H5   A Linguistic Introduction to the French Language
+FRE280Y5   Language Practice: Written
+FRE282H5   Intermediate Language Practice: Written French
+FRE283H5   Intermediate Language Practice: Spoken French 
+FRE299Y5   Research Opportunity Program
+FRE312H5   Modernity, Tradition, and Resistance in Quebec Literature
+FRE316H5   Comedy and Tragedy in Quebec Theatre
+FRE325H5   Talking like a child: language acquisition of French    
+FRE342H5   History of Quebec and French Canada
+FRE343H5   Indigenous Literatures in Quebec and Francophone Canada
+FRE352H5   Teaching French Grammar
+FRE354H5   Teaching French in a Plurilingual Context
+FRE355H5   Psycholinguistics: multilingual learners in action 
+FRE356H5   Versailles and the Classical Age
+FRE363H5   Love and Pain in French Literature
+FRE364H5   Society through the French Novel 
+FRE367H5   French Fiction of the 20th Century
+FRE369H5   The French Novel Today
+FRE370H5   Voices from No-Man's Land: Diaspora Writings in the 21st Century Francophone Literature
+FRE376H5   French Phonology and Phonetics
+FRE377H5   Phonetics & Phonology of French Foreign Accent
+FRE378H5   French syntax and the multilingual speaker 
+FRE380H5   Plurilingual Theatre : Developing Writing and Oral Skills in French
+FRE382H5   Advanced Language Practice: Written French
+FRE383H5   Advanced Language Practice: Spoken French
+FRE386H5   French Semantics
+FRE387H5   French Morphology
+FRE389H5   Individual Differences in Second Language Acquisition
+FRE391H5   Women and LGBTQ+ Writers and Filmmakers of the Francophone World 
+FRE393H5   French Society through Film
+FRE395H5   Francophone Media and Global Culture
+FRE397H5   Francophone African and Caribbean Cinema 
+FRE398H5   The Culture of Paris
+FRE399Y5   Research Opportunity Program
+FRE400H5   French Studies Internship
+FRE440H5   Francophone Periodical Studies
+FRE442H5   Advanced Language Practice IV: Written
+FRE445H5   Special Topics in French & Francophone Literary and Cultural Studies I 
+FRE446H5   Special Topics in Literature II
+FRE453H5   Teaching French Culture
+FRE482H5   Creative Writing
+FRE487H5   Advanced Topics in Experimental French Linguistics
+FRE488H5    Advanced Topics in Theoretical French Linguistics 
+FRE489H5   The Structure of the Syllable in Romance Languages
+FRE490Y5   Senior Essay
+FRE491H5   Independent Study
+FRE492H5   Independent Study
+FSC100H5   The Real CSI
+FSC101H5   The Real Law & Order
+FSC210H5   Physical Evidence and Microscopy
+FSC220H5   Introduction to Forensic Psychology
+FSC239Y5   Introduction to Forensic Science
+FSC271H5   Ethics and Professionalism in Forensic Science
+FSC300H5   Forensic Identification
+FSC302H5   Advanced Forensic Identification
+FSC303H5   Techniques of Crime Scene Investigation
+FSC307H5   Missing Persons DVI and Unidentified Human Remains
+FSC311H5   Forensic Chemistry
+FSC314H5   Current Trends in Forensic Biology
+FSC315H5   Forensic Biology
+FSC316H5   Forensic Anatomy
+FSC320H5   Forensic Psychopathology
+FSC330H5   Best Practices in Forensic Science
+FSC335H5   Forensic Epistemology and Theory 
+FSC340H5   Research Design
+FSC350H5   Special Topics in Forensic Science
+FSC351H5   Advanced Topics in Forensic Science
+FSC360H5   Evidence, Law and Forensic Science in Canada
+FSC361H5   Mental Illness and the Criminal Justice System
+FSC370H5   Forensic Psychopharmacology
+FSC371H5   The Science of Cannabis
+FSC399Y5   Research Opportunity Program
+FSC401H5   Forensic Pathology
+FSC402H5   Forensic Toxicology
+FSC403H5   Forensic Analytical Toxicology
+FSC406H5   Introduction To 3D Crime Scene Mapping And Reconstruction
+FSC407H5   Forensic Identification Field School
+FSC415H5   Advanced Methods in Forensic Biology
+FSC416H5   Population Genetics
+FSC420H5   Field and Lab Methods in Forensic Psychology
+FSC430H5   Seminar in Forensic Science
+FSC439H5   Forensic Anthropology Case Analysis
+FSC481Y5   Internship in Forensic Science
+FSC482H5   Professional Practice in Forensic Science
+FSC483H5   Collaborative Research Internship
+FSC485H5   Professional Opportunity in Forensic Science
+FSC489H5   Advanced Independent Project
+FSL105H5   Functional French-Novice
+FSL106H5   Functional French-Advanced Beginner
+FSL205Y5   Functional French-Intermediate
+FSL305Y5   Functional French-High Intermediate
+FSL405H5   Functional French-Advanced I
+FSL406H5   Functional French-Advanced II
+FSL466H5   French for Business Communication
+GER100Y5   Introductory German
+GER200Y5   Intermediate German
+GER204H5   Masterpieces in German Literature in Translation
+GER205H5   Introduction to German Literature
+GER250H5    Introduction to German Culture
+GER299Y5   Research Opportunity Program
+GER300Y5   Advanced German
+GER303H5   German Current Events Through Print and Online News Media
+GER305H5   German Literature: From the 18th to the 21st century
+GER320H5   Topics in German Literature
+GER330H5   Topics in German Cultural Studies
+GER335H5   Post-War German Culture and Literature: Memory and the Holocaust
+GER353H5   German National Cinemas
+GER354H5   Topics in German Cinema Studies
+GER355H5   The Theatre of Bertolt Brecht
+GER370H5   German for a Global Context: Business and International Relations I
+GER371H5   German for a Global Context: Business and International Relations II
+GER450H5   Advanced Seminar in German Literature
+GER475H5   Advanced Seminar in German Cultural Studies
+GER490H5   Independent Study
+GGR111H5   Human Geography
+GGR112H5   Physical Geography
+GGR201H5   Introduction to Geomorphology
+GGR202H5   Geography of Canada
+GGR207H5   Cities, Urbanization and Development
+GGR208H5   Population Geography
+GGR209H5   Economic Geography
+GGR210H5   Social Geographies
+GGR214H5   Global Weather and Climate
+GGR217H5   Fundamentals of Hydrology
+GGR227H5   Ecosystems and Environmental Change
+GGR252H5   Retail Geography
+GGR265H5   (Under)development and Health 
+GGR276H5   Spatial Data Science I
+GGR277H5   Social Research Methods in Geography
+GGR278H5   Geographical Information Systems
+GGR300H5   Special Topics in Human Geography
+GGR304H5   Dendrochronology
+GGR305H5   Biogeography
+GGR307H5   Environmental Soil Science
+GGR309H5   Wetland Ecosystems
+GGR311H5   Landscape Biogeography
+GGR313H5   Gender and the City
+GGR315H5   Physical Hydrology
+GGR316H5   Landforms
+GGR317H5   The Cryosphere: Canada's Frozen Environments
+GGR318H5   Political Geography
+GGR319H5   Landscapes of Belonging
+GGR321H5   Geographic Information Processing
+GGR322H5   GIS and Population Health
+GGR325H5   Business and Industrial Geography
+GGR329H5   Environment and the Roots of Globalization
+GGR333H5   Energy and Society
+GGR335H5   Remote Sensing Applications
+GGR337H5   Environmental Remote Sensing
+GGR338H5   Environmental Modeling
+GGR349H5   Cities in Transition
+GGR353H5   Disease and Death
+GGR361H5   City Planning and Development
+GGR362H5   Exploring Urban Neighbourhoods
+GGR363H5   Global Migration and Health
+GGR365H5   Trade and Globalization
+GGR370H5   The Geography of Transportation
+GGR372H5   Geographical Analysis of Land Resources
+GGR374H5   Water Quality and Stream Ecosystems
+GGR375H5   Physical Environment of the City
+GGR376H5   Spatial Data Science II
+GGR377H5   Global Climate Change
+GGR379H5   Field Methods in Physical Geography
+GGR382H5   Digital Mapping and Principles of Cartography
+GGR383H5   Contaminants in the Environment
+GGR384H5   Climatology of Canadian Landscapes
+GGR385H5   Indigenizing Space and Place
+GGR387H5   Food and Globalization
+GGR389H5   Field Studies in Human Geography
+GGR399Y5   Research Opportunity Program
+GGR404H5   Paleoenvironmental Change
+GGR406H5   Environmental Biogeochemistry
+GGR407H5   Ecohydrology
+GGR415H5   Geographies of Indigenous Health
+GGR418H5   Geopolitics
+GGR420H5   Geography of Finance and Financial Crisis
+GGR426H5   The Geographies of Human Rights
+GGR437H5   Cloud-based Image Analysis
+GGR440H5   Drone Remote Sensing
+GGR442H5   GIS Capstone Project
+GGR444H5   Space Time Data Analysis
+GGR461H5   Advanced Urban Planning
+GGR463H5   Geographic Information Analysis and Processing
+GGR479H5   Special Topics in Physical Geography
+GGR484H5   The Climate of the Arctic
+GGR489H5   Special Topics in Human Geography
+GGR494H5   Special Topics in GIS
+GGR497H5   Human Geography Independent Research Project
+GGR498H5   Physical  Geography Independent Research Project
+GRK211H5   Introductory Ancient Greek I
+GRK212H5   Introductory Ancient Greek II
+GRK213H5   Introductory Ancient Greek III
+GRK221H5   Intermediate Ancient Greek
+HIN211H5   Introductory Hindi I
+HIN212H5   Introductory Hindi II
+HIN311H5   Readings in Hindi
+HIN312H5   Intermediate Hindi I
+HIN313H5   Intermediate Hindi II
+HIN411H5   Hindi Culture and Media
+HIN412Y5   Advanced Hindi
+HIS101H5   Introduction to History
+HIS102H5   A History of Discoveries and Inventions in the Ancient, Medieval, and Early Modern World.
+HIS103H5   Revolutions in History
+HIS104H5   A History of Here
+HIS105H5   A Brief History of Capitalism
+HIS106H5   A History of Sex
+HIS107H5   Critical Historiography
+HIS108H5   Encounters Across the Atlantic
+HIS200H5   Topics in History
+HIS201H5   Introduction to Middle Eastern History
+HIS203H5   The Making of the Atlantic World (1000-1800)
+HIS204H5   History of the Ottoman Empire, 1299-1923
+HIS210H5   Introduction to Digital Humanities
+HIS211H5   Screening History
+HIS212H5   The History of Capitalism
+HIS213H5   A History of the Present
+HIS214H5   Comparative Genocide
+HIS221H5   Themes in Medieval History
+HIS222H5   Eastern Europe Since 1815
+HIS230H5   Introduction to European History 1300-1815
+HIS236H5   Introduction to British History
+HIS241H5   Introduction to 19th-Century European History
+HIS242H5   Introduction to Contemporary European History
+HIS250H5   Introduction to Russian History
+HIS255H5   Introduction to Histories of Extraction and the Environment
+HIS261H5   Introduction to Canadian History
+HIS262H5   What is Canada?
+HIS263Y5   The History of Canada
+HIS271H5   US History, Colonial Era to 1877
+HIS272H5   US History, 1877-present
+HIS282H5   Introduction to South Asian History
+HIS284H5   Introduction to East Asian History
+HIS285H5   War and Memory in Modern East Asia
+HIS290H5   Introduction to Latin American History
+HIS295H5   Introduction to African History
+HIS299Y5   Research Opportunity Program
+HIS300H5   Islam and Muslims in the Balkans
+HIS301H5   North Africa and Western Asia Before World War I
+HIS306H5   The Cold War
+HIS307H5   The Russian Revolutions of 1917
+HIS308H5   Themes in the History of Women Before 1800
+HIS309H5   Anglo-Saxon England
+HIS310H5   The History of Women Since 1800
+HIS311H5   Introduction to Canadian International Relations
+HIS312H5   Canadian Communities 1600-2000
+HIS313H5   Canadian Working-Class History to 1919
+HIS314H5   20th Century Canadian Working-Class History
+HIS315H5   Indigenous Peoples and Immigrants in Canada
+HIS318H5   Canadian Environmental History: Contact to Conservation
+HIS319H5   Canadian Environmental History:  Conservation to the Modern Environmental Movement
+HIS321H5   Medieval and Early Modern Scotland
+HIS323H5   The Rwandan Genocide: History, Violence, and Identity
+HIS325H5   Modern African History
+HIS326Y5   History of Women in Canada, 1600-2000
+HIS327Y5   From Antiquity to the Middle Ages: Europe 300-800
+HIS330H5   Politics and Political Change in Latin America
+HIS336H5   The Imperial Victorian World
+HIS337H5   History of Information and Media
+HIS338H5   The Holocaust in Nazi Germany and Occupied Europe
+HIS339H5   Postwar Germany, 1945-present
+HIS340H5   The Reformation in Europe
+HIS342H5   History of Quebec and French Canada
+HIS351H5   Twentieth-Century Russia
+HIS355H5   Histories of Extraction and the Future of the Environment
+HIS357H5   The Renaissance
+HIS358H5   Canada Since World War Two
+HIS364H5   International Labour Migration
+HIS366H5   Diasporic Histories & Cultures
+HIS367H5   Diasporic Canada
+HIS368H5   Canada in the First World War
+HIS369H5   Great Lakes Aboriginal History
+HIS370H5   The American Revolution
+HIS371H5   The Americas: Interaction and Inequality
+HIS372H5   The United States in the 20th Century
+HIS373H5   From the Gilded Age to the Jazz Age:  The Emergence of Modern America, 1877-1929
+HIS374H5   Gender and Sexuality in the US, 1945-present
+HIS378H5   East Asian Cities
+HIS382H5   Nations, Borders and Citizenship in South Asia
+HIS384H5   International Relations in the Middle East - Regional Perspectives on the 20th Century
+HIS385H5   Orientalism and Occidentalism
+HIS386H5   Gender and History in South Asia
+HIS387H5   Popular Culture in East Asia
+HIS388H5   Histories of Modern Hinduism in South Asia
+HIS389H5   Localities, Regions and Nations in South Asia
+HIS390H5   Revolutions and Nations in Latin America
+HIS391H5   Mexico from Aztec to Zapatista
+HIS392H5   Topics in Global History
+HIS393H5   Slavery and the American South
+HIS394H5   Race and Empire in Colonial South Asia
+HIS395H5   Topics in History
+HIS396H5   Modernity and Islam
+HIS397H5   Iran's Islamic Revolution
+HIS398H5   South Asia in Motion: Circulation, Mobility, Histories 
+HIS399Y5   Research Opportunity Program
+HIS401H5   Missionaries and Colonization in New France
+HIS402H5   Topics in the History of French Canada
+HIS403H5   Empire and Colonization in the French Atlantic
+HIS405H5   Microhistory
+HIS407H5   Imperial Germany 1871-1918
+HIS409H5   The Life Cycle in Medieval and Early Modern Europe
+HIS410H5   Doing Digital History
+HIS416H5   Canada and the Second World War
+HIS420H5   Topics in Medieval History
+HIS425H5   Global Intellectual History: Asia and Africa in the 20th Century
+HIS431H5   Global China
+HIS435H5   The Viking Age
+HIS438H5   Remembering Atrocity: The Holocaust and Historical Memory in Europe and North America
+HIS440H5   Photography and American Culture
+HIS448H5   Memory, History and South Asia's Contested Pasts
+HIS452H5   The Great Depression in Canada
+HIS453H5   The Klondike Gold Rush
+HIS454H5   Race, Gender and Nation in Modern Latin America
+HIS461H5   History of Upper Canada
+HIS462H5   Indigenous North America
+HIS463H5   Memory and Memorialization in South African History
+HIS464H5   Decolonizing Africa
+HIS475H5   The French Revolution
+HIS479H5   Cold War America
+HIS480H5   Partition and its Aftermath in South Asia
+HIS483H5   Colonialism in East Asia
+HIS484H5   Religion and Public Culture in South Asian History
+HIS486H5   Political Thought in the Reformation
+HIS487H5   Canadian Social History
+HIS489Y5   History Honours Thesis
+HIS490H5   Religion and Society in Latin America
+HIS492H5   Entrepreneurial Diasporas
+HIS493H5   Advanced Topics in Global History
+HIS494H5   Advanced Topics in the History of the Americas
+HIS495H5   Advanced Topics in European History
+HIS497Y5   Independent Reading
+HIS498Y5   Internship in History
+HIS499H5   Independent Reading
+HIS499Y5   Research Opportunity Program
+HSC200H5   Imaging Technologies for Scientific Visual Communication
+HSC300H5   Written Communication for Health Care
+HSC301H5   Data and Information Visualization
+HSC302H5   Biocommunication Visualization
+HSC307H5   Visual Presentation Design for Life Sciences
+HSC401H5   Health and Science Communication Design
+HSC402H5   Digital Learning Environments in Biology and Health Science
+HSC403H5   Visualization of Forensic Demonstrative Evidence
+HSC404H5   Advanced Visual Media for Anthropological Data
+HSC405H5   Digital Forensic Facial Reconstruction
+HSC406H5   Advanced Written Communication for Health Care
+IMI201H5   Fundamentals of Marketing
+IMI202H5   Principles of Human Resource Management
+IMI203H5   Essentials of Accounting: Financial & Managerial
+IMI299H5   Research Opportunity Program
+IMI301H5   Essentials of Finance
+IMI302H5   Managing Projects, Operations & Preparing a Business Plan
+IMI303H5   Technology Strategy
+IMI399H5   Research Opportunity Program
+IMI400H5   Innovation and Entrepreneurship
+IMI499H5   Research Opportunity Program
+ISP010H5   Basics of Writing in English (BoWiE)
+ISP100H5   Writing for University and Beyond
+ISP130H5   Numeracy for University and Beyond
+ISP299H5   Research Opportunity Program
+ISP299Y5   Research Opportunity Program
+ISP399H5   Research Opportunity Program
+ISP399Y5   Research Opportunity Program
+ISP490Y5   Independent Reading
+ISP491H5   Independent Reading
+ITA100Y5   Beginner Italian
+ITA101Y5   Intermediate Italian I
+ITA102H5   Italian for Musicians
+ITA200Y5   Beginner - Intermediate Italian
+ITA201Y5   Beginner - Intermediate Italian
+ITA218H5   Writings on Love and Sex (Medieval to Early Italian Renaissance)
+ITA219H5   Writings on Love and Sex (Mid to Late Italian Renaissance)
+ITA221H5   Major Authors (20th Century Italy)
+ITA222H5   Major Authors (Late 20th to 21st Century Italy)
+ITA227H5   Multilingual Language Acquisition
+ITA231H5   Major Authors (Medieval to Renaissance Italy)
+ITA232H5   Major Authors (Baroque to Present Italy)
+ITA233H5   Made in Italy: Italian Fashion, from the Theatre to the Runway
+ITA235H5   Cucina Italiana: Italian History and Culture Through Food
+ITA237H5   Italian Civilization (1815 to 1960)
+ITA238H5   Italian Civilization (1960 to Present)
+ITA242H5   Classics of Italian Cinema
+ITA246H5   Contemporary Italian Cinema  I
+ITA247H5   Contemporary Italian Cinema II
+ITA255Y5   Italian Canadians
+ITA272H5   Italian Linguistics
+ITA299Y5   Research Opportunity Program
+ITA307H5   Italian Novels on the Big Screen
+ITA309H5   Mafia Movies: Unraveling the Mob in Italian and North American Cinema
+ITA311H5   Laughter Is the Best Medicine: Italian Cinematic Comedies and Comedians, Then and Now
+ITA313H5   Quentin Tarantino and the Spaghetti Western Effect
+ITA315Y5   Major Italian Playwrights (19th to 21st Century) 
+ITA339Y5   Exploring Italian Culture
+ITA342H5   Post War Italian Cinema I: Mastering Neorealism
+ITA343H5   Post War Italian Cinema II: Moving Beyond Neorealism
+ITA350H5   Intermediate - Advanced Italian
+ITA351H5   Creative Writing in Italian Studies
+ITA352H5   Italian Media and Social Media Production
+ITA370H5    Machiavelli’s The Prince
+ITA371H5   Writings on Politics, Power, and Success (Italian Renaissance)
+ITA373H5   Italian Sociolinguistics
+ITA374H5   Language Teaching Methodology I
+ITA375H5   Language Teaching Methodology II
+ITA388H5   Education Internship in Italian Studies
+ITA390H5   Writings on Self, Gender, Society (19th Century Italy)
+ITA391H5   Writings on Anxiety and Identity
+ITA392H5   Queer Italy: Literature and Cinema
+ITA399Y5   Research Opportunity Program
+ITA400Y5   Internship in Itialian Studies (Private or Public Sector)
+ITA415Y5   Major Playwrights (15th to 18th Century Italy)
+ITA420H5   Dante's Inferno
+ITA421H5   Dante’s Purgatory and Paradise
+ITA436Y5   The 18th Century in Italy
+ITA437Y5   History of the Italian Language
+ITA450H5   Advanced Italian
+ITA451H5   The Italian Language Today
+ITA491H5   Senior Project
+ITA491Y5   Independent Studies in Italian
+ITA492H5   Senior Project
+ITA493H5   Senior Project: Teaching and Learning Language
+ITA494H5   Senior Project: Teaching and Learning Cinema, Literature, or Theatre
+ITA498H5   Senior Project (Florence Program)
+ITA499H5   Research Opportunity Program
+JAL253H5   Language and Society
+JAL355H5   Language and Gender
+JBC472H5   Seminars in Biotechnology
+JBH471H5   Worlds Colliding: The History and Ecology of Exploration, Contact, and Exchange
+JCB487Y5   Advanced Interdisciplinary Research Laboratory
+JCP221H5   Thermodynamics
+JCP265H5   Introduction to Scientific Computing
+JCP321H5   Quantum Mechanics I: Foundations
+JCP322H5   Statistical Mechanics
+JCP410H5   Modelling of Biochemical Systems
+JCP421H5   Quantum Mechanics II: Applications
+JCP422H5   NMR Spectroscopy
+JCP463H5   Techniques in Structural Biology
+JEG400Y5   Geography / Environment Science Internship
+JEG401Y5   Geography / Environment Social Science Internship
+JEG417Y5   Honours Thesis
+JEP351H5   Comparative Environmental Policy
+JEP356H5   Environmental Justice
+JEP452H5   Politics and Policy of Wildlife Conservation
+JFL388H5   Bilingualism and Multiple Language Acquisition
+JFL389H5   Second Language Assessment
+JFL454H5   Teaching and Learning Varieties of Canadian French
+JGE378H5   Natural Hazards
+JPE251H5   Introduction to Canadian Environmental Law and Policy I
+JPE252H5   Introduction to Canadian Environmental Law and Policy II
+LAT211H5   Introductory Latin I
+LAT212H5   Introductory Latin II
+LAT213H5   Introductory Latin III
+LAT221H5   Intermediate Latin
+LIN101H5   Introduction to General Linguistics: The Sounds of Language
+LIN102H5   Introduction to General Linguistics: Words, Sentences, their Structure and Meaning
+LIN200H5   Introduction to Language
+LIN204H5   English Grammar I
+LIN205H5   English Grammar II
+LIN208H5   English Sounds
+LIN228H5   Phonetics
+LIN229H5   Sound Patterns in Language
+LIN231H5   Morphological Patterns in Languages
+LIN232H5   Syntactic Patterns in Language
+LIN233H5   English Words through Space and Time
+LIN237H5   Semantics
+LIN256H5   Sociolinguistics
+LIN271Y5   Introduction to Sanskrit
+LIN288H5   Introduction to Psycholinguistics and Language Acquisition
+LIN299Y5   Research Opportunity Program
+LIN310H5   Contrastive Linguistics
+LIN311H5   Linguistics and Poetics
+LIN318H5   Talking Numbers: Interpretation and Presentation of Quantitative Linguistic Data
+LIN325H5   Phonetics and Phonology in English
+LIN327H5   Speech Perception
+LIN328H5   Acoustic Phonetics
+LIN329H5   Phonological Theory
+LIN332H5   Syntactic Theory
+LIN337H5   Lexical Semantics: What is (or is not) in a Word?
+LIN338H5   Pragmatics
+LIN340H5   Computing with Natural Language
+LIN341H5   Linguistics and Computation
+LIN353H5   Discourse Analysis
+LIN357H5   English Worldwide
+LIN360H5   Historical Linguistics
+LIN366H5   Contact Languages: Pidgins, Creoles and Mixed Languages
+LIN369H5   Romance Linguistics
+LIN372H5   The Great Debates: Critical Reading and Writing in Linguistics
+LIN380H5   Theoretical Issues in Second Language Teaching and Learning
+LIN385H5   The Acquisition of Grammar in Different Contexts
+LIN387H5   Theoretical Issues in Teaching and Learning Second Language Vocabulary
+LIN399Y5   Research Opportunity Program
+LIN411H5   Introduction to Analysis and Argumentation
+LIN418H5   Research Methods in Linguistics
+LIN419H5   Field Methods: A Language Unlocked
+LIN421H5   Speaking and Hearing with an Accent
+LIN441H5   Computing Meaning
+LIN447H5   Topics in Natural Language Processing
+LIN456H5   Sociolinguistics and Second Language Teaching and Learning
+LIN458H5   Analyzing Sociolinguistic Variation
+LIN460H5   Special Topics in Language Change
+LIN466H5   Topics in Creole Linguistics
+LIN469H5   Topics in Romance Linguistics
+LIN476H5   Language Diversity and Language Universals
+LIN479H5   The Structure of a Specific Language
+LIN486H5   Teaching and Learning Cross-cultural Communication
+LIN487H5   Second Language Pedagogy
+LIN495Y5   Individual Project
+LIN496H5   Individual Project
+LIN498H5   Individual Project
+LTL380H5   Theoretical Issues In Second Language Teaching and Learning
+LTL381H5   Methodologies for Teaching English as a Second Language
+LTL382H5   Teaching Second Language Speaking and Listening
+LTL383H5   Teaching Second Language Reading and Writing
+LTL387H5   Theoretical Issues in Teaching and Learning Second Language Vocabulary
+LTL456H5   Sociolinguistics and Second Language Teaching and Learning
+LTL486H5   Teaching and Learning Cross-cultural Communication
+LTL487H5   Second Language Pedagogy
+LTL488H5   Principles and Strategies for Online Second Language Course Design
+LTL495Y5   Individual Project
+LTL496H5   Individual Project
+MAT102H5   Introduction to Mathematical Proofs
+MAT132H5   Differential Calculus for Life Sciences
+MAT133Y5   Calculus and Linear Algebra for Commerce
+MAT134H5   Integral Calculus for Life Sciences
+MAT135H5   Differential Calculus
+MAT136H5   Integral Calculus
+MAT137Y5   Calculus
+MAT157Y5   Analysis I
+MAT202H5   Introduction to Discrete Mathematics
+MAT223H5   Linear Algebra I
+MAT224H5   Linear Algebra II
+MAT232H5   Calculus of Several Variables
+MAT233H5   Calculus of Several Variables
+MAT236H5   Vector Calculus
+MAT240H5   Algebra I
+MAT244H5   Differential Equations I
+MAT247H5   Algebra II
+MAT257Y5   Analysis II
+MAT299Y5   Research Opportunity Program
+MAT301H5   Groups and Symmetries
+MAT302H5   Introduction to Algebraic Cryptography
+MAT305H5   Elementary Lie Theory
+MAT307H5   Curves and Surfaces
+MAT309H5   Introduction to Mathematical Logic
+MAT311H5   Partial Differential Equations
+MAT315H5   Introduction to Number Theory
+MAT322H5   Mathematical Modelling in Biology
+MAT332H5   Introduction to Nonlinear Dynamics and Chaos
+MAT334H5   Complex Variables
+MAT337H5   Introduction to Real Analysis
+MAT344H5   Introduction to Combinatorics
+MAT354H5   Complex Analysis
+MAT382H5   Mathematics for Teachers
+MAT387H5   Topics in Mathematics
+MAT388H5   Topics in Mathematics
+MAT392H5   Ideas of Mathematics
+MAT397H5   Further Studies in Mathematics
+MAT398H5   Further Studies in Mathematics
+MAT399Y5   Research Opportunity Program
+MAT401H5   Polynomial Equations and Fields
+MAT402H5   Classical Geometries
+MAT405H5   Introduction to Topology
+MAT406H5   Mathematical Introduction to Game Theory
+MAT478H5   Topics in Mathematics
+MAT488H5   Topics in Mathematics
+MAT492H5   Senior Thesis
+MAT497H5   Further Studies in Mathematics
+MAT498H5   Further Studies in Mathematics
+MAT499Y5   Research Opportunity Program
+MGD415H5   E-Business Strategies
+MGD420H5   Global Digital Industries
+MGD421H5   Technological Entrepreneurship
+MGD426H5   Enterprise Risk Management
+MGD427H5   Advanced Legal Issues
+MGD428H5   Project Management
+MGD429H5   Data Analysis II
+MGD430H5   Knowledge Management and Strategy
+MGM101H5   Introduction to Management Functions
+MGM102H5   Management in a Changing Environment
+MGM222H5   Accounting Fundamentals II
+MGM320H5   Financial Statement Analysis and Interpretation
+MGM360H5   Compensation
+MGM364H5   Labour Relations
+MGM365H5   HR Planning
+MGM390H5   Business Law
+MGM464H5   Recruitment and Selection
+MGM465H5   Occupational Health & Safety
+MGM466H5   Training & Development
+MGT010H5   Effective Business Practices and Leadership Skills Capstone
+MGT120H5   Introduction to Financial Accounting
+MGT150H5   Financial Planning for Individuals
+MGT201H5   Coding for Business
+MGT211H5   Special Topics for Management
+MGT212H5   Special Topics for Management
+MGT218H5   Quantitative Analysis for Management
+MGT220H5   Intermediate Accounting I
+MGT223H5   Management Accounting I
+MGT225H5   Intermediate Accounting II
+MGT231H5   Business Finance I
+MGT232H5   Business Finance II
+MGT252H5   Principles of Marketing
+MGT260H5   Managing Human Potential
+MGT262H5   Psychology at Work
+MGT270H5   Data Analytics for Management
+MGT299H5   Research Opportunity Program
+MGT299Y5   Research Opportunity Program
+MGT300H5   Presentation Skills for Management
+MGT301H5   Coding and Data Management for Business Analytics
+MGT311H5   Special Topics for Management
+MGT312H5   Special Topics for Management
+MGT321H5   Audit & Assurance
+MGT322H5   Financial Accounting Theory and Policy II
+MGT323H5   Managerial Accounting II
+MGT324H5   Equity Valuation and Analysis
+MGT325H5   Critical Thinking, Analysis and Decision Making I
+MGT326H5   Advanced Accounting
+MGT330H5   Investments
+MGT336H5   Security Analysis
+MGT341H5   Financial Modeling and Data Analytics
+MGT353H5   Introduction to Marketing Management
+MGT354H5   Consumer Behaviour
+MGT355H5   Pricing
+MGT363H5   Designing Effective Organizations
+MGT371H5   Business Technology Management
+MGT373H5   Machine Learning
+MGT374H5   Operations Management
+MGT393H5   Legal Environment of Business I
+MGT394H5   Legal Environment of Business II
+MGT399H5   Research Opportunity Program
+MGT399Y5   Research Opportunity Program
+MGT401H5   Supervised Reading Course on an Approved Subject
+MGT402H5   Supervised Reading Course on an Approved Subject
+MGT411H5   Special Topics in Management
+MGT412H5   Special Topics in Management
+MGT414H5   Special Topics in Management
+MGT415H5   Special Topics in Management
+MGT416H5   Special Topics in Management
+MGT417H5   Special Topics in Management
+MGT420H5   Critical Thinking, Analysis and Decision Making II
+MGT421H5   Advanced Audit & Assurance
+MGT422H5   Advanced IT Audit and Data Analytics
+MGT423H5   Canadian Income Taxation I
+MGT428H5   Management Control
+MGT429H5   Canadian Income Taxation II
+MGT430H5   Behavioural Finance
+MGT431H5   Advanced Topics in Corporate Finance
+MGT434H5   Mergers and Acquisitions
+MGT435H5   Financial Market Trading
+MGT437H5   Strategy and Governance
+MGT438H5   Futures and Options Markets
+MGT440H5   Fixed Income Markets
+MGT442H5   Financial Distress and Insolvency
+MGT443H5   Topics in Asset Pricing
+MGT444H5   FinTech Innovation
+MGT445H5   Enterprise Risk Management and Analytics
+MGT450H5   Digital Marketing
+MGT452H5   Marketing and Behavioural Economics
+MGT453H5   Marketing Research
+MGT454H5   Special Topics in Marketing
+MGT455H5   Marketing Consulting:  Models for Analysis
+MGT456H5   Marketing Ethics
+MGT457H5   Business to Business Marketing
+MGT458H5   Big Data and Marketing Analysis
+MGT461H5   Negotiations
+MGT463H5   Managing Global Organizations
+MGT480H5   Internship
+MGT491H5   Introduction to International Business
+MGT492H5   Introduction to Strategic Management
+MGT493H5   Small Business Management
+MGT494H5   Entrepreneurial Strategy
+MGT495H5   Entrepreneurial Finance and Private Equity
+PHL103H5   Introduction to Philosophy: Knowledge and Reality
+PHL105Y5   Introduction to Philosophy
+PHL113H5   Introduction to Philosophy: Persons and Value
+PHL200H5   Ancient Philosophy
+PHL204H5   Philosophy in Everyday Life
+PHL210Y5   17th and 18th Century Philosophy
+PHL220H5   Existentialism
+PHL221H5   Philosophy at the Movies
+PHL235H5   Philosophy of Religion
+PHL237H5   Introduction to East Asian Philosophy
+PHL238H5   Introduction to South Asian Philosophy
+PHL239H5   Critical Reasoning
+PHL240H5   Minds and Machines
+PHL242H5   Science Fiction and Philosophy
+PHL243H5   Philosophy of Human Sexuality
+PHL244H5   Human Nature
+PHL245H5   Modern Symbolic Logic
+PHL246H5   Probability and Inductive Logic
+PHL255H5   Philosophy of Science
+PHL258H5   Puzzles and Paradoxes
+PHL265H5   Social and Political Philosophy
+PHL267H5   Feminism
+PHL271H5   Ethics and the Law
+PHL272H5   Philosophy of Education
+PHL273H5   Environmental Ethics
+PHL274H5   Ethics and Society
+PHL275H5   Ethics and Moral Philosophy
+PHL277Y5   Moral, Social and Political Philosophy Through Its History
+PHL282H5   Ethics:  Death and Dying
+PHL283H5   Bioethics
+PHL284H5   Ethics of Eating
+PHL285H5   Philosophy of Art
+PHL290H5   Philosophical Issues in Psychoanalysis
+PHL293H5   Special Topics in Philosophy
+PHL295H5   Philosophy of Business
+PHL299Y5   Research Opportunity Program
+PHL300H5   Topics in Ancient Philosophy
+PHL301H5   The Philosophy of Plato
+PHL302H5   The Philosophy of Aristotle
+PHL307H5   Topics in Mediaeval Philosophy
+PHL310H5   Topics in 17th and 18th Century Philosophy
+PHL311H5   South Asian Philosophy
+PHL314H5   Kant
+PHL315H5   Topics in Nineteenth Century Philosophy
+PHL324H5   The Continental Tradition
+PHL325H5   Early Analytic Philosophy
+PHL327H5   Later Analytic Philosophy
+PHL332H5   Metaphysics
+PHL333H5   Epistemology
+PHL340H5   Philosophy of Mind
+PHL341H5   Practical Reason and Human Action
+PHL343H5   Freedom and Determinism
+PHL345H5   Intermediate Logic
+PHL346H5   Choice and Chance
+PHL347H5   Modality in Logic and Philosophy
+PHL350H5   Philosophy of Language
+PHL354H5   Philosophy of Mathematics
+PHL355H5   Issues in Philosophy of Science
+PHL357H5   Philosophy of Biology
+PHL358H5   Philosophical Issues in Cognitive Science
+PHL365H5   Issues in Political Philosophy
+PHL367H5   Issues in Philosophy and Feminism
+PHL370H5   Issues in Philosophy of Law
+PHL374H5   Issues in Normative Ethics
+PHL376H5   Issues in Metaethics
+PHL390H5   Special Topics in Philosophy
+PHL400H5   Seminar in Ancient and Medieval Philosophy
+PHL410H5   Seminar in 17th and 18th Century Philosophy
+PHL420H5   Seminar in 19th and 20th Century Philosophy
+PHL432H5   Seminar in Metaphysics
+PHL433H5   Seminar in Epistemology
+PHL440H5   Seminar in the Philosophy of Mind
+PHL445H5   Metalogic
+PHL447H5   Seminar in Philosophy of Logic
+PHL450H5   Seminar in Philosophy of Language
+PHL455H5   Seminar in Philosophy of Science
+PHL475H5   Seminar in Moral and Political Philosophy
+PHL489Y5   The Socrates Project
+PHL495H5   Special Seminar:  Philosophical Problems
+PHL496H5   Individual Studies
+PHL497H5   Individual Studies
+PHL498H5   Individual Studies
+PHL499Y5   Individual Studies
+PHY100H5   What's Physics Got to Do With It?
+PHY136H5   Introductory Physics I
+PHY137H5   Introductory Physics II
+PHY146H5   Principles of Physics I
+PHY147H5   Principles of Physics II
+PHY241H5   Electromagnetism
+PHY242H5   Thermal Physics and Fluid Mechanics
+PHY245H5   Vibrations and Waves
+PHY255H5   Introduction to Biomedical Physics
+PHY299Y5   Research Opportunity Program
+PHY324H5   Advanced Physics Laboratory
+PHY325H5   Mathematical and Computational Physics
+PHY332H5   Molecular Biophysics
+PHY333H5   Physics of the Cell
+PHY343H5   Classical Mechanics
+PHY347H5   Optics
+PHY351H5   Climate Physics
+PHY399Y5   Research Opportunity Program
+PHY426H5   Computational Modeling in Physics
+PHY433H5   Medical Physics
+PHY451H5   Classical Electrodynamics
+PHY473H5   Supervised Readings
+POL111H5   Canada in Comparative Perspective
+POL112H5   Democracy in Theory and Practice
+POL113H5   Ideas and Ideologies
+POL114H5   Politics in a Global World
+POL115H5   Evidence and Argument in the Study of Politics
+POL116H5   Politics & Social Justice 
+POL200Y5   Political Theory
+POL203Y5   Politics and Government of the United States
+POL209H5   Introduction to International Relations
+POL210H5   Contemporary Challenges in International Relations
+POL215H5   Canadian Government
+POL216H5   Canadian Politics
+POL218Y5   Introduction to Comparative Politics
+POL242Y5   Methods
+POL300Y5   Topics in Comparative Politics
+POL301H5   Topics in Political Theory
+POL302Y5   Politics of Western Europe and the European Union
+POL303Y5   The Politics of Islam
+POL304Y5   Politics of South Asia
+POL305H5   Topics in International Relations
+POL305Y5   Topics in International Relations
+POL309Y5   The State, Planning and Markets
+POL310Y5   Managing International Military Conflict
+POL316Y5   Contemporary Canadian Federalism
+POL317H5   Comparative Public Policy and Administration
+POL317Y5   Comparative Public Policy and Administration
+POL318H5   Power and Conflict in Federalism
+POL320Y5   Modern Political Thought
+POL322Y5   Enlightenment and Theocracy
+POL327Y5   Comparative Foreign Policy
+POL336Y5   Ontario Politics
+POL340Y5   International Law
+POL343Y5   Politics of Global Governance
+POL346Y5   Urban Politics
+POL353Y5   Canadian Public Policy:  From the Golden Age to the Era of Globalization
+POL354H5   Russian Politics
+POL354Y5   Russian Politics
+POL355Y5   Multiculturalism and Citizenship
+POL360H5   State, Nation and Regime Change in Latin America
+POL361H5   Democracy and its interruptions in Latin America 
+POL368H5   Gender and Politics
+POL368Y5   Gender and Politics
+POL369Y5   Media and Politics
+POL390H5   Topics in Comparative Politics
+POL391H5   Topics in Comparative Politics
+POL392H5   Topics in Political Theory
+POL392Y5   Topics in Political Theory
+POL393H5   Topics in Political Science
+POL394H5   Topics in Political Science
+POL399H5   Research  Opportunity Program
+POL399Y5   Research Opportunity Program
+POL401Y5   Senior Major Research Paper
+POL402H5   Topics in Political Science
+POL403H5   Topics in Political Science
+POL404Y5   20th Century Political Thought 
+POL405Y5   Political Science Internship
+POL438H5   Topics in Comparative Politics
+POL438Y5   Topics in Comparative Politics
+POL440Y5   Politics and Governments of Eastern Europe
+POL443Y5   Topics in Comparative Politics
+POL446H5   Politics of the South Asian Diaspora in Comparative Perspective
+POL455Y5   The Craft of Political Research
+POL475H5   Global Environmental and Sustainability Politics
+POL476H5   Topics in Political Economy
+POL477H5   Topics in Political Economy
+POL478Y5   Moral Reason and Economic History
+POL484Y5   Topics in Political Thought
+POL485H5   Topics in Political Thought
+POL486Y5   Topics in International Relations
+POL487H5   Topics in International Relations
+POL490H5   Topics in Canadian Politics
+POL494Y5   Topics in Canadian Politics
+POL495Y5   Undergraduate Reading Course
+POL496H5   Undergraduate Reading Course
+POL499H5   Research Opportunity Program
+POL499Y5   Research Opportunity Program
+PRS210H5   Introductory Persian I
+PRS211H5   Introductory Persian II
+PRS310H5   Intermediate Persian I
+PRS311H5   Intermediate Persian II
+PSY100Y5   Introductory Psychology
+PSY201H5   Research Design and Analysis in Psychology I
+PSY202H5   Research Design and Analysis in Psychology II
+PSY210H5   Introduction to Developmental Psychology
+PSY220H5   Introduction to Social Psychology
+PSY230H5   Introduction to Personality Science
+PSY240H5   Introduction to Abnormal Psychology
+PSY270H5   Cognition: The Machinery of the Mind
+PSY274H5   Language, Mind, and Brain
+PSY280H5   Sensation and Perception: Where the World Meets the Brain
+PSY290H5   Introduction to Neuroscience
+PSY299H5   Research Opportunity Program
+PSY299Y5   Research Opportunity Program
+PSY309H5   Experimental Design and Theory
+PSY310H5   Adolescence and Emerging Adulthood
+PSY311H5   Social Development
+PSY312H5   Children's Thinking: Cognitive Development in a Social World
+PSY313H5   Adult Development and Aging
+PSY314H5   Educational Psychology: The Science of Learning
+PSY315H5   Language Development
+PSY316H5   Infant Perception and Cognition
+PSY317H5   Gender and Sexual Development
+PSY318H5   Developmental Neuropsychology
+PSY319H5   Developmental Psychology Laboratory
+PSY320H5   Social Psychology:  Attitudes
+PSY321H5   Cross-cultural Psychology
+PSY324H5   The Science of Wellbeing
+PSY325H5   Psychology of the Self
+PSY327H5   Psychology of Intimate Relationships
+PSY328H5   Psychology and the Law
+PSY329H5   Social/Personality Laboratory
+PSY330H5   The Basics of Measurement in Social and Personality Psychology
+PSY331H5   Psychology of Emotion
+PSY333H5   Health Psychology
+PSY340H5   Abnormal Psychology:  Adult Disorders
+PSY341H5   Abnormal Psychology:  Disorders of Children and Adolescents
+PSY343H5   Theories of Psychotherapy
+PSY344H5   Forensic Psychology
+PSY345H5   Exceptionality:  Disability and Giftedness
+PSY346H5   Abnormal Psychology:  Neuroscience Perspectives
+PSY351H5   Evolutionary Psychology
+PSY352H5   Animal Behaviour
+PSY353H5   Social Neuroscience
+PSY354H5   The Biopsychology of Sex
+PSY355H5   Animal Behaviour Genetics
+PSY362H5   Animal Cognition
+PSY369H5   Behavioural Neuroscience Laboratory
+PSY371H5   Higher Cognitive Processes
+PSY372H5   Human Memory: The World within your Mind
+PSY374H5   Psycholinguistics
+PSY376H5   Psychology of Bilingualism
+PSY379H5   Cognitive Psychology Laboratory
+PSY384H5   Speech Perception and Production
+PSY385H5   Human Factors: Applying Perceptual and Cognitive Research to the World
+PSY387H5   Psychology of Music
+PSY389H5   Perception Laboratory
+PSY391H5   Psychology of Pain
+PSY392H5   Behavioural Epigenetics
+PSY393H5   Human Neuropsychology
+PSY395H5   Hormones and Behaviour
+PSY397H5   Neuroplasticity and Behaviour
+PSY399H5   Research Opportunity Program
+PSY399Y5   Research Opportunity Program
+PSY400Y5   Thesis
+PSY402H5   Roots of Psychology: A history of the field from the 19th century to the present day
+PSY403H5   Individual Project
+PSY404H5   Individual Project
+PSY405H5   Individual Project
+PSY406H5   Individual Project
+PSY410H5   Special Topics in Developmental Psychology
+PSY415H5   Special Topics in Adult Development and Aging
+PSY420H5   Special Topics in Social Psychology
+PSY430H5   Special Topics in Personality
+PSY440H5   Special Topics in Abnormal Psychology
+PSY442Y5   Practicum in Exceptionality in Human Learning
+PSY471H5   Special Topics in Cognition
+PSY474H5   Special Topics in Human Communication
+PSY480H5   Special Topics in Perception
+PSY490H5   Advanced Topics in Neuroscience
+PSY495H5   Special Topics in Neuropsychology
+PSY499H5   Research Opportunity Program
+PUN212Y5   Introductory Punjabi
+RLG101H5   Introduction to the Study of Religion
+RLG201H5   Introduction to Religion in the Literary, Visual, and Performing Arts
+RLG202H5   Introduction to Judaism
+RLG203H5   Introduction to Christianity
+RLG204H5   Introduction to Islam and Muslim Civilizations
+RLG205H5   Key Themes in South Asian Religions
+RLG206H5   Introduction to Buddhism
+RLG207H5   Introduction to Sikhism
+RLG208H5   Iran before Islam: Introduction to Zoroastrianism
+RLG209H5   Introduction to Indigenous Traditions
+RLG210H5   Introduction to Hinduism
+RLG211H5   Introduction to Religion, Media, and Popular Culture
+RLG299Y5   Research Opportunity Program
+RLG300H5   Religion at the Edge of Tomorrow
+RLG301H5   Stranger Things: Religious Objects in Theory and Practice
+RLG302H5   Sufism
+RLG303H5   Islam in South Asia
+RLG304H5   Islamic Spiritual Traditions
+RLG305H5   Islamic Aesthetic Traditions
+RLG306H5   Shi'i Islam
+RLG307H5   Indian Scholasticism
+RLG308H5   Monuments, Inscriptions, and Narratives in South Asia
+RLG309H5   Muslim Lives, Ritual Practices
+RLG310H5   The Ramayana
+RLG311H5   Religion and Ecology
+RLG312Y5   How to Study Religion
+RLG313H5   The Literature of Ancient Israel
+RLG314H5   Religion and Gender
+RLG315H5   Biblical Wisdom and Poetry
+RLG316H5   Religion and Violence
+RLG317H5   Religion and Science
+RLG318H5   Jainism
+RLG319H5   Magic, Astrology, and Religion
+RLG323H5   Jesus of Nazareth
+RLG324H5   Paul and Earliest Christianity
+RLG325H5   Visions and Revelations
+RLG326H5   Early Christianity and Rabbinic Judaism
+RLG330H5   Topics in Judaism
+RLG331H5   Religion on Screen
+RLG332H5   Reel Religion
+RLG333H5   Biblical Themes in Modern Literature
+RLG337H5   Christmas: A History
+RLG340H5   Topics in Christianity
+RLG346H5   Early Modern Christianity
+RLG347H5   Zoroastrian Religious Writings
+RLG348H5   Zoroastrian Customs and Ceremonies
+RLG349H5   Medieval Christianity
+RLG350H5   Topics in Islam
+RLG351H5   Major Themes in the Study of the Quran
+RLG352H5   Jews and Muslims: The Medieval Encounter
+RLG356H5   Persia and Beyond: Christianity in Asia to 1300
+RLG357H5   Contemporary Global Christianity
+RLG358H5   Christianity in Late Antiquity: From Persecuted Sect to Imperial Religion
+RLG359H5   The Orthodox Church of the Byzantine Empire
+RLG360H5   Topics in South Asian Religions
+RLG361H5   Encounters Between Indo-Islamic and Hindu Cultures
+RLG362H5   Hindu and Muslim Worlds in Modern South Asia
+RLG365H5   Mediating Hinduism
+RLG366H5   Icon and Iconoclasm in South Asia
+RLG370H5   Topics in Buddhism
+RLG371H5   Buddhist Thought
+RLG373H5   Buddhist Practices and Institutions
+RLG374H5   Buddhist Literatures
+RLG378H5   Museums and Material Religion
+RLG380H5   Topics in Comparative Religions
+RLG381H5   Topics in Zoroastrianism
+RLG382H5   The Divine Comedy: A Spiritual Journey
+RLG388H5   Special Topics
+RLG399Y5   Research Opportunity Program
+RLG401H5   Advanced Topics in Religion and the Literary, Visual, and Performing Arts
+RLG411H5   Advanced Topics in Religion, Media, and Culture
+RLG412H5   Theorizing Religion
+RLG415H5   Advanced Topics in the Study of Religion
+RLG420H5   Women and Gender in Early and Medieval Christianity
+RLG421H5   South Asian Epics
+RLG422H5   Religion and the Senses in South Asia
+RLG423H5   Ritual and Material Practice in South Asian Islam
+RLG430H5   Advanced Topics in Judaism
+RLG435H5   The Dead Sea Scrolls
+RLG440H5   Advanced Topics in Christianity
+RLG445H5   Making Martyrs: From Socrates to the Suicide Bomber
+RLG448H5   Approaches to the Academic Study of Islam
+RLG449H5   Islamic Sexualities
+RLG450H5   Advanced Topics in Islam
+RLG451Y5   Islamic Literatures
+RLG452H5   Anthropology of Islam
+RLG453H5   Researching Islam: Entering the World of Scholarly Investigation
+RLG460H5   Advanced Topics in South Asian Religions
+RLG461H5   Religion and Aesthetics in South Asia
+RLG462H5   Sex and Gender in South Asian Religions
+RLG463H5   Genealogies of South Asian Religions
+RLG464H5   Saints, Royalty, and the State in South Asian Religions
+RLG465H5   Sex and Renunciation in Sanskrit Poetry
+RLG466H5   The Sasanian Empire: Religions at the Crossroads in Ancient Iran
+RLG470H5   Advanced Topics in Buddhism
+RLG497Y5   Independent Reading
+RLG499H5   Independent Reading
+RLG499Y5   Research Opportunity Program
+SAH200H5   Being Human in South Asia
+SAN291Y5   Introductory Sanskrit
+SAN392Y5   Intermediate Sanskrit
+SOC100H5   Introduction to Sociology
+SOC109H5   Introduction to Criminology, Law & Society
+SOC202H5   Cultural Sociology
+SOC205H5   Theories in Criminology
+SOC206H5   Introduction to the Sociology of Genocide
+SOC208H5   Crime and Organizations
+SOC210H5   Canadian Criminal Justice
+SOC211H5   Law and Social Control
+SOC216H5   Sociology of Law
+SOC219H5   Gender and Crime
+SOC221H5   The Logic of Social Inquiry
+SOC222H5   Measuring the Social World
+SOC224H5   Sociology of Education
+SOC227H5   Sociology of Work and Occupations
+SOC228H5    Introduction to Indigenous Studies
+SOC230H5   Thinking Like a Sociologist
+SOC231H5   Classical Sociological Theory
+SOC236H5   Globalization
+SOC239H5   Sociology of Health and Illness
+SOC240H5   Introduction to Social Policy
+SOC244H5   Sociology of Families
+SOC253H5   Social History of Race and Ethnicity
+SOC263H5   Social Inequality
+SOC275H5   Sociology of Gender
+SOC299H5   Research Opportunity Program
+SOC299Y5   Research Opportunity Program
+SOC301H5   Canadian Prisons
+SOC302H5   Indigenous-Canada Relations
+SOC303H5   White-collar and Corporate Crime
+SOC304H5    Environmental Sociology
+SOC305H5   Asian Canada and Asian Diaspora
+SOC306H5   Education and Social Control
+SOC308H5   Law and Crime in Asia and Asian Diasporas
+SOC309H5   Sociology of Mass Communication
+SOC310H5   Youth Justice
+SOC311H5   Special Topics in Law
+SOC312H5   Law, Race and Racism
+SOC316H5   Crime Prevention and Security
+SOC317H5   Shopping and Society
+SOC318H5   Sociology of Mental Health and Mental Disorders
+SOC320H5   Criminal Justice Organizations
+SOC321H5   Law & Rights
+SOC322H5   Criminal Justice and Inequality
+SOC323H5   Law, Culture and Social Problems
+SOC324H5   Carceral Feminisms: Race, Gender and State Violence
+SOC325H5   Law and Social Theory
+SOC326H5   Policing
+SOC327H5   Drugs and the Modern World
+SOC328H5   Drugs in the City
+SOC329H5   Law & Social Movements
+SOC330H5   Criminology and Immigration
+SOC331H5   Gender and Criminal Justice
+SOC332H5   Race and Ethnicity in Canada
+SOC333H5   Criminal Groups and Organizations
+SOC334H5   Aging and Society
+SOC335H5   Political Sociology
+SOC336H5   Special Topics in Sociology
+SOC337H5   Special Topics in Criminology, Law and Society
+SOC338H5   Legal Developments in Criminology
+SOC339H5   The Indian Act: Canadian Law, Sovereignty and Indigenous Womxn
+SOC340H5   Social Change
+SOC341H5   Contemporary Issues in the Sociology of Work
+SOC342H5   Sociology of Scandals
+SOC343H5   Urban Sociology
+SOC344H5   Sociological Approaches to Social Psychology
+SOC345H5   Special Topics in Sociology
+SOC346H5   Special Topics in Criminology, Law and Society
+SOC347H5   Sociology of Masculinities
+SOC348H5   Indigenous Rights, Resistance, and Resurgence
+SOC349H5   Sociology of Food
+SOC350H5   Quantitative Analysis
+SOC351H5   Politics and Violence: Spot the Difference
+SOC352H5   Gender and Care
+SOC353H5   Borders and Human Rights 
+SOC354H5   Global Sociology
+SOC355H5   Sociology of the Professions
+SOC356H5   Population and Society
+SOC357H5   The Legal Profession
+SOC358H5   Indigenous People: Legal Orders and Law
+SOC359H5   Gendered Identities
+SOC361H5   Sociology of Organizations
+SOC362H5   Sex, Gender and Work
+SOC363H5   Sexuality and Crime
+SOC364H5   New Directions in Social Inequality
+SOC365H5   Special Topics in Criminology
+SOC366H5   Special Topics in Criminology
+SOC371H5   Sociology of Punishment
+SOC373H5   Economic Sociology
+SOC375H5   Sociology of International Migration
+SOC378H5   Law, Crime and Justice
+SOC379H5   Criminology, Urban Life, and Social Policy
+SOC380H5   Gender, Politics and Society
+SOC382H5   Genocide and Memory
+SOC384H5   Media Ethics and Policy: Controversies in Mass Communication
+SOC387H5   Qualitative Analysis
+SOC388H5    Race and Indigeneity
+SOC391H5   Independent Research in Sociology
+SOC392H5   Independent Research in Sociology
+SOC393H5   Independent Research in Criminology, Law and Society
+SOC394H5   Independent Research in Criminology, Law and Society
+SOC399H5   Research Opportunity Program
+SOC399Y5   Research Opportunity Program
+SOC401H5   Doing Public Sociology
+SOC402H5   Understanding Human Action
+SOC403H5   Prisons, Punishment & Surveillance Across the Globe
+SOC404H5   Special Topics in Social Policy
+SOC405H5   Surveillance in a Digital World
+SOC406H5   Vigilantism on the Margins of the State
+SOC407H5   Development and Social Change: The Case of China
+SOC408H5   The Sociology of Anti-Muslim Racism
+SOC409H5   Masculinity and the Internet
+SOC410H5   Senior Seminar in Inequality
+SOC411H5   Senior Seminar in Social Institutions
+SOC412H5   Senior Seminar in the Sociology of Work
+SOC413H5   Senior Seminar in the Sociology of Gender
+SOC414H5   Senior Seminar in Political Sociology
+SOC415H5   Senior Seminar in Indigenous Studies
+SOC416H5   Senior Seminar in the Sociology of Culture
+SOC417H5   Senior Seminar in the Sociology of Globalization
+SOC418H5   Senior Seminar in the Sociology of Health
+SOC419H5   Senior Seminar in Race and Ethnicity
+SOC420H5   Senior Seminar in Punishment
+SOC421H5   Senior Seminar in Criminology
+SOC422H5   Sociology of the Body
+SOC423H5   Identity Crime
+SOC424H5   Law, Emotions and Justice
+SOC425H5   Gender in Global Contexts
+SOC426H5   Social Theory and Third Cinema
+SOC427H5   Politics, Violence, Democracy and Human Rights in Latin America
+SOC428H5   Health, Disability, and Crisis 
+SOC429H5   Disability, Politics and Society
+SOC430H5   Developments in Sociological Theory
+SOC432H5   Contemporary Issues in Genocide and State Violence
+SOC433H5   Power and Cultural Politics
+SOC434H5   Race, Class, Gender in the Global South
+SOC439Y5   Research Project in Sociology
+SOC440Y5   Research Project in Criminology, Law and Society
+SOC444H5   Advanced Topics in Sociology
+SOC445H5   Advanced Topics in Sociology
+SOC446H5   Advanced Topics in Criminology, Law and Society
+SOC447H5   Advanced Topics in Criminology, Law and Society
+SOC448H5   Advanced Topics in Criminology, Law and Society
+SOC450H5   Walls to Bridges: Carceral Seminar
+SOC452H5   Contemporary Issues in Higher Education
+SOC454H5   Sociology of the Global South
+SOC455H5   Comparative Indigenous Politics
+SOC456H5   Senior Seminar in Law and Society
+SOC457H5   Sociology of Race and Ethnicity
+SOC459H5   Science, Technology and Society
+SOC460H5   Migrant Labour
+SOC463H5   The Sociology of Disasters
+SOC465H5   Climate Change and Society
+SOC467H5   Peel Social Lab Seminar: Translating Research for the Wider Public
+SOC475H5   Sociology of Legal Careers
+SOC480Y5   Internship in Sociology, Criminology, Law and Society
+SOC485H5   Investigation through Study Abroad
+SOC491H5   Independent Research in Sociology
+SOC492H5   Independent Research in Sociology
+SOC493H5   Independent Research in Criminology, Law and Society
+SOC494H5   Independent Research in Criminology, Law and Society
+SOC499H5   Research Opportunity Program
+SOC499Y5   Research Opportunity Program
+SPA100Y5   Spanish for Beginners
+SPA219H5   Spanish for Heritage and Native Speakers I
+SPA220Y5   Intermediate Spanish
+SPA235H5   Music and Dance in Hispanic Culture
+SPA259H5   Introduction to Hispanic Culture
+SPA275H5   Latin American Cinema
+SPA319H5   Spanish for Heritage and Native Speakers II
+SPA320Y5   Advanced Spanish
+SPA323H5   Business Spanish
+SPA390H5   Crosscultural Communciation and Pragmatics in the Spanish-speaking World
+SPA420H5   Advanced Topics on Spanish Grammar
+SPA443H5   Studies in Spanish Linguistics: Pragmatics
+STA107H5   An Introduction to Probability and Modelling
+STA215H5   Introduction to Applied Statistics
+STA218H5   Statistics for Management
+STA220H5   The Practice of Statistics I
+STA221H5   The Practice of Statistics II
+STA246H5   Computational Probability and Statistics 
+STA256H5   Probability and Statistics I
+STA258H5   Statistics with Applied Probability
+STA260H5   Probability and Statistics II
+STA302H5   Regression Analysis
+STA304H5   Surveys, Sampling and Observational Data
+STA305H5   Experimental Design
+STA312H5   Topics in Statistics:  Applied Statistical Modelling
+STA313H5   Topics in Statistics: Applications of Statistical Models
+STA314H5   Introduction to Statistical Learning
+STA315H5   Advanced Statistical Learning
+STA348H5   Introduction to Stochastic Processes
+STA360H5   Introduction to Bayesian Statistics
+STA378H5   Research Project
+STA380H5   Computational Statistics
+STA388H5   Topics in Statistics
+STA398H5   Research Project
+STA399Y5   Research Opportunity Program
+STA413H5   Estimation and Testing
+STA431H5   Structural Equation Models
+STA437H5   Applied Multivariate Statistics
+STA441H5   Data Analysis
+STA457H5   Applied Time Series Analysis
+STA478H5   Statistics Research Project
+STA488H5   Topics in Statistics
+STA498H5   Research Project
+URD212Y5   Introduction to Urdu
+URD312Y5   Intermediate Urdu
+UTM101H5   LAUNCH: Business, Commerce and Management
+UTM102H5   LAUNCH: Science, Mathematics and Psychology
+UTM103H5   LAUNCH: Humanities and Social Science
+UTM108H5   utmONE: Special Topics at the Intersection of Science and Social Science 
+UTM109H5   utmONE: Special Topics at the Intersection of Science and Humanities
+UTM110H5   utmONE: Special Topics at the Intersection of Social Science and Humanities
+UTM111H5   utmONE: Tools of the Trade
+UTM112H5   utmONE: Power of Expression
+UTM114H5   utmONE: Technology and Innovation: Historical, Social and Economic Perspectives
+UTM115H5   utmONE: Communication Among Cultures
+UTM116H5   utmONE: Happiness
+UTM117H5   utmONE: Individualism, The Development Of An Idea
+UTM118H5   utmONE: Science of Learning
+UTM119H5   utmONE: Lights, Camera, Culture: Exploration of Cinema
+UTM190H5   utmONE Scholars: Special Topics at the Intersection of Social Science and Humanities
+UTM191H5   utmONE Scholars: Special Topics at the Intersection of Science and Social Science
+UTM192H5   utmONE Scholars: Special Topics at the Intersection of Science and Humanities
+UTM193H5   utmONE Scholars: Nations Colliding?
+UTM194H5   utmONE Scholars: Religion and Politics
+UTM195H5   utmONE Scholars: Curiosity and Control: Voyages of Discovery to North America
+UTM196H5   utmONE Scholars: Building Global Justice
+UTM197H5   utmONE Scholars: Humans in Nature: Interactions and Impacts
+VCC101H5   Introduction to Visual Culture
+VCC205H5   Monsters
+VCC207H5   Urban Sites and Sounds
+VCC236H5   North American Consumer Culture: 1890-Present
+VCC290H5   Topics in Visual Culture and Communication
+VCC292H5   Topics in Visual Culture and Communication
+VCC304H5   Visual Culture and the Politics of Identity
+VCC306H5   Visual Culture and Colonialism
+VCC308H5   Activism in Visual and Media Culture
+VCC309H5   Society and Spectacle
+VCC334H5   Media Realities
+VCC338H5   Picturing the Suburbs
+VCC360H5   South Asian Visual Culture
+VCC390H5   Topics in Visual Culture and Communication
+VCC392H5   Topics in Visual Culture and Communication
+VCC399Y5   Research Opportunity Program (ROP)
+VCC400H5   Advanced Project
+VCC405H5   Individual Project
+VCC406H5   Post-Colonialism and the Image
+VCC407H5   Architectures of Vision
+VCC409H5   Capital, Spectacle, War
+VCC410H5   The Collective Afterlife of Things
+VCC411H5   Real Space to Cyberspace
+VCC415H5   Theory and Criticism of New Media
+VCC419H5   Animals in Visual Culture
+VCC420H5   The Visual Culture of Automobility
+VCC425H5   Art and Media Culture
+VCC427H5   Participatory Media
+VCC490H5   Topics in Visual Culture and Communication
+VCC492H5   Topics in Visual Culture and Communication
+VST410H5   Internship in Visual Studies
+WGS101H5   Introduction to Women and Gender Studies
+WGS102H5   Reading and Writing in Women and Gender Studies
+WGS200Y5   Theories in Women, Gender, and Sexuality Studies
+WGS202H5   Fundamentals of Research in Women and Gender Studies
+WGS205H5   Introduction to Feminism and Popular Culture
+WGS210H5   Women, Gender and Labour
+WGS211H5   Gender, Technology and the Body 
+WGS215H5   Introduction to Women, Public Policy and the Law
+WGS250H5   Women in Families
+WGS299Y5   Research Opportunity Program
+WGS301H5   Representing Islam
+WGS325H5   Sustainability: Society and Feminist Praxis
+WGS335H5   Women, Migration and Diaspora
+WGS336H5   Political Aesthetics and Feminist Representation
+WGS337H5   Special Topics in Women and Gender Studies
+WGS340H5   Black Feminisms: Diasporic Conversations on Theory and Practice
+WGS341H5   Black Queer Cinema and Visual Culture  
+WGS343H5   The Montreal Experience: Sex and Gender in la Cité
+WGS345H5   Genealogies of South Asian Feminisms
+WGS347H5   Indigenous Feminisms and Decolonization
+WGS348H5   Sex, Gender, and the Environment
+WGS350H5   Critical Race Theory in Women and Gender Studies
+WGS351H5   Gender, Race, and Surveillance
+WGS353H5   Theories of Masculinity
+WGS354H5   Gender, Sexuality and Sport
+WGS355H5   Wired Women: Gender, Cyberspace and New Information Technology
+WGS365H5   Gender, Justice and the Law
+WGS366H5   Women and Psychology
+WGS367H5   Women and Health
+WGS368H5   Women in World Cultures
+WGS369H5   Women in Science, Technology, Engineering and Mathematics
+WGS369Y5   Gender, Colonialism and Postcolonialism
+WGS370H5   On Love: Gender, Sexuality, Identity
+WGS372H5   Theories of Sexuality
+WGS373H5   Gender, Violence and Resistance
+WGS375H5   The Aesthetics of Sexuality
+WGS410H5   Independent Project in Study of Women & Gender
+WGS411Y5   Independent Project in Study of Women & Gender
+WGS415H5   Black Feminist Performance in Popular Culture and Everyday Life 
+WGS418H5   Feminist Cultural Studies of Biomedicine
+WGS419H5   Gender and Disability
+WGS420H5   Engendering Human Rights
+WGS421H5   Engendering Ethics
+WGS425H5   Decolonial Feminist Archival Practices 
+WGS430H5   Diasporic Sexualities
+WGS434H5   Special Topics in Women & Gender Studies
+WGS435Y5   Women and Gender Studies Practicum
+WGS455H5   Queer Theory
+WGS470H5   Politicizing Culture: Pop Feminism and Representation
+WGS497Y5   Independent Reading
+WRI173H5   Creative Non-Fiction
+WRI225H5   Community and Writing
+WRI227H5   Social Media and Content Creation
+WRI273H5   Specialized Prose
+WRI291H5   Introduction to Journalism
+WRI292H5   Narrative Inquiry
+WRI293H5   Introduction to Technical Communication
+WRI299Y5   Research Opportunity Program
+WRI306H5   Writing for the Academic 
+WRI307H5   Writing about Science
+WRI310H5   Social and Professional Languages
+WRI320H5   History and Writing
+WRI330H5   Oral Rhetoric
+WRI340H5   Critical Reading and Listening
+WRI360H5   Finance and Writing
+WRI363H5   Communicating in a World of Data
+WRI365Y5   Editing: Principles and Practice
+WRI370H5   Writing about Place
+WRI375H5   Writing about Environment and Ecology
+WRI380H5   Podcasting
+WRI390H5   Independent Studies
+WRI391H5   Independent Studies
+WRI395H5   Re-languaging: Writing Across Cultures and Languages
+WRI399Y5   Research Opportunity Program
+WRI410H5   Professional Writing and Communication Internship 1
+WRI411H5   Professional Writing and Communication Internship II
+WRI420H5   Making a Book
+WRI430H5   Journalistic Investigation
+WRI470H5   Writing Futures
+WRI483H5   Character, Narrator and Psychic Space
+WRI488H5   Food and Writing
+WRI490H5   Special Topics in Writing
+WRI499Y5   Research Opportunity Program
