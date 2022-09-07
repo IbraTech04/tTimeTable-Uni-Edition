@@ -9,6 +9,7 @@ from nextcord import Interaction, SlashOption, ChannelType
 from nextcord.abc import GuildChannel #Tentative import - gonna be used later
 from nextcord import Attachment #Tentative import - gonna be used later (ACORN HTML parsing)
 from dotenv import load_dotenv
+from Buttons import ConfirmDialogue
 
 load_dotenv(dotenv_path="tTimeTableTokens.env")
 
@@ -19,7 +20,7 @@ tTimeTable = commands.Bot(intents = intents, command_prefix='tmt',activity = nex
 
 UTMCourses = json.load(open("UTMCourses.json"))
 
-
+print(len(UTMCourses))
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
 async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
@@ -34,7 +35,7 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
     #These are checks to make sure the inputted info is valid
     #Step One: Check if the course code is valid - check if it is in the json file
     courseCode = coursecode.upper()
-    if (not coursecode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+    if (not courseCode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
         await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
     #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
@@ -42,6 +43,11 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
         courseCode = courseCode + "H5"
         if (not courseCode in UTMCourses):
             courseCode = courseCode[:-2] + "Y5"
+    #Easiest thing to check first - check if semester is valid
+    course = UTMCourses[courseCode]
+    if (semester not in course["validSemesters"]):
+        await interaction.response.send_message("Looks like this course isn't offered in your selected semester, try again. If you think this is an error, please contact my owner", ephemeral=True)
+        return
     #check if course needs tutorial in the first place
     if (not UTMCourses[courseCode]["tutorial"]):
         await interaction.response.send_message("This course does not have a tutorial", ephemeral=True)
@@ -52,6 +58,7 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
     if (not semester in db.courses.find_one({"_id":courseCode})):
         #create the semester object
         db.courses.update_one({"_id":courseCode},{"$set":{semester:{}}})
+
     #If we're here, we know the course code is guaranteed to be valid. Now we need to check if the lecture section is valid
     #The Lecture section should either be in the format of LECXXXX, or just XXXX. 
     tutorialsection = tutorialsection.upper()
@@ -63,7 +70,11 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
     if (not tutorialsection[4:].isdigit()):
         await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
         return
-
+    #At this point we know the formatting is correct - now we need to check if the tutorial section is valid
+    if (not tutorialsection in course["sections"]):
+        await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
+        return
+    
     #If we're here, we know the tutorial section is valid. 
     #The Semester is apart of a picker - it's guaranteed to be valid
     
@@ -105,7 +116,7 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
     #These are checks to make sure the inputted info is valid
     #Step One: Check if the course code is valid - check if it is in the json file
     courseCode = coursecode.upper()
-    if (not coursecode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+    if (not courseCode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
         await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
     #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
@@ -113,6 +124,12 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
         courseCode = courseCode + "H5"
         if (not courseCode in UTMCourses):
             courseCode = courseCode[:-2] + "Y5"
+    #Easiest thing to check first - check if semester is valid
+    course = UTMCourses[courseCode]
+    if (semester not in course["validSemesters"]):
+        await interaction.response.send_message("Looks like this course isn't offered in your selected semester, try again. If you think this is an error, please contact my owner", ephemeral=True)
+        return
+
     #check if course needs tutorial in the first place
     if (not UTMCourses[courseCode]["practical"]):
         await interaction.response.send_message("This course does not have a tutorial", ephemeral=True)
@@ -134,7 +151,9 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
     if (not practicalSection[4:].isdigit()):
         await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
         return
-
+    if (not practicalSection in course["sections"]):
+        await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
+        return
     #If we're here, we know the tutorial section is valid. 
     #The Semester is apart of a picker - it's guaranteed to be valid
     
@@ -176,7 +195,7 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
     #These are checks to make sure the inputted info is valid
     #Step One: Check if the course code is valid - check if it is in the json file
     courseCode = coursecode.upper()
-    if (not coursecode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+    if (not courseCode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
         await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
     #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
@@ -203,6 +222,11 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         return
 
     #If we're here, we know the lecture section is valid. 
+    course = UTMCourses[courseCode]
+    if (not lectureSection in course["sections"]):
+        await interaction.response.send_message("Invalid tutorial section, check your spelling and try again", ephemeral=True)
+        return
+    
     #The Semester is apart of a picker - it's guaranteed to be valid
     
     if (not lectureSection in db.courses.find_one({"_id":courseCode})[semester]):
@@ -231,243 +255,124 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
     await interaction.response.send_message("You already have this course in your timetable. Use /remove to remove this course from your timetable", ephemeral=True)
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "viewclassmates", description = "See who else is in your class!")
-async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=False, description="The course you'd like to view classmates in. Optional: Leave blank to search all courses", name="coursecode"), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}, description="The semester you'd like to view classmates in. Optional: Leave blank to search all semesters", required=False)):
-    #TODO Implement this command
-    await interaction.response.send_message("This command is not yet implemented", ephemeral=True)
-    
-@tTimeTable.command(pass_context=True)
-async def addCourse(ctx):
-    semester = None
-    lectureSection = None
-    tutorialSection = None
-    practicalSection = None
-    db = mongo.tTimeTableUniEdition
-    await ctx.send("Please enter a course code")
-    courseCode = await tTimeTable.wait_for('message', check=lambda message: message.author == ctx.message.author)
-    courseCode = courseCode.content.upper()
-    if (courseCode not in UTMCourses):
-        await ctx.send("Course not found; try again. Make sure you use the course code, not the course name. Ensure you include the ending (H5/Y5) as well")
+async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True, description="The course you'd like to view classmates in. Optional: Leave blank to search all courses", name="coursecode"), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}, description="The semester you'd like to view classmates in. Optional: Leave blank to search all semesters", required=True)):
+    #Step One: Check if user has a profile
+    if (not mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})):
+        await interaction.response.send_message("You don't have a profile, use /addlecture to add a course to your profile", ephemeral=True)
         return
-    #check if courseCode object is in database
-    if (db.courses.find_one({"_id": courseCode}) == None):
-        #add courseCode to database
-        db.courses.insert_one({"_id": courseCode})
-    await ctx.send("Adding course " + (courseCode) + ": " + UTMCourses[(courseCode)]["courseTitle"])
-    
-    await ctx.send("Please enter a semester (F/S)")
-    semester = await tTimeTable.wait_for('message', check=lambda message: message.author == ctx.message.author)
-    semester = semester.content.upper()
-    if (semester not in ["F", "S"]):
-        await ctx.send("Invalid semester; try again. Only F and S are valid")
+    #Step Two: Check if the user has the semester in their profile
+    if (not semester in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})):
+        await interaction.response.send_message("You don't have any courses in this semester, use /addlecture to add a course to your profile", ephemeral=True)
         return
-    #check if semester object is in database
-    if (semester not in db.courses.find_one({"_id": courseCode})):
-        #add semester to database
-        db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
-    
-    if (UTMCourses[courseCode]['lecture']):
-        if (not lectureSection):
-            await ctx.send("Please enter a lecture section (LECXXXX)")
-            lectureSection = await tTimeTable.wait_for('message', check=lambda message: message.author == ctx.message.author)
-            lectureSection = lectureSection.content.upper()
-        #validate the lecture section and make sure it's valid
-        #Valid Format: LECXXXX, XXXX being a number
-        if (lectureSection[:3] != "LEC" or not lectureSection[4:].isdigit()):
-            await ctx.send("Invalid lecture section; try again. Make sure you use the lecture section, not the course name")
-            return
-        if (not lectureSection in db.courses.find_one({"_id":courseCode})[semester]):
-        #append the lecturesection array to the semester object
-            db.courses.update_one({"_id":courseCode},{"$set":{semester+"."+lectureSection:[]}})
-        #append the userID to the lecture section array
-        
-    if (UTMCourses[courseCode]['tutorial']):
-        await ctx.send("Please enter a tutorial section (TUTXXXX)")
-        tutorialSection = await tTimeTable.wait_for('message', check=lambda message: message.author == ctx.message.author)
-        tutorialSection = tutorialSection.content.upper()
-        if (tutorialSection[:3] != "TUT" or not tutorialSection[4:].isdigit()):
-            await ctx.send("Invalid tutorial section; try again. Make sure you use the lecture section, not the course name")
-            return
-        if (not tutorialSection in db.courses.find_one({"_id":courseCode})[semester]):
-            #append the tutorialsection array to the semester object
-            db.courses.update_one({"_id":courseCode},{"$set":{semester+ "." +tutorialSection:[]}})  
-        #append userID to the tutorialsection array
-
-
-    if (UTMCourses[courseCode]['practical']):
-        await ctx.send("Please enter a practical section (PRAXXXX)")
-        practicalSection = await tTimeTable.wait_for('message', check=lambda message: message.author == ctx.message.author)
-        practicalSection = practicalSection.content.upper()
-        if (practicalSection[:3] != "PRA" or not practicalSection[4:].isdigit()):
-            await ctx.send("Invalid practical section; try again. Make sure you use the lecture section, not the course name")
-            return
-        if (not practicalSection in db.courses.find_one({"_id":courseCode})[semester]):
-            #append the practical array to the semester object
-            db.courses.update_one({"_id":courseCode},{"$set":{semester+ "." +practicalSection:[]}})
-        #add user id to the practical array
-    
-    if (not db.courses.find_one({"_id":courseCode})):
-        #create the course object
-        db.courses.insert_one({"_id":courseCode})
-
-    #check if user already has the course - [userID][semester][courseCode]
-    if (not db.users.find_one({"_id":ctx.message.author.id})):
-        db.users.insert_one({"_id":ctx.message.author.id})
-    if (semester not in db.users.find_one({"_id":ctx.message.author.id})):
-        db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester:{}}})   
-    if (courseCode in db.users.find_one({"_id":ctx.message.author.id})[semester]):
-        await ctx.send("You already have this course")
+    #Step Three: Validate coursecode
+    courseCode = coursecode.upper()
+    if (not coursecode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+        await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
-    #add course object to semester object
-    db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester:{courseCode:{}}}})
-    #add courseCode and courseName to course object
-    db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
-    db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
-    if (not semester in db.courses.find_one({"_id":courseCode})):
-    #create the semester object
-        db.courses.update_one({"_id":courseCode},{"$set":{semester:{}}})
-    #add course code to user's timetable
-    if (practicalSection):
-        db.courses.update_one({"_id":courseCode},{"$push":{semester+ "." +practicalSection:ctx.message.author.id}})
-        db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester+"."+courseCode+"."+"practicalSection":practicalSection}})
-    if (lectureSection):
-        db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+lectureSection:ctx.message.author.id}})
-        #add lecture section to user's courseCode object
-        db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester+"."+courseCode+"."+"lectureSection":lectureSection}})
-    if (tutorialSection):
-        db.courses.update_one({"_id":courseCode},{"$push":{semester+ "." +tutorialSection:ctx.message.author.id}})
-        db.users.update_one({"_id":ctx.message.author.id},{"$set":{semester+"."+courseCode+"."+"tutorialSection":tutorialSection}})
-    
-    await ctx.send(f"{UTMCourses[courseCode]['courseTitle']} has been added to your profile")
-
-@tTimeTable.command(pass_context=True)
-async def viewClassmates(ctx, courseCode = None, semester = None):
-#method which will show a user all the classmates in a course
-    db = mongo.tTimeTableUniEdition
-    if (not db.users.find_one({"_id":ctx.message.author.id})):
-        await ctx.send("You don't have a profile yet. Use `tmtaddCourse` to add a course")
+    course = UTMCourses[courseCode]
+    #Step Four: Check if semester is valid for that course
+    if (not semester in course["semesters"]):
+        await interaction.response.send_message("Invalid semester, check your spelling and try again", ephemeral=True)
         return
-    if (courseCode):
-        #check if course code is valid
+    #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
+    if (not courseCode[-2:] == "H5" and not courseCode[-2:] == "Y5"):
+        courseCode = courseCode + "H5"
         if (not courseCode in UTMCourses):
-            await ctx.send("Invalid course code")
-            return
-        # semester is valid
-        if (semester.upper() not in ["F", "S"]):
-            await ctx.send("Invalid semester")
-            return
-        #check if user has the course
-        if (not courseCode in db.users.find_one({"_id":ctx.message.author.id})[semester]):
-            await ctx.send("You don't have this course in your profile")
-            return
-        #if we're here all the checks have passed - we can show the classmates
-        #Get the user's lecture
-        lecture = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["lectureSection"]
-        embed = nextcord.embeds.Embed(title=UTMCourses[courseCode]['courseTitle'], description="Classmates: ", color=0x00ff00)
-        lectureClassmates = db.courses.find_one({"_id":courseCode})[semester][lecture]
-        finalLectureString = ""
-        for classmate in lectureClassmates:
-            #convert the User ID to a discord user object
-            user = tTimeTable.get_user(classmate)
-            finalLectureString += f"{user.mention}\n"
-        embed.add_field(name="Lecture", value=finalLectureString, inline=False)
-        #check if course has a tutorial
-        if (UTMCourses[courseCode]['tutorial']):
-            #get the user's tutorial
-            tutorial = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["tutorialSection"]
-            tutorialClassmates = db.courses.find_one({"_id":courseCode})[semester][tutorial]
-            finalTutorialString = ""
-            for classmate in tutorialClassmates:
-                #convert the User ID to a discord user object
-                user = tTimeTable.get_user(classmate)
-                finalTutorialString += f"{user.mention}\n"
-            
-            embed.add_field(name="Tutorial", value=finalTutorialString, inline=False)
-        if (UTMCourses[courseCode]['practical']):
-            #get the user's practical
-            practical = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["practicalSection"]
-            practicalClassmates = db.courses.find_one({"_id":courseCode})[semester][practical]
-            finalPracticalString = ""
-            for classmate in practicalClassmates:
-                #convert the User ID to a discord user object
-                user = tTimeTable.get_user(classmate)
-                finalPracticalString += f"{user.mention}\n"
-            embed.add_field(name="Practical", value=finalPracticalString, inline=False)
-        await ctx.send(embed=embed)
-        #check if course has a practical
+            courseCode = courseCode[:-2] + "Y5"
+    #check if user has course in their profile
+    if (not courseCode in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester]):
+        await interaction.response.send_message("You don't have this course in your profile, use /addlecture to add a course to your profile", ephemeral=True)
         return
-    #if we're here the user wants to see all their courses
-    embed = nextcord.embeds.Embed(title="Your Courses", description="Classmates: ", color=0x00ff00)
-    #get the users object
-    user = db.users.find_one({"_id":ctx.message.author.id})
-    if ("F" in user):
-        semester = "F"
-        #get the user's fall courses
-        fallCourses = db.users.find_one({"_id":ctx.message.author.id})["F"]
-        for course in fallCourses:
-            course = db.users.find_one({"_id":ctx.message.author.id})["F"][course]
-            #get courseCode and courseName
-            courseCode = course["courseCode"]
-            courseName = course["courseName"]
-            if (UTMCourses[courseCode]['lecture']):
-                lectureSection = course["lectureSection"]
-                lectureInfo = db.courses.find_one({"_id":courseCode})[semester][lectureSection]
-                lectureClassmates = ""
-                for classmate in lectureInfo:
-                    #convert the User ID to a discord user object
-                    user = tTimeTable.get_user(classmate)
-                    lectureClassmates += f"{user.mention}\n"
-                embed.add_field(name=f"{courseCode} - {courseName}: Lecture {lectureSection}", value=lectureClassmates, inline=False)
-            if (UTMCourses[courseCode]['tutorial']):
-                tutorialSection = course["tutorialSection"]
-                tutorialInfo = db.courses.find_one({"_id":courseCode})[semester][tutorialSection]
-                tutorialClassmates = ""
-                for classmate in tutorialInfo:
-                    #convert the User ID to a discord user object
-                    user = tTimeTable.get_user(classmate)
-                    tutorialClassmates += f"{user.mention}\n"
-                embed.add_field(name=f"{courseCode} - {courseName}: Tutorial {tutorialSection}", value=tutorialClassmates, inline=False)
+    #If we're here, we know the course code is valid, and the user has the course in their profile
+    embed = nextcord.embeds.Embed(title=f"Classmates in {UTMCourses[courseCode]['courseTitle']}", description="Here are the people in your class", color=0x00ff00)
+    if ("lectureSection" in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        lectureSection = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["lectureSection"]
+        lectureClassmates = ""
+        for user in mongo.tTimeTableUniEdition.courses.find_one({"_id":courseCode})[semester][lectureSection]:
+            user = await tTimeTable.fetch_user(user)
+            lectureClassmates = lectureClassmates + user.mention + "\n"
+        lecSection = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["lectureSection"]
+        embed.add_field(name=f"Lecture Section {lecSection}", value=lectureClassmates, inline=False)
+    if ("tutorialSection" in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        tutorialSection = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["tutorialSection"]
+        tutorialClassmates = ""
+        for user in mongo.tTimeTableUniEdition.courses.find_one({"_id":courseCode})[semester][tutorialSection]:
+            user = await tTimeTable.fetch_user(user)
+            tutorialClassmates = tutorialClassmates + user.mention + "\n"
+        tutSection = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["tutorialSection"]
+        embed.add_field(name=f"Tutorial Section {tutSection}", value=tutorialClassmates, inline=False)
+    if ("practiceSection" in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        practiceSection = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["practiceSection"]
+        practiceClassmates = ""
+        for user in mongo.tTimeTableUniEdition.courses.find_one({"_id":courseCode})[semester][practiceSection]:
+            user = await tTimeTable.fetch_user(user)
+            practiceClassmates = practiceClassmates + user.mention + "\n"
+        pracSec = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]["practicalSection"]
+        embed.add_field(name=f"Practical Section Section {pracSec}", value=practiceClassmates, inline=False)
+    await interaction.response.send_message(embed=embed)
 
-            if (UTMCourses[courseCode]['practical']):
-                practicalSection = course["practicalSection"]
-                practicalInfo = db.courses.find_one({"_id":courseCode})[semester][practicalSection]
-                practicalClassmates = ""
-                for classmate in practicalInfo:
-                    #convert the User ID to a discord user object
-                    user = tTimeTable.get_user(classmate)
-                    practicalClassmates += f"{user.mention}\n"
-                embed.add_field(name=f"{courseCode} - {courseName}: Practical {practicalSection}", value=practicalClassmates, inline=False)
-            #get info about the course from courses database
-    await ctx.send(embed=embed)
-@tTimeTable.command(name="remove", help="Remove a course from your timetable")
-async def remove(ctx, courseCode, semester):
+
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name = "remove", description = "Remove a course from your profile")
+async def remove(interaction:Interaction, courseCode: Optional[str] = SlashOption(required=True, name="coursecode"), semester: Optional[str] = SlashOption(required=True, name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), objecttoremove: Optional[str] = SlashOption(required=True, name="objecttoremove", choices={"Lecture":"lec", "Tutorial":"tut", "Practical":"prac", "All":"lec_prac_tut"})):
     db = mongo.tTimeTableUniEdition
+    #check if user has courses setup
+    if (not mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})):
+        await interaction.response.send_message("You don't have any courses in your profile, use /addlecture to add a course to your profile", ephemeral=True)
+        return
     #check if courseCode is valid
-    if (not courseCode in UTMCourses):
-        await ctx.send("Invalid course code; try again")
+    courseCode = courseCode.upper()
+    if (not courseCode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
+        await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
-    if (not db.users.find_one({"_id":ctx.message.author.id}) or not semester in db.users.find_one({"_id":ctx.message.author.id}) or db.users.find_one({"_id":ctx.message.author.id})[semester] == {}):
-        await ctx.send("You don't have any courses added in your timetable")
+    #If we're here, we know the course code is at least half valid, we don't know if it has the proper ending. We need to check if it has the proper ending, and if not we need to add the correct ending
+    if (not courseCode[-2:] == "H5" and not courseCode[-2:] == "Y5"):
+        courseCode = courseCode + "H5"
+        if (not courseCode in UTMCourses):
+            courseCode = courseCode[:-2] + "Y5"
+    #Check is semester is valid for course 
+    if (not semester in UTMCourses[courseCode]["validSemesters"]):
+        await interaction.response.send_message("This course is not offered in the semester you specified", ephemeral=True)
         return
-    #check if course code obeject is in user's timetable
-    print(db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode])
-    if (not courseCode in db.users.find_one({"_id":ctx.message.author.id})[semester]):
-        await ctx.send("You don't have this course in your timetable")
+    #check if semester is in userprofile
+    if (not semester in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})):
+        await interaction.response.send_message("You don't have any courses in this semester, use /addlecture to add a course to your profile", ephemeral=True)
         return
+    #Now we know both the course and the semester are valid, we need to check if the user has the course in their profile
+    
+    if (not courseCode in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester]):
+        await interaction.response.send_message("You don't have this course in your profile, use /addlecture to add a course to your profile", ephemeral=True)
+        return
+    #If we're here we know the course is valid, and the user has the course in their profile. We also know the semester is valid for the course
+
+    #Now we need to actually remove the course from the user's profile - Check if the requested removal is valid
+    confirmButton = ConfirmDialogue()
+    await interaction.response.send_message(f"Are you sure you want to remove this course from your profile? ({courseCode} - {UTMCourses[courseCode]['courseTitle']})", view=confirmButton)   
+    await confirmButton.wait()    
+    if (not confirmButton.value):
+        await interaction.followup.send("Cancelled", ephemeral=True)
+        return
+    #If we're here, we know the user confirmed the removal - Get the course info from the user's profile
     #get tutorial, practical, and lecture sections
-    lec = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["lectureSection"]
-    if ("tutorialSection" in db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]):
-        tut = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["tutorialSection"]
-        db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+tut:ctx.message.author.id}})
-    if ("practicalSection" in db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]):
-        pra = db.users.find_one({"_id":ctx.message.author.id})[semester][courseCode]["practicalSection"]
-        db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+pra:ctx.message.author.id}})
-
-    #remove user's ID from courses database
-    db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+lec:ctx.message.author.id}})        
-    #if we're here, we can remove the course
-    db.users.update_one({"_id":ctx.message.author.id},{"$unset":{semester+"."+courseCode:None}})
-    await ctx.send(f"{UTMCourses[courseCode]['courseTitle']} has been removed from your timetable")
-
+    if ("lec" in objecttoremove):
+        lec = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["lectureSection"]
+        db.users.update_one({"_id":interaction.user.id}, {"$unset":{f"{semester}.{courseCode}.lectureSection":lec}})
+        db.courses.update_one({"_id":courseCode}, {"$pull":{f"{semester}.{lec}":interaction.user.id}})
+    #remove the user from the lecture section
+        db.courses.update_one({"_id":courseCode}, {"$pull":{semester + ".lectureSections." + lec:interaction.user.id}})
+        #remove the lecture section from the user's profile
+        db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".lectureSection":""}})
+    if ("tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and "tut" in objecttoremove):
+        tut = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["tutorialSection"]
+        db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+tut:interaction.user.id}})
+        db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".tutorialSection":""}})
+    if ("practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and "prac" in objecttoremove):
+        pra = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["practicalSection"]
+        db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+pra:interaction.user.id}})
+        db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".practicalSection":""}})
+    if (objecttoremove == "lec_prac_tut"):
+        #remove the course from the user's profile
+        db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode:""}})
+    await interaction.followup.send(f"Removed {courseCode} - {UTMCourses[courseCode]['courseTitle']} from your profile", ephemeral=True)
 #on ready
 @tTimeTable.event
 async def on_ready():
