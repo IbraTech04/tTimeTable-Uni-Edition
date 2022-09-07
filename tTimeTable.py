@@ -1,5 +1,3 @@
-from asyncio.windows_events import CONNECT_PIPE_INIT_DELAY
-from code import interact
 from typing import Optional
 import nextcord 
 from nextcord.ext import commands
@@ -21,9 +19,7 @@ tTimeTable = commands.Bot(intents = intents, command_prefix='tmt',activity = nex
 
 UTMCourses = json.load(open("UTMCourses.json"))
 
-print(len(UTMCourses))
-
-def validateCourse(courseCode, semester, activityCode, activityPrefix, activityType, thing = False):
+def validateCourse(courseCode, semester, activityCode, activityPrefix, activityType, courseCodeOnly = False):
     """
     Method which takes a course code and a semester, and validates both the coursecode and the semester within the course
     :param courseCode: The course code
@@ -40,7 +36,7 @@ def validateCourse(courseCode, semester, activityCode, activityPrefix, activityT
     course = UTMCourses[courseCode]
     if (semester not in course["validSemesters"]):
         raise SemesterNotValidForCourseException(semester + " is not a valid semester for " + courseCode)
-    if (thing):
+    if (courseCodeOnly):
         return courseCode
     if (len(activityCode) < 4 or (activityCode.isdigit() and len(activityCode) > 4)):
         raise ActivityNotFoundException(activityCode + " is not a valid activity code")
@@ -58,6 +54,14 @@ def validateCourse(courseCode, semester, activityCode, activityPrefix, activityT
     return [courseCode, activityCode]
 
 def initDatabase(interaction: Interaction, courseCode, semester, activity):
+    """
+    Method which initializes the database for a user - Ensuring the database environment is ready and setup for adding the user's courses 
+    This method assumes validateCourse has already been called
+    :param interaction: The interaction object
+    :param courseCode: The course code
+    :param semester: The semester
+    :param activity: The activity (tutorial, lecture, etc)
+    """
     db = mongo.tTimeTableUniEdition
     if (db.courses.find_one({"_id": courseCode}) == None):
         #add courseCode to database
@@ -75,6 +79,7 @@ def initDatabase(interaction: Interaction, courseCode, semester, activity):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{}}})       
     if (semester not in db.courses.find_one({"_id": courseCode})): #Add semester to database
         db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
+        
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
 async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
     """
@@ -222,7 +227,9 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
         return
     #If we're here, we know the course code is valid, and the user has the course in their profile
     embed = nextcord.embeds.Embed(title=f"Classmates in {UTMCourses[courseCode]['courseTitle']}", description="Here are the people in your class", color=0x00ff00)
-    for i in ["lectureSection", "tutorialSection", "practicalSection"]:
+    embedPhrase = ["Lecture: ", "Tutorial: ", "Practical: "]
+    loopPhrase = ["lectureSection", "tutorialSection", "practicalSection"]
+    for i in loopPhrase:
         if (i in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
             section = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode][i]
             classmates = ""
@@ -240,7 +247,7 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
             section = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode][i]
             if (classmates == ""):
                 continue
-            embed.add_field(name=f"{i} {section}", value=classmates, inline=False)
+            embed.add_field(name=f"{embedPhrase[loopPhrase.index(i)]} {section}", value=classmates, inline=False)
     #check if embed is empty - how many fields does it have?
     if (len(embed.fields) == 0):
         await interaction.response.send_message("You don't have any classmates in this course :(", ephemeral=True)
