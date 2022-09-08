@@ -79,7 +79,10 @@ def initDatabase(interaction: Interaction, courseCode, semester, activity):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester:{}}})       
     if (semester not in db.courses.find_one({"_id": courseCode})): #Add semester to database
         db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
-        
+    if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
 async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
     """
@@ -111,10 +114,6 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
     initDatabase(interaction, courseCode, semester, tutorialsection)
     #Now we can interact with our database
     #Step one: Check if the user has a profile
-    if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
     if (not "tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"tutorialSection":tutorialsection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+tutorialsection:interaction.user.id}})
@@ -151,10 +150,6 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
         await interaction.response.send_message("This course does not have a practical", ephemeral=True)
         return
     initDatabase(interaction, courseCode, semester, practicalSection)
-    if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
     if (not "practicalSession" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"practicalSession":practicalSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+practicalSection:interaction.user.id}})
@@ -191,10 +186,6 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         await interaction.response.send_message("This course does not have a lecture? This is probably a mistake - Please contact my owner", ephemeral=True)
         return
     initDatabase(interaction, courseCode, semester, lectureSection)
-    if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
     if (not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"lectureSection":lectureSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+lectureSection:interaction.user.id}})
