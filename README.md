@@ -18,7 +18,7 @@ The golden key to this puzzle. This website houses all the relevent course infor
 
 Under the network tab... there it was. "getPageableCourses". The request used to fetch live course information for the website.  Ecstatic, I copied the header information to analyze it. And there it was... The `pageSize` parameter. After messing with it's value, I confirmed that I had found the right paramter.
 
-I copied the cURL and converted it into a Python request. I changed the `pageSize` paramter to 1667 (The number of courses offered this year at UTM) and sent the request. When I got the respnonse... Let's just say I can see why it was initially set to 10. After dumping the JSON to a file, I was greeted with a 50mb JSON file with almost a million lines! While definately overkill for this project, I was happy to have found a solution.
+I copied the cURL and converted it into a Python request. I changed the `pageSize` paramter to 1667 (The number of courses offered this year at UTM) and sent the request. When I got the respnonse... Let's just say I can see why it was initially set to 10. After dumping the request to a JSON file, I was greeted with a 50mb JSON file with almost a million lines! While definately overkill for this project, I was happy to have found a solution.
 
 From there, I wrote a simple script to parse the new JSON file, extract the necissary data out of it, and insert it into the existing JSON. Then it was as simple as updating the code and bam! The bot was working with the new JSON file.
 
