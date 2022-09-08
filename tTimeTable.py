@@ -255,9 +255,6 @@ async def remove(interaction:Interaction, courseCode: Optional[str] = SlashOptio
     :param semester: The semester of the course to remove
     :param objecttoremove: The object to remove
     :return: None
-    
-    FIXME - This command is partially broken, and is not really tested
-    BUG - Command doesn't check if the activity exists in the user's profile before removing it. The way it's structured right now: It will send a success message even if the user doesn't have the activity in their profile. It wont crash or do anything bad, but it will send a success message even if the user doesn't have the activity in their profile
     """
     db = mongo.tTimeTableUniEdition
     #check if user has courses setup
