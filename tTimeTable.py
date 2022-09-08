@@ -88,6 +88,13 @@ def initDatabase(interaction: Interaction, courseCode, semester, activity):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
 
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtimetable", description = "Import all your courses at once using an Acorn HTML file")
+async def addtimetable(interaction: Interaction, htmlfile: Optional[Attachment] = SlashOption(required=True)):
+    #Check if the file is an HTML file
+    if (not htmlfile.filename.endswith(".html")):
+        await interaction.response.send_message("Please upload an HTML file", ephemeral=True)
+        return
+    #Check if the file is an Acorn HTML file
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
 async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
     """
