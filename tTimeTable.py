@@ -83,6 +83,7 @@ def initDatabase(interaction: Interaction, courseCode, semester, activity):
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
+
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "addtutorial", description = "Add a tutorial to your timetable")
 async def addtutorial(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}), tutorialsection: Optional[str] = SlashOption(required=True)):
     """
@@ -150,8 +151,8 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
         await interaction.response.send_message("This course does not have a practical", ephemeral=True)
         return
     initDatabase(interaction, courseCode, semester, practicalSection)
-    if (not "practicalSession" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
-        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"practicalSession":practicalSection}}, upsert=True)
+    if (not "practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"practicalSection":practicalSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+practicalSection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
         return
@@ -297,25 +298,33 @@ async def remove(interaction:Interaction, courseCode: Optional[str] = SlashOptio
         return
     #If we're here, we know the user confirmed the removal - Get the course info from the user's profile
     #get tutorial, practical, and lecture sections
+    removed = False
     if ("lec" in objecttoremove and "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         lec = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["lectureSection"]
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{f"{semester}.{courseCode}.lectureSection":lec}})
         db.courses.update_one({"_id":courseCode}, {"$pull":{f"{semester}.{lec}":interaction.user.id}})
+        removed = True
     #remove the user from the lecture section
         db.courses.update_one({"_id":courseCode}, {"$pull":{semester + ".lectureSections." + lec:interaction.user.id}})
         #remove the lecture section from the user's profile
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".lectureSection":""}})
     if ("tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and "tut" in objecttoremove):
+        removed = True
         tut = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["tutorialSection"]
         db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+tut:interaction.user.id}})
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".tutorialSection":""}})
     if ("practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and "prac" in objecttoremove):
+        removed = True
         pra = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["practicalSection"]
         db.courses.update_one({"_id":courseCode},{"$pull":{semester+"."+pra:interaction.user.id}})
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode + ".practicalSection":""}})
-    if (objecttoremove == "lec_prac_tut" or (not "tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and not "practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode])):
+    if (objecttoremove == "lec_prac_tut" or (not "tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode] and not "practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]) and not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         #remove the course from the user's profile
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode:""}})
+        removed = True
+    if (not removed):
+        await interaction.followup.send("You don't have this sections in this course", ephemeral=True)
+        return
     await interaction.followup.send(f"Removed {courseCode} - {UTMCourses[courseCode]['courseTitle']} from your profile", ephemeral=True)
 #on ready
 @tTimeTable.event
