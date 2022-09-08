@@ -26,32 +26,35 @@ def validateCourse(courseCode, semester, activityCode, activityPrefix, activityT
     :param semester: The semester
     :return: The coursecode of the valid course
     """
+    #Check if course code exists in any way shape or form
     if (not courseCode in UTMCourses and not courseCode + "H5" in UTMCourses and not courseCode + "Y5" in UTMCourses):
         raise CourseNotFoundException(courseCode + " not found")
-    
+    #Add the necissary H5 or Y5 to the course code
     if (not courseCode[-2:] == "H5" and not courseCode[-2:] == "Y5"):
         courseCode = courseCode + "H5"
         if (not courseCode in UTMCourses):
             courseCode = courseCode[:-2] + "Y5"
-    course = UTMCourses[courseCode]
-    if (semester not in course["validSemesters"]):
+    course = UTMCourses[courseCode] #Getting course info from JSON
+    if (semester not in course["validSemesters"]):  #Is the semester provided valid for the course: i.e is the course offered in the semester
         raise SemesterNotValidForCourseException(semester + " is not a valid semester for " + courseCode)
-    if (courseCodeOnly):
+    if (courseCodeOnly): #If we only want to validate the course code, we return the course code
         return courseCode
-    if (len(activityCode) < 4 or (activityCode.isdigit() and len(activityCode) > 4)):
+    #In order for an activity code to be valid, it must follow the format of "XXXYYYY" where XXX are letters and YYYY are numbers - XXX is one of LEC, TUT, PRA
+    if (len(activityCode) < 4 or (activityCode.isdigit() and len(activityCode) > 4)): #If the activity code is not 4 digits, it is invalid
+        #If the activity code is less than four characters, or it's only made of numbers and hss more than 4 characters, it's invalid
         raise ActivityNotFoundException(activityCode + " is not a valid activity code")
-    if (not activityCode[:3] == activityPrefix):
+    if (not activityCode[:3] == activityPrefix): #If the activity code does not start with the activity prefix (LEC, PRA, TUT), add it
         activityCode = activityPrefix + activityCode
-    if (not activityCode[4:].isdigit()):
+    if (not activityCode[4:].isdigit()): #if the last four digits of the activity code are not numbers, it's invalid
         raise ActivityNotFoundException(activityCode + " is not a valid activity code")
 
-    if (not UTMCourses[courseCode][activityType]):
+    if (not UTMCourses[courseCode][activityType]): #Check if the course has any activities of the type specified
         raise ActivityNotValidForCourseException(activityType + " is not a valid activity for " + courseCode)
 
-    #At this point we know the formatting is correct - now we need to check if the tutorial section is valid
-    if (not activityCode in course["sections"]):
+    #At this point we know the formatting is correct - now we need to check if the activity section is valid
+    if (not activityCode in course["sections"]): #Check if the session code is valid for that course
         raise ActivityNotFoundException(activityCode + " is not a valid activity code for this course")
-    return [courseCode, activityCode]
+    return [courseCode, activityCode] ##If we get to this point, the course code and activity code are valid - return them
 
 def initDatabase(interaction: Interaction, courseCode, semester, activity):
     """
@@ -80,6 +83,7 @@ def initDatabase(interaction: Interaction, courseCode, semester, activity):
     if (semester not in db.courses.find_one({"_id": courseCode})): #Add semester to database
         db.courses.update_one({"_id": courseCode}, {"$set": {semester: {}}})
     if (not courseCode in db.users.find_one({"_id":interaction.user.id})[semester]):
+        #Setup user profile for the course
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester + "." +courseCode:{}}}, upsert=True)
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseCode":courseCode}})
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+".courseName":UTMCourses[courseCode]["courseTitle"]}})
@@ -100,7 +104,7 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
     tutorialsection = tutorialsection.upper()
     try:
         courseCode, tutorialsection = validateCourse(courseCode, semester, tutorialsection, "TUT", "tutorial")
-    except CourseNotFoundException:
+    except CourseNotFoundException: 
         await interaction.response.send_message("Invalid course code, check your spelling and try again", ephemeral=True)
         return
     except SemesterNotValidForCourseException:
@@ -113,9 +117,8 @@ async def addtutorial(interaction: Interaction, coursecode: Optional[str] = Slas
         await interaction.response.send_message("This course does not have a tutorial", ephemeral=True)
         return
     initDatabase(interaction, courseCode, semester, tutorialsection)
-    #Now we can interact with our database
-    #Step one: Check if the user has a profile
     if (not "tutorialSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        #Add the tutorial section to the user's profile
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"tutorialSection":tutorialsection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+tutorialsection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
@@ -152,6 +155,7 @@ async def addpractical(interaction: Interaction, coursecode: Optional[str] = Sla
         return
     initDatabase(interaction, courseCode, semester, practicalSection)
     if (not "practicalSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        #Add the practical to the user's profile
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"practicalSection":practicalSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+practicalSection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
@@ -188,6 +192,7 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
         return
     initDatabase(interaction, courseCode, semester, lectureSection)
     if (not "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+        #Add the lecture to the user's profile
         db.users.update_one({"_id":interaction.user.id},{"$set":{semester+"."+courseCode+"."+"lectureSection":lectureSection}}, upsert=True)
         db.courses.update_one({"_id":courseCode},{"$push":{semester+"."+lectureSection:interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[courseCode]['courseTitle']} Added!")
@@ -196,6 +201,12 @@ async def addlecture(interaction: Interaction, coursecode: Optional[str] = Slash
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name = "viewclassmates", description = "See who else is in your class!")
 async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True, description="The course you'd like to view classmates in. Optional: Leave blank to search all courses", name="coursecode"), semester: str= SlashOption(name="semester", choices={"F":"F", "S": "S", "Y":"Y"}, description="The semester you'd like to view classmates in. Optional: Leave blank to search all semesters", required=True)):
+    """
+    Command which allows the user to view the classmates in a course
+    :param interaction: Interaction object
+    :param coursecode: Course code of the course to be added
+    :param semester: Semester of the course to be added
+    """
     #Step One: Check if user has a profile
     if (not mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})):
         await interaction.response.send_message("You don't have a profile, use /addlecture to add a course to your profile", ephemeral=True)
@@ -219,10 +230,10 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
         return
     #If we're here, we know the course code is valid, and the user has the course in their profile
     embed = nextcord.embeds.Embed(title=f"Classmates in {UTMCourses[courseCode]['courseTitle']}", description="Here are the people in your class", color=0x00ff00)
-    embedPhrase = ["Lecture: ", "Tutorial: ", "Practical: "]
+    embedPhrase = ["Lecture: ", "Tutorial: ", "Practical: "] 
     loopPhrase = ["lectureSection", "tutorialSection", "practicalSection"]
-    for i in loopPhrase:
-        if (i in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
+    for i in loopPhrase: #Loop through lecture, tutorial, practical
+        if (i in mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode]): #If the user has that activity in their profile, get their classmates and add it to the embed
             section = mongo.tTimeTableUniEdition.users.find_one({"_id":interaction.user.id})[semester][courseCode][i]
             classmates = ""
             for user in mongo.tTimeTableUniEdition.courses.find_one({"_id":courseCode})[semester][section]:
@@ -295,7 +306,7 @@ async def remove(interaction:Interaction, courseCode: Optional[str] = SlashOptio
         return
     #If we're here, we know the user confirmed the removal - Get the course info from the user's profile
     #get tutorial, practical, and lecture sections
-    removed = False
+    removed = False #This will tell us if we actually removed anything
     if ("lec" in objecttoremove and "lectureSection" in db.users.find_one({"_id":interaction.user.id})[semester][courseCode]):
         lec = db.users.find_one({"_id":interaction.user.id})[semester][courseCode]["lectureSection"]
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{f"{semester}.{courseCode}.lectureSection":lec}})
@@ -319,7 +330,7 @@ async def remove(interaction:Interaction, courseCode: Optional[str] = SlashOptio
         #remove the course from the user's profile
         db.users.update_one({"_id":interaction.user.id}, {"$unset":{semester + "." + courseCode:""}})
         removed = True
-    if (not removed):
+    if (not removed): #If we didn't remove anything, then the user didn't have it in their timetable
         await interaction.followup.send("You don't have this sections in this course", ephemeral=True)
         return
     await interaction.followup.send(f"Removed {courseCode} - {UTMCourses[courseCode]['courseTitle']} from your profile", ephemeral=True)
