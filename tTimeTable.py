@@ -485,10 +485,10 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
         # remove the course from the user's profile
         db.users.update_one({"_id": interaction.user.id}, {"$unset": {semester + "." + course_code: ""}})
         removed = True
-    if (not removed): #If we didn't remove anything, then the user didn't have it in their timetable
+    if not removed: #If we didn't remove anything, then the user didn't have it in their timetable
         await interaction.followup.send("You don't have this sections in this course", ephemeral=True)
         return
-    await interaction.followup.send(f"Removed {courseCode} - {UTMCourses[courseCode]['courseTitle']} from your profile", ephemeral=True)
+    await interaction.followup.send(f"Removed {course_code} - {UTMCourses[course_code]['courseTitle']} from your profile", ephemeral=True)
 #on ready
 @tTimeTable.event
 async def on_ready():
