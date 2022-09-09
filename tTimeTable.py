@@ -133,10 +133,12 @@ async def add_timetable(interaction: Interaction, html_file: Optional[Attachment
                 # get all the columns in the row
                 cols = row.find_all('td')
                 # iterate through the columns
-                for col in cols:
-                    # get the text in the column
-                    text = col.get_text()
-                    print(fix_array(text.splitlines()))
+                for i in range(0, len(cols)):
+                    if i % 2 != 0:
+                        continue
+                    course_info = (cols[i].get_text())
+                    activity_info = fix_array(cols[i+1].get_text())
+                    course_info = course_info[0].split(" ")
         except:
             await interaction.response.send_message("Invalid HTML file - try again", ephemeral=True)
         finally:
