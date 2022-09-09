@@ -10,7 +10,8 @@ from nextcord import Attachment  # Tentative import - going be used later (ACORN
 from dotenv import load_dotenv
 from Buttons import ConfirmDialogue
 from Errors import *
-
+from bs4 import BeautifulSoup
+import ics # Importing the ics library for parsing the ACORN calendar
 load_dotenv(dotenv_path="tTimeTableTokens.env")
 
 mongo = MongoClient(os.getenv('DATABASE_CREDS'))
@@ -108,15 +109,44 @@ def init_database(interaction: Interaction, course_code, semester, activity):
             "$set": {semester + "." + course_code + ".courseName": UTMCourses[course_code]["courseTitle"]}})
 
 
+def fix_array(arr):
+    return [x.strip() for x in arr if x.strip() != '']
+
+
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="addtimetable",
                           description="Import all your courses at once using an Acorn HTML file")
 async def add_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True)):
     # Check if the file is an HTML file
-    if not html_file.filename.endswith(".html"):
-        await interaction.response.send_message("Please upload an HTML file", ephemeral=True)
+    if html_file.filename.endswith(".html"):
+        # Save file to disk
+        await html_file.save(str(interaction.user.id) + ".html")
+        # Check if the file is an Acorn HTML file
+        site = BeautifulSoup(open(str(interaction.user.id) + ".html", 'r'), 'html.parser')
+        try:
+            div = site.find('div', class_='program-course-info')
+            # get the table with the class called course-meeting
+            table = div.find('table', class_='course-meeting')
+            # get all the rows in the table
+            rows = table.find_all('tr')
+            # iterate through the rows
+            for row in rows:
+                # get all the columns in the row
+                cols = row.find_all('td')
+                # iterate through the columns
+                for col in cols:
+                    # get the text in the column
+                    text = col.get_text()
+                    print(fix_array(text.splitlines()))
+        except:
+            await interaction.response.send_message("Invalid HTML file - try again", ephemeral=True)
+        finally:
+            # Delete the file
+            os.remove(str(interaction.user.id) + ".html")
         return
-    # Check if the file is an Acorn HTML file
-
+    if (html_file.filename.endswith(".ics")):
+        await interaction.response.send_message("ICS files are not supported yet. Stay tuned!", ephemeral=True)
+        return
+    await interaction.response.send_message("Invalid file type - try again", ephemeral=True)
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="addtutorial",
                           description="Add a tutorial to your timetable")
