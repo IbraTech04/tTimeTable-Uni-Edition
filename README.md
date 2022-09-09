@@ -35,5 +35,5 @@ Adds a practical to a user's profile
 ### /remove {courseCode} {semester} {activity}
 Removes an activity from a user's profile
 
-### viewClassmates {courseCode} {semester} 
+### /viewClassmates {courseCode} {semester} 
 Replies with an embed containing the classmates in the specified course
