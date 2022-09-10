@@ -11,7 +11,10 @@ from dotenv import load_dotenv
 from Buttons import ConfirmDialogue
 from Errors import *
 from bs4 import BeautifulSoup
-import ics # Importing the ics library for parsing the ACORN calendar
+import ics
+import datetime
+import pytz
+
 load_dotenv(dotenv_path="tTimeTableTokens.env")
 
 mongo = MongoClient(os.getenv('DATABASE_CREDS'))
@@ -120,7 +123,7 @@ def fix_array(arr):
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="addtimetable",
                           description="Import all your courses at once using an Acorn HTML file")
-async def add_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True)):
+async def add_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True, description="The file you exported from Acorn - ICS and HTML files accepted", name="acorn_file")):
     # Check if the file is an HTML file
     database_names = {"TUT": "tutorialSection", "LEC": "lectureSection", "PRA": "practicalSection"}
     if html_file.filename.endswith(".html"):
@@ -136,7 +139,6 @@ async def add_timetable(interaction: Interaction, html_file: Optional[Attachment
             # get all the rows in the table
             rows = table.find_all('tr')
             # iterate through the rows
-            courses = {}
             for row in rows:
                 # get all the columns in the row
                 cols = row.find_all('td')
@@ -171,7 +173,34 @@ async def add_timetable(interaction: Interaction, html_file: Optional[Attachment
             os.remove(str(interaction.user.id) + ".html")
         return
     if html_file.filename.endswith(".ics"):
-        await interaction.response.send_message("ICS files are not supported yet. Stay tuned!", ephemeral=True)
+        db = mongo.tTimeTableUniEdition
+        await html_file.save(str(interaction.user.id) + ".ics")
+        #delay interaction response
+        await interaction.response.defer()
+        utc = pytz.UTC
+
+        # import calendarTest.ics
+
+        c = ics.Calendar(open(str(interaction.user.id) + ".ics", 'r').read())
+
+        for event in c.events:
+            course_code = event.name.split(" ")[0]
+            activity_code = event.name.split(" ")[1]
+            if event.begin > datetime.datetime(2023, 1, 9, 0, 0, 0, 0, utc):
+                course_semester = "S"
+            else:
+                course_semester = "F"
+            init_database(interaction, course_code, course_semester, activity_code)
+
+            print(event.name)
+            if database_names[activity_code[:3]] not in db.users.find_one({"_id": interaction.user.id})[course_semester][course_code]:
+                # Add the code's section to the user's profile
+                db.users.update_one({"_id": interaction.user.id},
+                                    {"$set": {course_semester + "." + course_code + "." + database_names[activity_code[:3]]: activity_code}},
+                                    upsert=True)
+                db.courses.update_one({"_id": course_code},
+                                      {"$push": {course_semester + "." + activity_code: interaction.user.id}})
+        await interaction.followup.send("Successfully added courses to your profile!", ephemeral=True)
         return
     await interaction.response.send_message("Invalid file type - try again", ephemeral=True)
 

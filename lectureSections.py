@@ -39,21 +39,22 @@ json_data = {
     'dayPreferences': [],
     'timePreferences': [],
     'divisions': [
-        'ERIN',
-    ],
+            "APSC",
+          ],
     'creditWeights': [],
     'page': 1,
     'pageSize': 2000,
     'direction': 'asc',
 }
-"""response = requests.post('https://api.easi.utoronto.ca/ttb/getPageableCourses', headers=headers, json=json_data)
+"""
+response = requests.post('https://api.easi.utoronto.ca/ttb/getPageableCourses', headers=headers, json=json_data)
 #save to json
 response = response.json()
 with open('response.json', 'w') as f:
-    json.dump(response, f, indent=4)"""
+    json.dump(response, f, indent=4)
+"""
 
-
-response = json.load(open('lectureSections.json'))
+response = json.load(open('response.json'))
 
 courses = response['payload']['pageableCourse']
 UTMCourses = json.load(open('UTMCourses.json', 'r'))
@@ -96,4 +97,4 @@ for course in courses['courses']:
 #save new json
 with open('UTMCourses.json', 'w') as f:
     json.dump(UTMCourses, f, indent=2)
-    
+
