@@ -110,25 +110,33 @@ def init_database(interaction: Interaction, course_code, semester, activity):
 
 
 def fix_array(arr):
-    return [x.strip() for x in arr if x.strip() != '']
+    arr = [x.strip() for x in arr if x.strip() != '']
+    #Remove any entry in the array with a bracket
+    arr = [x for x in arr if not x.startswith('(')]
+    #replace spaces in each entry with a dash
+    arr = [x.replace(' ', '') for x in arr]
+    return arr
 
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="addtimetable",
                           description="Import all your courses at once using an Acorn HTML file")
 async def add_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True)):
     # Check if the file is an HTML file
+    database_names = {"TUT": "tutorialSection", "LEC": "lectureSection", "PRA": "practicalSection"}
     if html_file.filename.endswith(".html"):
         # Save file to disk
         await html_file.save(str(interaction.user.id) + ".html")
         # Check if the file is an Acorn HTML file
         site = BeautifulSoup(open(str(interaction.user.id) + ".html", 'r'), 'html.parser')
         try:
+            db = mongo.tTimeTableUniEdition
             div = site.find('div', class_='program-course-info')
             # get the table with the class called course-meeting
             table = div.find('table', class_='course-meeting')
             # get all the rows in the table
             rows = table.find_all('tr')
             # iterate through the rows
+            courses = {}
             for row in rows:
                 # get all the columns in the row
                 cols = row.find_all('td')
@@ -136,16 +144,33 @@ async def add_timetable(interaction: Interaction, html_file: Optional[Attachment
                 for i in range(0, len(cols)):
                     if i % 2 != 0:
                         continue
-                    course_info = (cols[i].get_text())
-                    activity_info = fix_array(cols[i+1].get_text())
-                    course_info = course_info[0].split(" ")
-        except:
+                    course_info = (cols[i].get_text()).lstrip().rstrip()
+                    course_code = course_info.split(" ")[0]
+                    course_semester = course_info.split(" ")[1]
+                    course_activities = cols[i + 1].get_text().split("\n")
+                    course_codes = fix_array(course_activities)
+                    for code in course_codes:
+                        init_database(interaction, course_code, course_semester, code)
+                        if database_names[code[:3]] not in db.users.find_one({"_id": interaction.user.id})[course_semester][course_code]:
+                            # Add the code's section to the user's profile
+                            db.users.update_one({"_id": interaction.user.id},
+                                                {"$set": {course_semester + "." + course_code + "." + database_names[code[:3]]: code}},
+                                                upsert=True)
+                            db.courses.update_one({"_id": course_code},
+                                                  {"$push": {course_semester + "." + code: interaction.user.id}})
+            await interaction.response.send_message("Successfully added courses to your profile!", ephemeral=True)
+        except AttributeError:
             await interaction.response.send_message("Invalid HTML file - try again", ephemeral=True)
+        except Exception:
+            await interaction.response.send_message("Something went wrong - try again. This bug has automatically been reported to my owner", ephemeral=True)
+            file = nextcord.File(str(interaction.user.id) + ".html")
+            channel = tTimeTable.get_channel(1017951473629401088)
+            await channel.send("Ibra! I encountered an error with tihs file. Please investigate", file=file)
         finally:
             # Delete the file
             os.remove(str(interaction.user.id) + ".html")
         return
-    if (html_file.filename.endswith(".ics")):
+    if html_file.filename.endswith(".ics"):
         await interaction.response.send_message("ICS files are not supported yet. Stay tuned!", ephemeral=True)
         return
     await interaction.response.send_message("Invalid file type - try again", ephemeral=True)
