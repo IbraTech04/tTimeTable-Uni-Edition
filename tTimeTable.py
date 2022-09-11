@@ -176,59 +176,65 @@ async def add_timetable(interaction: Interaction, html_file: Optional[Attachment
             os.remove(str(interaction.user.id) + ".html")
         return
     if html_file.filename.endswith(".ics"):
-        db = mongo.tTimeTableUniEdition
-        await html_file.save(str(interaction.user.id) + ".ics")
-        # delay interaction response
-        await interaction.response.defer()
-        utc = pytz.UTC
+        try:
+            db = mongo.tTimeTableUniEdition
+            await html_file.save(str(interaction.user.id) + ".ics")
+            # delay interaction response
+            await interaction.response.defer()
+            utc = pytz.UTC
 
-        # import calendarTest.ics
+            c = ics.Calendar(open(str(interaction.user.id) + ".ics", 'r').read())
 
-        c = ics.Calendar(open(str(interaction.user.id) + ".ics", 'r').read())
+            for event in c.events:
+                course_code = event.name.split(" ")[0]
+                activity_code = event.name.split(" ")[1]
+                if event.begin > datetime.datetime(2023, 1, 9, 0, 0, 0, 0, utc):
+                    course_semester = "S"
+                else:
+                    course_semester = "F"
+                init_database(interaction, course_code, course_semester, activity_code)
 
-        for event in c.events:
-            course_code = event.name.split(" ")[0]
-            activity_code = event.name.split(" ")[1]
-            if event.begin > datetime.datetime(2023, 1, 9, 0, 0, 0, 0, utc):
-                course_semester = "S"
-            else:
-                course_semester = "F"
-            init_database(interaction, course_code, course_semester, activity_code)
-
-            print(event.name)
-            if database_names[activity_code[:3]] not in db.users.find_one({"_id": interaction.user.id})[course_semester][course_code]:
-                # Add the code's section to the user's profile
-                db.users.update_one({"_id": interaction.user.id},
-                                    {"$set": {course_semester + "." + course_code + "." + database_names[activity_code[:3]]: activity_code}},
-                                    upsert=True)
-                db.courses.update_one({"_id": course_code},
-                                      {"$push": {course_semester + "." + activity_code: interaction.user.id}})
-        await interaction.followup.send("Successfully added courses to your profile!", ephemeral=True)
-        return
+                print(event.name)
+                if database_names[activity_code[:3]] not in db.users.find_one({"_id": interaction.user.id})[course_semester][course_code]:
+                    # Add the code's section to the user's profile
+                    db.users.update_one({"_id": interaction.user.id},
+                                        {"$set": {course_semester + "." + course_code + "." + database_names[activity_code[:3]]: activity_code}},
+                                        upsert=True)
+                    db.courses.update_one({"_id": course_code},
+                                          {"$push": {course_semester + "." + activity_code: interaction.user.id}})
+            await interaction.followup.send("Successfully added courses to your profile!", ephemeral=True)
+        except Exception:
+            await interaction.followup.send("Something went wrong. This is likely due to an invalid file")
+        finally:
+            os.remove(str(interaction.user.id) + ".ics")
+            return
     await interaction.response.send_message("Invalid file type - try again", ephemeral=True)
 
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="addactivity",
                           description="Add an activity to your timetable")
-async def addactivity(interaction: Interaction, coursecode: str = SlashOption(required=True),
-                      semester: str = SlashOption(name="semester", choices={"F": "F", "S": "S", "Y": "Y"}),
-                      activity_section: str = SlashOption(required=True)):
+async def add_activity(interaction: Interaction, coursecode: str = SlashOption(required=True, description="The course code of the activity you want to add", name="course_code"),
+                       semester: str = SlashOption(name="semester", choices={"F": "F", "S": "S", "Y": "Y"}, description="The semester of the activity you want to add", required=True),
+                       activity_type: str = SlashOption(name="activity_type", choices={"LEC": "lecture", "TUT": "tutorial", "PRA": "practical"}, description="The type of activity you want to add", required=True),
+                       activity_section: str = SlashOption(required=True, description="The section of the activity you want to add", name="activity_section")):
     """
-    Command which adds a lecture to a user's profile, and creates a user profile if one does not exist
+    Command which adds an activity (lecture, tutorial, practical) to a user's profile, and creates a user profile if one
+    does not exist
     :param interaction: Interaction object
     :param coursecode: Course code of the course to be added
     :param semester: Semester of the course to be added
+    :param activity_type: Type of activity to be added
     :param activity_section: Tutorial section of the course to be added
     """
+    activities = {"lecture": "LEC", "tutorial": "TUT", "practical": "PRA"}
     db = mongo.tTimeTableUniEdition
     # These are checks to make sure the inputted info is valid
     # Step One: Check if the course code is valid - check if it is in the json file
     course_code = coursecode.upper()
     activity_section = activity_section.upper()
-    activity_types = {"TUT": "tutorial", "LEC": "lecture", "PRA": "practical"}
     try:
         course_code, activity_section = validate_course(course_code, semester, activity_section,
-                                                        course_code[:3], activity_types[course_code[:3]])
+                                                        activities[activity_type], activity_type)
     except CourseNotFoundException:
         await interaction.response.send_message("Invalid course code, check your spelling and try again",
                                                 ephemeral=True)
@@ -244,15 +250,15 @@ async def addactivity(interaction: Interaction, coursecode: str = SlashOption(re
                                                 ephemeral=True)
         return
     except ActivityNotValidForCourseException:
-        await interaction.response.send_message(f"This course does not have a {activity_types[course_code[:3]]} section"
+        await interaction.response.send_message(f"This course does not have a {activity_type} section"
                                                 , ephemeral=True)
         return
     init_database(interaction, course_code, semester, activity_section)
-    if f"{activity_types[course_code[:3]]}Section" not in db.users.find_one(
+    if f"{activity_type}Section" not in db.users.find_one(
             {"_id": interaction.user.id})[semester][course_code]:
         # Add the tutorial section to the user's profile
         db.users.update_one({"_id": interaction.user.id},
-                            {"$set": {semester + "." + course_code + "." + f"{activity_types[course_code[:3]]}Section":
+                            {"$set": {semester + "." + course_code + "." + f"{activity_type}Section":
                                       activity_section}}, upsert=True)
         db.courses.update_one({"_id": course_code}, {"$push": {semester + "." + activity_section: interaction.user.id}})
         await interaction.response.send_message(f"{UTMCourses[course_code]['courseTitle']} Added!")
@@ -416,7 +422,7 @@ async def addactivity(interaction: Interaction, coursecode: str = SlashOption(re
 
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="viewclassmates",
                           description="See who else is in your class!")
-async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = SlashOption(required=True,
+async def viewclassmates(interaction: Interaction, course_code: Optional[str] = SlashOption(required=True,
                                                                                            description="Course you'd"
                                                                                                        "like to view "
                                                                                                        "classmates in",
@@ -434,18 +440,17 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
     # Step One: Check if user has a profile
     if not mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have a profile, use /addlecture to add a course to your profile", ephemeral=True)
+            "You don't have a profile, use /addactivity to add a course to your profile", ephemeral=True)
         return
     # Step Two: Check if the user has the semester in their profile
     if semester not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in this semester, use /addlecture to add a course to your profile",
+            "You don't have any courses in this semester, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # Step Three: Validate coursecode
-    course_code = coursecode.upper()
     try:
-        course_code = validate_course(course_code, semester, "", "", "lecture", True)
+        course_code = validate_course(course_code.upper(), semester, "", "", "lecture", True)
     except CourseNotFoundException:
         await interaction.response.send_message("Invalid course code, check your spelling and try again",
                                                 ephemeral=True)
@@ -458,7 +463,7 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
     # check if user has course in their profile
     if course_code not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id})[semester]:
         await interaction.response.send_message(
-            "You don't have this course in your profile, use /addlecture to add a course to your profile",
+            "You don't have this course in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # If we're here, we know the course code is valid, and the user has the course in their profile
@@ -514,7 +519,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
     # check if user has courses setup
     if not mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in your profile, use /addlecture to add a course to your profile",
+            "You don't have any courses in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # check if courseCode is valid
@@ -538,7 +543,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
     # check if semester is in userprofile
     if semester not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in this semester, use /addlecture to add a course to your profile",
+            "You don't have any courses in this semester, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # Now we know both the course and the semester are valid, we need to check
@@ -546,7 +551,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
 
     if course_code not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id})[semester]:
         await interaction.response.send_message(
-            "You don't have this course in your profile, use /addlecture to add a course to your profile",
+            "You don't have this course in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # If we're here we know the course is valid, and the user has the
@@ -987,12 +992,12 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
     # Step One: Check if user has a profile
     if not mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have a profile, use /addlecture to add a course to your profile", ephemeral=True)
+            "You don't have a profile, use /addactivity to add a course to your profile", ephemeral=True)
         return
     # Step Two: Check if the user has the semester in their profile
     if semester not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in this semester, use /addlecture to add a course to your profile",
+            "You don't have any courses in this semester, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # Step Three: Validate coursecode
@@ -1011,7 +1016,7 @@ async def viewclassmates(interaction: Interaction, coursecode: Optional[str] = S
     # check if user has course in their profile
     if course_code not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id})[semester]:
         await interaction.response.send_message(
-            "You don't have this course in your profile, use /addlecture to add a course to your profile",
+            "You don't have this course in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # If we're here, we know the course code is valid, and the user has the course in their profile
@@ -1067,7 +1072,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
     # check if user has courses setup
     if not mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in your profile, use /addlecture to add a course to your profile",
+            "You don't have any courses in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # check if courseCode is valid
@@ -1091,7 +1096,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
     # check if semester is in userprofile
     if semester not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id}):
         await interaction.response.send_message(
-            "You don't have any courses in this semester, use /addlecture to add a course to your profile",
+            "You don't have any courses in this semester, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # Now we know both the course and the semester are valid, we need to check
@@ -1099,7 +1104,7 @@ async def remove(interaction: Interaction, course_code: Optional[str] = SlashOpt
 
     if course_code not in mongo.tTimeTableUniEdition.users.find_one({"_id": interaction.user.id})[semester]:
         await interaction.response.send_message(
-            "You don't have this course in your profile, use /addlecture to add a course to your profile",
+            "You don't have this course in your profile, use /addactivity to add a course to your profile",
             ephemeral=True)
         return
     # If we're here we know the course is valid, and the user has the
