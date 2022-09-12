@@ -1,5 +1,6 @@
 from typing import Optional
 import nextcord
+import requests
 from nextcord.ext import commands
 import json
 from pymongo import MongoClient
@@ -121,9 +122,9 @@ def fix_array(arr):
     return arr
 
 
-@tTimeTable.slash_command(guild_ids=[518573248968130570], name="addtimetable",
-                          description="Import all your courses at once using an Acorn HTML file")
-async def add_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True, description="The file you exported from Acorn - ICS and HTML files accepted", name="acorn_file")):
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name="importtimetable",
+                          description="Import all your courses at once using an Acorn HTML/ics file")
+async def import_timetable(interaction: Interaction, html_file: Optional[Attachment] = SlashOption(required=True, description="The file you exported from Acorn - ICS and HTML files accepted", name="acorn_file")):
     # Check if the file is an HTML file
     database_names = {"TUT": "tutorialSection", "LEC": "lectureSection", "PRA": "practicalSection"}
     if html_file.filename.endswith(".html"):
@@ -421,6 +422,74 @@ async def add_activity(interaction: Interaction, coursecode: str = SlashOption(r
 #         ephemeral=True)
 
 
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name="importacorn", description="Import your timetable directly from Acorn")
+async def importacorn(interaction: Interaction, jsessionID: str = SlashOption(required=True, name="jsessionid", description="Your JSESSIONID cookie from Acorn"),
+                            ltpatoken2: str = SlashOption(required=True, name="ltpatoken2", description="Your LTPATOKEN2 cookie from Acorn"),
+    wsjessionid = SlashOption(required=True, name="wsjessionid", description="Your WSJSESSIONID cookie from Acorn"),
+    xsrf_token = SlashOption(required=True, name="xsrf_token", description="Your XSRF-TOKEN cookie from Acorn")):
+    """
+    Command which imports a user's timetable from Acorn
+    :param interaction: Interaction object
+    :param jsessionID: JSESSIONID cookie from Acorn
+    :param ltpatoken2: LTPATOKEN2 cookie from Acorn
+    :param wsjessionid: WSJSESSIONID cookie from Acorn
+    :param xsrf_token: XSRF-TOKEN cookie from Acorn
+    :return:
+    """
+    cookies = {
+        'LtpaToken2': f"{ltpatoken2}",
+        'JSESSIONID': f"{jsessionID}",
+        'XSRF-TOKEN': f"{xsrf_token}",
+        'WSJSESSIONID': f"{wsjessionid}",
+    }
+
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+        'If-Modified-Since': '1',
+        'Pragma': 'no-cache',
+        'Prefer': 'safe',
+        'Referer': 'https://acorn.utoronto.ca/sws/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.70',
+        'X-XSRF-TOKEN': '74bmRIHJX0vKGYnRN1F4na8o007dpgSF+xZ1j2ZZFU8=',
+        'sec-ch-ua': '"Chromium";v="104", " Not A;Brand";v="99", "Microsoft Edge";v="104"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    response = requests.get(
+        'https://acorn.utoronto.ca/sws/rest/enrolment/course/enrolled-courses?acpDuration=2&adminOrgCode=ERIN&assocOrgCode=ERIN&coSecondaryOrgCode=&collaborativeOrgCode=&designationCode1=PGM&levelOfInstruction=U&postAcpDuration=2&postCode=ER+++CMS1&postDescription=UTM+Intro+to+CSC,+MATH+%26+STATS&primaryOrgCode=ERIN&secondaryOrgCode=&sessionCode=20229&sessionDescription=2022-2023+Fall%2FWinter&status=REG&subjectCode1=SCN&typeOfProgram=OTH&useSws=Y&yearOfStudy=1',
+        cookies=cookies, headers=headers)
+    try:
+        await interaction.response.defer()
+        choices = {"LEC": "lecture", "TUT": "tutorial", "PRA": "practical"}
+        db = mongo.tTimeTableUniEdition
+        response = response.json()
+        response = response['APP']
+        for course in response:
+            course_code = course['code']
+            for meetings in course['meetings']:
+                semester = course['sectionCode']
+                activity_section = meetings['teachMethod'] + meetings['sectionNo']
+                activity_type = choices[meetings['teachMethod']]
+                init_database(interaction, course_code, semester, activity_section)
+                if f"{activity_type}Section" not in db.users.find_one(
+                        {"_id": interaction.user.id})[semester][course_code]:
+                    # Add the tutorial section to the user's profile
+                    db.users.update_one({"_id": interaction.user.id},
+                                        {"$set": {semester + "." + course_code + "." + f"{activity_type}Section":
+                                                      activity_section}}, upsert=True)
+                    db.courses.update_one({"_id": course_code},
+                                          {"$push": {semester + "." + activity_section: interaction.user.id}})
+        await interaction.followup.send("Your timetable has been imported!")
+    except Exception as e:
+        await interaction.followup.send("Invalid cookies, please try again. To find your cookies, navigate to `edge://settings/cookies/detail?site=acorn.utoronto.com` on edge or `chrome://settings/cookies/detail?site=acorn.utoronto.com` on Chrome. Make sure you're signed into Acorn before you do this", ephemeral=True)
+        print(e)
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="viewclassmates",
                           description="See who else is in your class!")
 async def viewclassmates(interaction: Interaction, course_code: Optional[str] = SlashOption(required=True,
