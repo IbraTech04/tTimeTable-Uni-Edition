@@ -5,7 +5,7 @@ from nextcord.ext import commands
 import json
 from pymongo import MongoClient
 import os
-from nextcord import Interaction, SlashOption
+from nextcord import Interaction, SlashOption, slash_command
 # from nextcord.abc import GuildChannel  # Tentative import - going be used later
 from nextcord import Attachment  # Tentative import - going be used later (ACORN HTML parsing)
 from dotenv import load_dotenv
@@ -217,7 +217,9 @@ async def import_timetable(interaction: Interaction, html_file: Optional[Attachm
 async def add_activity(interaction: Interaction, coursecode: str = SlashOption(required=True, description="The course code of the activity you want to add", name="course_code"),
                        semester: str = SlashOption(name="semester", choices={"F": "F", "S": "S", "Y": "Y"}, description="The semester of the activity you want to add", required=True),
                        activity_type: str = SlashOption(name="activity_type", choices={"LEC": "lecture", "TUT": "tutorial", "PRA": "practical"}, description="The type of activity you want to add", required=True),
-                       activity_section: str = SlashOption(required=True, description="The section of the activity you want to add", name="activity_section")):
+                       activity_section: str = SlashOption(required=True, description="The section of the activity you want to add", name="activity_section"),
+                       campus_code: str = SlashOption(required=True, description="The campus which the activity is held at", name="campus_code", choices={"UTSG": "1", "UTSC": "3", "UTM": "5"})):
+
     """
     Command which adds an activity (lecture, tutorial, practical) to a user's profile, and creates a user profile if one
     does not exist
@@ -267,6 +269,57 @@ async def add_activity(interaction: Interaction, coursecode: str = SlashOption(r
     await interaction.response.send_message(
         "You already have this course in your timetable. Use /remove to remove this course from your timetable",
         ephemeral=True)
+
+#help command
+@tTimeTable.slash_command(guild_ids=[518573248968130570], name="help", description="Get help with the bot")
+async def help_command(interaction: Interaction, command: Optional[str] = SlashOption(name="command", description="The command you need help with", required=False,
+                                                                                      choices={"addactivity": "1",
+                                                                                               "importtimetable": "2",
+                                                                                               "importacorn": "3",
+                                                                                               "remove": "4"})):
+
+    """
+    Command which sends a help embed to the user
+    :param interaction: Interaction object
+    :param command: The command the user needs help with
+    """
+    if (command is None):
+        embed = nextcord.embeds.Embed(title="Help", description="Need help with tTimeTable? You're in the right place!", color=0x4287f5)
+        embed.add_field(name="/addactivity", value="Add an activity to your timetable (LEC, TUT, PRAC)", inline=False)
+        embed.add_field(name="/importtimetable", value="Import your timetable from an Acorn .ics file", inline=False)
+        embed.add_field(name="/importacorn", value="Import your timetable directly from Acorn using your weblogin idpz tokens", inline=False)
+        embed.add_field(name="/viewclassmates", value="View the classmates in your activity", inline=False)
+        embed.add_field(name="/remove", value="Remove a course from your timetable", inline=False)
+
+        embed.add_field(name="/help", value="Get help with the bot", inline=False)
+    elif command == "1":
+        embed = nextcord.embeds.Embed(title="About /addactivity", description="/addactivity is one of the main commands used with tTimeTable")
+        embed.add_field(name = "Description", value="Used to add courses and activites to your timetable")
+        embed.add_field(name = "Usage", value="/addactivity <courseCode> <semester> <activityType> <activitySection>")
+        embed.add_field(name="Example:", value="`/addActivity CSC108 F LEC 0102`", inline=False)
+        embed.add_field(name="Example:", value="`/addActivity CSC108H5 F LEC LEC0102`", inline=False)
+        embed.set_footer(text="All arguments are handled through Discords slash command interface")
+    elif command == "2":
+        embed = nextcord.embeds.Embed(title="About /importtimetable", description="/importtimetable is one of the main commands used with tTimeTable")
+        embed.add_field(name = "Description", value="Used to import your timetable from an Acorn .ics file")
+        embed.add_field(name = "Usage", value="/importtimetable <file>")
+        embed.add_field(name="Supported Files", value="tTimeTabls supports .ics and .html files from Acorn")
+        embed.add_field(name="Example:", value="`/importtimetable` with a file attached", inline=False)
+        embed.add_field(name="Where can I find my .ics file?", value="From Acorn, navigate to the 'TimeTables and Exams tab. Click 'Download Calendar Export' and upload the file Acorn provides '")
+        embed.add_field(name="Where can I find my .html file?", value="Pressing Ctrl/Cmd + S on your Acorn timetable page and uploading the saved html file will suffice for tTimeTable")
+        embed.set_footer(text="All arguments are handled through Discords slash command interface")
+    elif command == "3":
+        embed = nextcord.embeds.Embed(title="About /importacorn", description="/importacorn is one of the main commands used with tTimeTable")
+        embed.add_field(name = "Description", value="Used to import your timetable directly from Acorn using your weblogin idpz tokens")
+        embed.add_field(name = "Usage", value="/importacorn <idpzToken>")
+        embed.add_field(name="Is this safe?" , value="Yes, tTimeTable does not store your idpz token in any way. It is only used to access your timetable and is discarded after the import is complete")
+        embed.add_field(name="How do I get my idpz token?", value="This process differs depending on your browser. On chromium browsers (Chrome, Edge, Brave, etc): \n1. Login to Acorn \n2. In a new tab, navigate to `<your browser>://settings/cookies/detail?site=acorn.utoronto.ca` \nExample: If you're using Edge, type in `edge://settings/cookies/detail?site=acorn.utoronto.ca`\n3. Expand each entry in the list \n4. Copy each cookie's content and paste it into its respective field in the command \n5. Run the command")
+    else:
+        embed = nextcord.embeds.Embed(title="About /remove", description="/remove is one of the main commands used with tTimeTable")
+        embed.add_field(name = "Description", value="Used to remove courses and activites from your timetable")
+        embed.add_field(name = "Usage", value="/remove <courseCode> <semester> <activityToRemove>")
+        embed.add_field(name="Example:", value="`/remove CSC108 F LEC`", inline=False)
+    await interaction.response.send_message(embed=embed)
 
 # Legacy Commands - Merged into /addactivity
 
@@ -486,9 +539,9 @@ async def importacorn(interaction: Interaction, jsessionID: str = SlashOption(re
                                                       activity_section}}, upsert=True)
                     db.courses.update_one({"_id": course_code},
                                           {"$push": {semester + "." + activity_section: interaction.user.id}})
-        await interaction.followup.send("Your timetable has been imported!")
+        await interaction.followup.send("Your timetable has been imported!", ephemeral=True)
     except Exception as e:
-        await interaction.followup.send("Invalid cookies, please try again. To find your cookies, navigate to `edge://settings/cookies/detail?site=acorn.utoronto.com` on edge or `chrome://settings/cookies/detail?site=acorn.utoronto.com` on Chrome. Make sure you're signed into Acorn before you do this", ephemeral=True)
+        await interaction.followup.send("Invalid cookies, please try again. To find your cookies, navigate to `edge://settings/cookies/detail?site=acorn.utoronto.ca` on edge or `chrome://settings/cookies/detail?site=acorn.utoronto.ca` on Chrome. Make sure you're signed into Acorn before you do this", ephemeral=True)
         print(e)
 @tTimeTable.slash_command(guild_ids=[518573248968130570], name="viewclassmates",
                           description="See who else is in your class!")
@@ -538,7 +591,7 @@ async def viewclassmates(interaction: Interaction, course_code: Optional[str] = 
         return
     # If we're here, we know the course code is valid, and the user has the course in their profile
     embed = nextcord.embeds.Embed(title=f"Classmates in {UTMCourses[course_code]['courseTitle']}",
-                                  description="Here are the people in your class", color=0x00ff00)
+                                  description="Here are the people in your class", color=0x4287f5)
     embed_phrase = ["Lecture: ", "Tutorial: ", "Practical: "]
     loop_phrase = ["lectureSection", "tutorialSection", "practicalSection"]
     for i in loop_phrase:  # Loop through lecture, tutorial, practical
