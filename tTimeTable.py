@@ -314,11 +314,15 @@ async def help_command(interaction: Interaction, command: Optional[str] = SlashO
         embed.add_field(name = "Usage", value="/importacorn <idpzToken>")
         embed.add_field(name="Is this safe?" , value="Yes, tTimeTable does not store your idpz token in any way. It is only used to access your timetable and is discarded after the import is complete")
         embed.add_field(name="How do I get my idpz token?", value="This process differs depending on your browser. On chromium browsers (Chrome, Edge, Brave, etc): \n1. Login to Acorn \n2. In a new tab, navigate to `<your browser>://settings/cookies/detail?site=acorn.utoronto.ca` \nExample: If you're using Edge, type in `edge://settings/cookies/detail?site=acorn.utoronto.ca`\n3. Expand each entry in the list \n4. Copy each cookie's content and paste it into its respective field in the command \n5. Run the command")
+        embed.set_footer(text="All arguments are handled through Discords slash command interface")
+
     else:
         embed = nextcord.embeds.Embed(title="About /remove", description="/remove is one of the main commands used with tTimeTable")
         embed.add_field(name = "Description", value="Used to remove courses and activites from your timetable")
         embed.add_field(name = "Usage", value="/remove <courseCode> <semester> <activityToRemove>")
         embed.add_field(name="Example:", value="`/remove CSC108 F LEC`", inline=False)
+        embed.set_footer(text="All arguments are handled through Discords slash command interface")
+
     await interaction.response.send_message(embed=embed)
 
 # Legacy Commands - Merged into /addactivity
