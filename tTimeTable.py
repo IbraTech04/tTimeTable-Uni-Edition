@@ -155,6 +155,10 @@ async def import_timetable(interaction: Interaction, html_file: Optional[Attachm
                     course_activities = cols[i + 1].get_text().split("\n")
                     course_codes = fix_array(course_activities)
                     for code in course_codes:
+                        try:
+                            validate_course(course_code, course_semester, code, code[:3], database_names[code[:3]], True)
+                        except:
+                            continue
                         init_database(interaction, course_code, course_semester, code)
                         if database_names[code[:3]] not in db.users.find_one({"_id": interaction.user.id})[course_semester][course_code]:
                             # Add the code's section to the user's profile
@@ -193,6 +197,11 @@ async def import_timetable(interaction: Interaction, html_file: Optional[Attachm
                     course_semester = "S"
                 else:
                     course_semester = "F"
+                try:
+                    validate_course(course_code, course_semester, activity_code, activity_code[:3], database_names[activity_code[:3]], True)
+                except Exception as e:
+                    print(e)
+                    continue
                 init_database(interaction, course_code, course_semester, activity_code)
 
                 print(event.name)
